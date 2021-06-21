@@ -40,7 +40,7 @@ You can install modules with following command.
 - Indentation is very important in Python programming. Indentation level is used to determine the coding block (the grouping of statements) and scope of variables.
 - Variable is accessible from same block or nested block. Variable doesn't need to declare before using. Type of variable is determined by value to be assigned.Variable declared "global" has globally scope.
 - A comment starts with a hash character (#)
-- If you need more information about Python language, you can see the following site : https://docs.python.org/3.8/index.html;
+- If you need more information about Python language, you can see the following site : [python3.8 docs](https://docs.python.org/3.8/index.html)
 - Sample code
   ```python
   # example
@@ -72,3 +72,60 @@ You can install modules with following command.
   sum is between 30 and 50
   ```
 
+### Cardinal modules in image processing
+#### numpy (short name: np)
+- more information: [numpy docs](https://numpy.org/doc/stable/)
+- This module is the fundamental package for scientific computing.
+  - a powerful N-dimensional array object
+  - useful linear algebra, Fourier transform, and random number capabilities
+- Sample code
+  ```python
+  import numpy as np
+  a = np.zeros((4, 3, 2))  # make zero array whose size is (4,3,2)
+  a[0:2, 1:2, 1] = 1  # Note that, 0:2 means 0 to 1, and 1:2 means 1.
+  print(a)
+  print(np.average(a))
+  print(np.max(a))
+  ```
+
+#### cv2 (opencv-python)
+- more information: [OpenCV4.5.2 docs](https://docs.opencv.org/4.5.2/)
+- This is an open source module for Computer Vision.
+- It has many functions for image processing.
+- Sample code
+  ```python
+  import cv2
+  img = cv2.imread('img/flash/ambient.jpg') # read image file
+  bimg = cv2.GaussianBlur(img, (51,51), 5) # gaussian filter (size=(51,51),sigma=5)
+  cv2.imshow('img',img)
+  cv2.imshow('blur img',bimg)
+  cv2.waitKey(0) # pause until press any key
+  cv2.destroyAllWindows # close all cv2's windows
+  ```
+
+#### matplotlib.pyplot (short name: plt)
+- more information: [matplotlib tutorials](https://matplotlib.org/tutorials/index.html), [pyplot](https://matplotlib.org/stable/api/pyplot_summary.html)
+- This module is based on MATLAB.
+- It has many functions for image processing.
+- "plt" has many differences from "cv2". The following table shows the main examples in image IO.
+  ||cv2|plt|
+  |----|----|----|
+  |color space (order of color channels)|BGR|RGB|
+  |able to show multi-figures on a single window|x|o|
+  |figure window|does not pause|pause and must be closed manually|
+  |normalization at showing image|default:off|default:on|
+  |displaying axis at showing image|default:off|default:on|
+- Sample code
+  ```python
+  import matplotlib.pyplot as plt
+  img = plt.imread('img/flash/ambient.jpg')
+  plt.subplot(121),plt.imshow(img)
+  plt.subplot(122),plt.imshow(255-img) # negative-positive conversion
+  plt.show() # required for showing figure
+  ```
+
+### About digital image
+#### Color (Additive color) 
+Many colors can be created by mixing the primary colors (Blue, Green, Red).
+
+  途中
