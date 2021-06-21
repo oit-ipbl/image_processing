@@ -138,8 +138,132 @@ You can install modules with following command.
 
 #### Data structure of digital images
 - Digital color images can be represented by 3 dimensional array.<br>
-  <image src="../image/imageArray.png" height=50% width=50%><br>
+  <image src="../image/imageArray.png" height=30% width=30%><br>
   Color image array
 - Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.    
+
+### Image IO
+まず，スクリプトと関数の違いについて紹介する．
+#### Python Script
+- Sample code
+  ```python
+  import cv2
+
+  # read image file
+  img = cv2.imread('img/flash/ambient.jpg')
+
+  # some image processing ==============
+  #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+  #   _____            _____
+  #  /   B/__         /   R/__
+  # /____/ G/__  ==> /____/ G/__
+  #   /____/ R/        /____/ B/
+  #     /____/           /____/
+  # ====================================
+
+  # write image file
+  cv2.imwrite('res/res.png', img)
+
+  # show image file
+  cv2.imshow('window name', img)
+  cv2.waitKey(0)  # pause until any key pressed
+  cv2.destroyAllWindows()  # close all windows
+  ```
+
+#### Python Function
+- We define a function of above script. It increases reusability.
+- Sample code
+  ```python
+  import cv2
+
+  def imageIOdemo():
+      # read image file
+      img = cv2.imread('img/flash/ambient.jpg')
+
+      # some image processing ==============
+      # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+      #   _____            _____
+      #  /   B/__         /   R/__
+      # /____/ G/__  ==> /____/ G/__
+      #   /____/ R/        /____/ B/
+      #     /____/           /____/
+      # ====================================
+
+      # write image file
+      cv2.imwrite('res/res.png', img)
+
+      # show image file
+      cv2.imshow('window name', img)
+      cv2.waitKey(0)  # pause until any key pressed
+      cv2.destroyAllWindows()  # close all windows
+
+  if __name__ == '__main__':
+      imageIOdemo()
+  ```
+
+- cv2とpltの違いを体感する
+- Sample code
+  ```python
+  import cv2
+  import matplotlib.pyplot as plt
+
+  def imageIOdemo():
+      # read image file
+      img_BGR = cv2.imread('img/flash/ambient.jpg')
+
+      # some image processing ==============
+      img_RGB = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2RGB)
+      #   _____            _____
+      #  /   B/__         /   R/__
+      # /____/ G/__  ==> /____/ G/__
+      #   /____/ R/        /____/ B/
+      #     /____/           /____/
+      # ====================================
+
+      # write image file
+      cv2.imwrite('res/res1.png', img_BGR)
+      cv2.imwrite('res/res2.png', img_RGB)
+
+      # show images (cv2)
+      cv2.imshow('img_BGR', img_BGR)
+      cv2.imshow('img_RGB', img_RGB)
+      # cv2.waitKey(0) # pause until any key pressed
+
+      # show multi-images (plt)
+      plt.subplot(1, 2, 1), plt.imshow(img_BGR), plt.title('img_BGR'), plt.axis('off')
+      plt.subplot(1, 2, 2), plt.imshow(img_RGB), plt.title('img_RGB'), plt.axis('off')
+      plt.show()
+      # plt's figures must be closed manually.
+
+      # close all cv2 windows (cv2)
+      cv2.destroyAllWindows()
+
+
+  if __name__ == '__main__':
+      imageIOdemo()
+  ```
+
+#### How to resize input images
+- The process with large size images is very heavy. If image size is huge, you should resize it to small.
+  ```python
+  # Resize the long side to the specified length
+  def resizeImg(img, length):
+      h, w, _ = img.shape
+
+      if max(h, w) < length:
+          return img
+
+      if h < w:
+          newSize = (int(h*length/w), length)
+      else:
+          newSize = (length, int(w*length/h))
+
+      print('resize to', newSize)
+
+      return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
+  ```
+
+
+
     
   途中
