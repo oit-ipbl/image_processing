@@ -126,6 +126,20 @@ You can install modules with following command.
 
 ### About digital image
 #### Color (Additive color) 
-Many colors can be created by mixing the primary colors (Blue, Green, Red).
+- Many colors can be created by mixing the primary colors (Blue, Green, Red).<br>
+  <image src="../image/Color-additive-mixing.png" height=25% width=25%><br>
+  Additive color mixing([wikipedia](https://commons.wikimedia.org/wiki/File:Color-additive-mixing.png))
 
+#### Digital images
+- Digital images consist of many pixels. Pixel is the smallest unit in image space.
+- Each pixel has a color (three values: Blue, Green, Red).<br>
+  <image src="../image/pixels.png"><br>
+  Digital image & pixels
+
+#### Data structure of digital images
+- Digital color images can be represented by 3 dimensional array.<br>
+  <image src="../image/imageArray.png" height=50% width=50%><br>
+  Color image array
+- Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.    
+    
   途中
