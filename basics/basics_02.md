@@ -1,7 +1,8 @@
 # Tutorials for video image processing
 
-- Variable "device" (line 11)  is the device numbers of the camera starting from 0. 
+- Grobal dariable "device" (line 11)  means the device numbers of the camera starting from 0. 
   - It can be specified the file name if you want to process the movie file.
+- 
 
 ```python
 # Sample of "Show video-image with the camera"
