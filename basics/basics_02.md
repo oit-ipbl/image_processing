@@ -5,6 +5,7 @@
 - 
 
 ```python
+# Sample of "Simple video-image processing"
 # -*- coding: utf-8 -*-
 import cv2
 import numpy as np
