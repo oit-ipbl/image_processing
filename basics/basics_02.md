@@ -4,10 +4,10 @@
 -- It can be specified the file name if you want to process the movie file.
 
 ```python
-; # Sample of "Show video-image with the camera"
-; # -*- coding: utf-8 -*-
-; import cv2
-; import numpy as np
+# Sample of "Show video-image with the camera"
+# -*- coding: utf-8 -*-
+import cv2
+import numpy as np
 
 device = 0  # number of camera device
 
