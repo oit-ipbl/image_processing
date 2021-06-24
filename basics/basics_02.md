@@ -1,6 +1,6 @@
 # Tutorials for video image processing
 
-- Grobal dariable "device" (line 11)  means the device numbers of the camera starting from 0. 
+- Grobal variable "device" (line 11)  means the device numbers of the camera starting from 0. 
   - It can be specified the file name if you want to process the movie file.
 - 
 
