@@ -6,7 +6,7 @@
 
 ```python
 # Sample of "Show video-image with the camera"
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import cv2
 import numpy as np
 
