@@ -10,27 +10,27 @@
 import cv2
 import numpy as np
 
-device = 0 # number of camera device
+device = 0 # camera device number
 
 # main----------------------------------------------------
 def main():
-  global device
+    global device
 
-  cap = cv2.VideoCapture(device)
-  fps = cap.get(cv2.CAP_PROP_FPS)
+    cap = cv2.VideoCapture(device)
+    fps = cap.get(cv2.CAP_PROP_FPS)
 
-  print("fps: ", fps)
-  while cap.isOpened() :
-    ret, frame = cap.read()
+    print("fps: ", fps)
+    while cap.isOpened() :
+        ret, frame = cap.read()
 
-    if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
-      break
-    cv2.imshow("video", frame)
+        if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
+            break
+        cv2.imshow("video", frame)
 
-  cv2.destroyAllWindows()
-  cap.release()
+    cv2.destroyAllWindows()
+    cap.release()
 
 # run-----------------------------------------------------
 if __name__ == '__main__':
-  main()
+    main()
 ```
