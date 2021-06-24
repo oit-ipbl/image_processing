@@ -1,6 +1,7 @@
 # Tutorials for video image processing
 
-  ```python
+
+```python
 # Sample of "Show video-image with the camera"
 # -*- coding: utf-8 -*-
 import cv2
@@ -11,18 +12,21 @@ device = 0  # number of camera device
 # main----------------------------------------------------
 def main():
   global device
+  
   cap = cv2.VideoCapture(device)
   fps = cap.get(cv2.CAP_PROP_FPS)
-  print("fps: ", fps)
+  
+  print("fps: ", fps)
   while cap.isOpened() :
     ret, frame = cap.read()
     if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
       break
     cv2.imshow("video", frame)
-  cv2.destroyAllWindows()
+  
+  cv2.destroyAllWindows()
   cap.release()
 
 # run-----------------------------------------------------
 if __name__ == '__main__':
     main()
-  ```
+```
