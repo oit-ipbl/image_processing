@@ -1,1 +1,75 @@
+# Tutorials for MediaPipe Pose
+
+## Objectives
+This page explains how to make a program for pose detection and get information.
+
+## Pose landmark model
+By using MediaPipe, we can obtain 3D position information of 33 landmarks as shown by the red marker in the following figure.<br>
+<image src="../image/pose_tracking_full_body_landmarks.png" width="75%" height="75%"><br>
+
+## Excercise
+  Get information and display about pose landmarks.
+  - Execute "vscode.bat" file, and open the VSCode.
+  - Make a python file `mypose.py`. 
+  - Type the following template. It's OK copy and paste.
+
+### Sample code
+```python
+import cv2
+import mediapipe as mp
+mp_drawing = mp.solutions.drawing_utils
+mp_pose = mp.solutions.pose
+
+# For webcam input:
+cap = cv2.VideoCapture(0)
+with mp_pose.Pose(
+    min_detection_confidence=0.5,
+    min_tracking_confidence=0.5) as pose:
+  while cap.isOpened():
+    success, image = cap.read()
+    if not success:
+      print("Ignoring empty camera frame.")
+      # If loading a video, use 'break' instead of 'continue'.
+      continue
+
+    # Flip the image horizontally for a later selfie-view display, and convert
+    # the BGR image to RGB.
+    image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
+    # To improve performance, optionally mark the image as not writeable to
+    # pass by reference.
+    image.flags.writeable = False
+    results = pose.process(image)
+
+    # Draw the pose annotation on the image.
+    image.flags.writeable = True
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    mp_drawing.draw_landmarks(
+        image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
+    cv2.imshow('MediaPipe Pose', image)
+    if cv2.waitKey(5) & 0xFF == 27:
+      break
+cap.release()
+```
+  - Execute "mypose.py" by clicking the execution button.<br>
+  <image src="../image/pose.png" width="30%" height="30%"><br>
+ 
+## Question (1)
+ - Calculate and display the average of both shoulders.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the question 1.
+
+## Question (2)
+ - Display "up" when you raise your hand, and "down" when you don't. There are several judgment methods.
+    - Use only relative positions in 3D coordinates.
+    - Use the angle between the vectors connecting the landmarks.
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the question 2.
+    
+## Question (3)
+ - Display "right" when you raise your right hand and "left" when you raise your left hand.
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the question 3.
+      
+途中
 
