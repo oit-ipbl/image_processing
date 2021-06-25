@@ -65,5 +65,5 @@ if __name__ == '__main__':
         | movie file | t + 1 |
      
 ### Wait for the user's key input
-    - The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
-    - It exits the while loop when the user inputs the "q" key.
+- The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
+- It exits the while loop when the user inputs the "q" key.
