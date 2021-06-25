@@ -5,7 +5,7 @@ To process the video image in Python 3 with your camera device.
 
 ## Sample of simple video-image processing
 
-### Code
+### Sample code
 ```python
 # Sample of "Simple video-image processing"
 # -*- coding: utf-8 -*-
