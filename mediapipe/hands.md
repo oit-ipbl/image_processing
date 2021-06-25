@@ -58,22 +58,22 @@ def main():
 # Draw a circle on index finger
 def draw_fingertip_landmarks(image, landmarks):
     image_width, image_height = image.shape[1], image.shape[0]
+    landmark_point = []
 
     for index, landmark in enumerate(landmarks.landmark):
+        if landmark.visibility < 0 or landmark.presence < 0:
+            continue
 
         # Convert the obtained landmark values x and y to the coordinates on the image
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
 
-        # Draw a circle on index finger and display the coordinate value
-        if index == 8:
-            cv2.circle(image, (landmark_x, landmark_y), 7, (0, 0, 255), 3)
-            cv2.putText(image, "(" + str(landmark_x) + ", " + str(landmark_y) + ")",
-            (landmark_x - 20, landmark_y - 20),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            1,
-            (0,0,255),
-            2)
+        landmark_point.append((landmark_x, landmark_y))
+
+    # Draw a circle on index finger and display the coordinate value
+    cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
+    cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
+        (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 
 if __name__ == '__main__':
     main()
@@ -96,7 +96,14 @@ if __name__ == '__main__':
 ```python
     landmark_x = min(int(landmark.x * image_width), image_width - 1)
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
-```    
+```
+ - In the draw_fingertip_landmarks function, the 3D coordinates of each landmark are stored in the list `landmark_point`. 
+    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][0]`, and the y-coordinate is stored in `landmark_point[8][1]`.
+```python
+    cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
+    cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
+        (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+````
     
 ## Question (1)
  - Draw red circles on all fingertips.<br>
