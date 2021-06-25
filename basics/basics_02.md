@@ -55,7 +55,7 @@ if __name__ == '__main__':
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
-    - The read function is called by every loop in the sample code, independent of the FPS. 
+    - The read function is called by every loop in this sample code, independent of the FPS. 
     - The loop time is costed the sum of the processing time with the read and any other functions in the while block and the sleep time with the waitKey function(1m sec).   
     - In the video stream, the returned frame from the function is the same as the previous frame when the loop time is shorter than 1/FPS sec.
     - In the movie file, the returned frame from the function is in order, independent of the loop time.
@@ -64,3 +64,6 @@ if __name__ == '__main__':
         | camera | t + int( loop time / fps) |
         | movie file | t + 1 |
      
+### Wait for the user's key input
+    - The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
+    - It exits the while loop when the user inputs the "q" key.
