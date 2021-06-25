@@ -60,4 +60,5 @@ if __name__ == '__main__':
         :--- | :--- 
         | camera | t + int( interval time / fps) |
         | movie file | t + 1 |
-    
+        
+        - In the video stream, the returned frame from the function is the same when the interval time is shorter than 1/FPS sec. 
