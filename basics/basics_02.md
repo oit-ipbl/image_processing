@@ -31,7 +31,7 @@ if __name__ == '__main__':
     main()
 ```
 
-## Video status
+#### Video status
 - A value of grobal variable "device" (line 11)  is the device numbers of the camera starting from 0. 
   - The value is set as a file name if you want to process the movie file.
 - 
