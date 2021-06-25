@@ -1,5 +1,8 @@
 # Tutorials for video image processing
 
+### purpose
+To process the video image in Python 3 with your camera device.
+
 ```python
 # Sample of "Simple video-image processing"
 # -*- coding: utf-8 -*-
