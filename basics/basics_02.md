@@ -54,10 +54,13 @@ if __name__ == '__main__':
 - Read a frame form video steram
     | code | comment | 
     :--- | :---
-    | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame | 
-    - In the video stream, the returned frame from the function is the same as the previous frame when the interval time is shorter than 1/FPS sec.
-    - In the movie file, the returned frame from the function is in order, independent of the interval time.
+    | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
+    - The read function is called by every loop in the sample code, independent of the FPS. 
+    - The loop time is costed the sum of the processing time with the read and any other functions in the while block and the sleep time with the waitKey function(1m sec).   
+    - In the video stream, the returned frame from the function is the same as the previous frame when the loop time is shorter than 1/FPS sec.
+    - In the movie file, the returned frame from the function is in order, independent of the loop time.
         | Device | Returned frame number |
         :--- | :--- 
-        | camera | t + int( interval time / fps) |
+        | camera | t + int( loop time / fps) |
         | movie file | t + 1 |
+        
