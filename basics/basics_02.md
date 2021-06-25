@@ -44,6 +44,7 @@ if __name__ == '__main__':
   - The value is set as a file name if you want to process the movie file.
 - Open the video stream and get the propaties of the video image
 
+|  | CODE |
 ----------------|----------------
 | Open the video stream | cv2.VideoCapture(device) |
 | FPS (frame / sec) rate | cv2.CAP_PROP_FPS |
