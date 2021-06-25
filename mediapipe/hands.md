@@ -76,7 +76,7 @@ if __name__ == '__main__':
   - Execute "myhands.py" by clicking the execution button.<br>
   <image src="../image/index_finger.png" width="30%" height="30%"><br>
 
-### How to refer to marker information
+### How to refer to landmark information
  - In the above Sample code, the detection results of all hands are stored in the variable `results`.
 ```python
     results = hands.process(image)
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 ```python
     results.multi_hand_landmarks[0].landmark[4]
 ```
- - Since the obtained coordinate values are expressed in the range of [0.0-1.0], it is necessary to convert them to the coordinates of the image as follows.
+ - Since the obtained values are expressed in the range of [0.0-1.0], it is necessary to convert them to the coordinates of the image as follows.
 ```python
     landmark_x = min(int(landmark.x * image_width), image_width - 1)
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
