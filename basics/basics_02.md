@@ -44,7 +44,7 @@ if __name__ == '__main__':
   - The value is set as a file name if you want to process the movie file.
 - Open the video stream and get the propaties of the video image
     | code | comment |
-    ---|---
+    :--- | :---
     | cv2.VideoCapture(device) | Open the video stream | 
     | cv2.CAP_PROP_FPS | FPS (frame / sec) rate | 
     | cv2.CAP_PROP_FRAME_WIDTH | Frame width | 
@@ -52,8 +52,9 @@ if __name__ == '__main__':
 ### Read a frame from video stream
 
 | code | comment | 
----|---
-| cap.read() | 1st return value is a boolean value for whether was able to read a frame. | 
-|  | 2nd return value is the list of the pixel values in a frame.  | 
+:--- | :---
+| cap.read() | ```1st return value is a boolean value for whether was able to read a frame. 
+ 2nd return value is the list of the pixel values in a frame.
+ ``` | 
     
     
