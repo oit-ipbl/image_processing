@@ -7,7 +7,7 @@ This page explains how to make a program for palm detection and get information.
 By using MediaPipe, we can obtain 3D position information of 21 landmarks as shown by the red marker in the following figure.<br>
 <image src="../image/hand_landmarks.png" width="75%" height="75%"><br>
 
-## Excercise
+## Practice[Get information of arbitrary landmark]
   Get information and display about an landmark of index finger.
   - Execute "vscode.bat" file, and open the VSCode.
   - Click the following button, and make a python file `myhands.py`. <br>
@@ -105,17 +105,17 @@ if __name__ == '__main__':
         (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 ````
     
-## Question (1)
+## Exercise[Hand1]
  - Draw red circles on all fingertips.<br>
     <image src="../image/q1_fingertips.png" width="30%" height="30%"><br>
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the question 1.
+It's OK, you can finish the Exercise[Hand1].
       
-## Question (2)
+## Exercise[Hand2]
  - Calculate the center of gravity of fingertips, and draw green circle.<br>
     <image src="../image/q2_fingertips_c.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the question 2.
+It's OK, you can finish the Exercise[Hand2].
       
 途中
