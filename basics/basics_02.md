@@ -59,8 +59,8 @@ if __name__ == '__main__':
     - The loop time is costed the sum of the processing time with the read and any other functions in the while block and the sleep time with the waitKey function(1m sec).   
     - In the video stream, the returned frame from the function is the same as the previous frame when the loop time is shorter than 1/FPS sec.
     - In the movie file, the returned frame from the function is in order, independent of the loop time.
-        | Device | Returned frame number |
+        | Device | The number of the returned frame |
         :--- | :--- 
         | camera | t + int( loop time / fps) |
         | movie file | t + 1 |
-        
+     
