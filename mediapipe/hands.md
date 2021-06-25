@@ -88,11 +88,11 @@ if __name__ == '__main__':
 ```
  - All the obtained landmark information is stored in the variable `results`. 
     You can refer to the landmark information of a specific hand as follows. 
-    In this example, the coordinate value of landmark #4(thumb) of the 0th hand is obtained.
+    In the following example, the coordinate value of landmark #4(thumb) of the 0th hand is obtained.
 ```python
     results.multi_hand_landmarks[0].landmark[4]
 ```
- - Since the obtained values are expressed in the range of [0.0-1.0], it is necessary to convert them to the coordinates of the image as follows.
+ - Since the obtained values are normalized to [0.0-1.0], it is necessary to convert them to the coordinates of the image as follows.
 ```python
     landmark_x = min(int(landmark.x * image_width), image_width - 1)
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
@@ -103,6 +103,12 @@ if __name__ == '__main__':
     cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
     cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
         (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+````
+  - `landmark.visibility` indicates whether landmark is visible or occluded by other objects. `landmark.presence` indicates whether landmark is present on the scene.
+    Both value ranges are [0.0-1.0].
+````python
+    if landmark.visibility < 0 or landmark.presence < 0:
+        continue
 ````
     
 ## Exercise[Hand1]
