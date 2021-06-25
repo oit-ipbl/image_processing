@@ -61,8 +61,7 @@ It's OK, you can finish the Exercise[Pose1].
     
 ## Exercise[Pose2]
  - Display "right" when you raise your right hand and "left" when you raise your left hand.
-    - Use only relative positions in 3D coordinates.
-    - Use the angle between the vectors connecting the landmarks.<br>
+    - Use only relative positions in 3D coordinates.<br>
     <image src="../image/pose_q2-1.png" width="30%" height="30%">
       <image src="../image/pose_q2-2.png" width="30%" height="30%">
         <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
