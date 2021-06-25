@@ -68,13 +68,18 @@ def draw_fingertip_landmarks(image, landmarks):
         # Draw a circle on index finger and display the coordinate value
         if index == 8:
             cv2.circle(image, (landmark_x, landmark_y), 7, (0, 0, 255), 3)
-            print(landmark_x, landmark_y)
+            cv2.putText(image, "(" + str(landmark_x) + ", " + str(landmark_y) + ")",
+            (landmark_x - 20, landmark_y - 20),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1,
+            (0,0,255),
+            2)
 
 if __name__ == '__main__':
     main()
 ```
   - Execute "myhands.py" by clicking the execution button.<br>
-  <image src="../image/index_finger.png" width="30%" height="30%"><br>
+  <image src="../image/index_finger_text.png" width="30%" height="30%"><br>
 
 ### How to refer to landmark information
  - In the above Sample code, the detection results of all hands are stored in the variable `results`.
