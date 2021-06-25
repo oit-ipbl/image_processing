@@ -52,7 +52,10 @@ cap.release()
 ```
   - Execute "mypose.py" by clicking the execution button.<br>
   <image src="../image/pose.png" width="30%" height="30%"><br>
- 
+
+### How to refer to landmark information
+ - `landmark.x` and `landmark.y` are normalized to [0.0-1.0]. `landmark.z` represents  the landmark depth with the depth at the midpoint of hips being the origin, and the smaller the value the closer the landmark is to the camera.
+    
 ## Exercise[Pose1]
  - ***.
 
