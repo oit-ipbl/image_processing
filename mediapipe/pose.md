@@ -7,7 +7,7 @@ This page explains how to make a program for pose detection and get information.
 By using MediaPipe, we can obtain 3D position information of 33 landmarks as shown by the red marker in the following figure.<br>
 <image src="../image/pose_tracking_full_body_landmarks.png" width="75%" height="75%"><br>
 
-## Excercise
+## Practice[Display all pose landmarks]
   Get information and display about pose landmarks.
   - Execute "vscode.bat" file, and open the VSCode.
   - Make a python file `mypose.py`. 
@@ -53,13 +53,13 @@ cap.release()
   - Execute "mypose.py" by clicking the execution button.<br>
   <image src="../image/pose.png" width="30%" height="30%"><br>
  
-## Question (1)
+## Exercise[Pose1]
  - ***.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the question 1.
+It's OK, you can finish the Exercise[Pose1].
     
-## Question (2)
+## Exercise[Pose2]
  - Display "right" when you raise your right hand and "left" when you raise your left hand.
     - Use only relative positions in 3D coordinates.
     - Use the angle between the vectors connecting the landmarks.<br>
@@ -67,7 +67,7 @@ It's OK, you can finish the question 1.
       <image src="../image/pose_q2-2.png" width="30%" height="30%">
         <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the question 2.
+It's OK, you can finish the Exercise[Pose2].
       
 途中
 
