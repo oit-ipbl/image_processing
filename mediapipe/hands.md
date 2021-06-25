@@ -1,4 +1,4 @@
-# Tutorials for MediaPipe_hands
+# Tutorials for MediaPipe Hands
 
 ## Objectives
 This page explains how to make a program for palm detection and get information.
