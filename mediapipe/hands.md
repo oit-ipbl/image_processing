@@ -93,6 +93,7 @@ if __name__ == '__main__':
     results.multi_hand_landmarks[0].landmark[4]
 ```
  - Since the obtained values(`landmark.x`, `landmark.y`) are normalized to [0.0-1.0], it is necessary to convert them to the coordinates of the image as follows.
+ - `landmark.z` represents the landmark depth with the depth at the wrist being the origin, and the smaller the value the closer the landmark is to the camera.
 ```python
     landmark_x = min(int(landmark.x * image_width), image_width - 1)
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
