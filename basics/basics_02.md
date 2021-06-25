@@ -58,6 +58,6 @@ if __name__ == '__main__':
     - XXX
         | Device | Returned frame number |
         :--- | :--- 
-        | camera | t + int(time/fps) |
+        | camera | t + int([interval time]/fps) |
         | movie file | t + 1 |
     
