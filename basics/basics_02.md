@@ -55,10 +55,9 @@ if __name__ == '__main__':
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame | 
-    - XXX
+    - In the video stream, the returned frame from the function is the same as the previous frame when the interval time is shorter than 1/FPS sec.
+    - In the movie file, the returned frame from the function is in order, independent of the interval time.
         | Device | Returned frame number |
         :--- | :--- 
         | camera | t + int( interval time / fps) |
         | movie file | t + 1 |
-        
-        - In the video stream, the returned frame from the function is the same when the interval time is shorter than 1/FPS sec. 
