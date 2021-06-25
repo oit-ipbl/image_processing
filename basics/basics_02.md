@@ -1,9 +1,5 @@
 # Tutorials for video image processing
 
-- Grobal variable "device" (line 11)  means the device numbers of the camera starting from 0. 
-  - It can be specified the file name if you want to process the movie file.
-- 
-
 ```python
 # Sample of "Simple video-image processing"
 # -*- coding: utf-8 -*-
@@ -34,3 +30,8 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## Video status
+- A value of grobal variable "device" (line 11)  is the device numbers of the camera starting from 0. 
+  - The value is set as a file name if you want to process the movie file.
+- 
