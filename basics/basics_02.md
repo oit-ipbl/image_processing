@@ -56,8 +56,8 @@ if __name__ == '__main__':
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame | 
     - XXX
-    | Device | Returned frame number |
-    :--- | :--- 
-    | camera | t + int(time/fps) |
-    | movie file | t + 1 |
+        | Device | Returned frame number |
+        :--- | :--- 
+        | camera | t + int(time/fps) |
+        | movie file | t + 1 |
     
