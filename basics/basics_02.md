@@ -43,11 +43,10 @@ if __name__ == '__main__':
 - A value of grobal variable "device" (line 11)  is the device numbers of the camera starting from 0. 
   - The value is set as a file name if you want to process the movie file.
 - Open the video stream and get the propaties of the video image
+    | code | comment |
+    ----------------|----------------
+    | cv2.VideoCapture(device) | Open the video stream | 
+    | cv2.CAP_PROP_FPS | FPS (frame / sec) rate | 
+    | cv2.CAP_PROP_FRAME_WIDTH | Frame width | 
+    | cv2.CAP_PROP_FRAME_HEIGHT | Frame height | 
 
-|  | CODE |
-----------------|----------------
-| Open the video stream | cv2.VideoCapture(device) |
-| FPS (frame / sec) rate | cv2.CAP_PROP_FPS |
-| Frame width | cv2.CAP_PROP_FRAME_WIDTH |
-| Frame height | cv2.CAP_PROP_FRAME_HEIGHT |
- 
