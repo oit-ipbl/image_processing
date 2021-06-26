@@ -83,3 +83,22 @@ if __name__ == '__main__':
   - Execute "myface.py" by clicking the execution button.<br>
   <image src="../image/face.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
+
+## Exercise[Face1]
+ - Calculate the center of gravity of all face landmarks, and draw green circle.<br>
+    <image src="../image/q1_face.png" width="30%" height="30%"><br>
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Face1].
+
+## Exercise[Face2]
+ - Display "left" or "right" according to the orientation of the face.<br>
+    <image src="../image/q2_face.png" width="30%" height="30%"><br>
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Face2].
+      
+## Exercise[Face3]
+ - aaa.
+
+途中
