@@ -126,7 +126,7 @@ It's OK, you can finish the Exercise[Hand1].
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand2].
 
-## Practice[Judgement of whether the finger is opened]
+## Practice[Judgement of whether the finger is bent or not]
   Judge whether the index finger is open by using the 3D coordinates of the landmark.
   - Make a python file `OpenFinger.py`. 
   - Type the following template. It's OK copy and paste.
@@ -192,9 +192,9 @@ def check_open_finger(image, landmarks):
 
         if len(landmark_point) != 0 and len(landmark_point)==21:
             if landmark_point[8][2] < landmark_point[6][2]:
-                cv2.putText(image, "opened", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
+                cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
             else:
-                cv2.putText(image, "closeed", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
+                cv2.putText(image, "bend", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 
             cv2.circle(image, (landmark_point[6][1], landmark_point[6][2]), 7, (0, 0, 255), 3)
             cv2.circle(image, (landmark_point[7][1], landmark_point[7][2]), 7, (0, 0, 255), 3)
@@ -210,11 +210,12 @@ if __name__ == '__main__':
   <image src="../image/open.png" width="30%" height="30%"> <image src="../image/close.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.                                                           
 
-### How to judge whether the finger is opened
- - In this Sample code, the y-coordinate of the fingertip and the second joint are compared to determine whether it is open or closed.
-    `landmark_point[8][2]` and `landmark_point[6][2]` indicate the y-coordinate of the fingertip of the index finger and  the second joint of the index finger espectively.
+### How to judge whether your finger is bent or not
+ - In this Sample code, the y-coordinate of the fingertip and the second joint are compared to judge whether the finger is bent or not.
+    `landmark_point[8][2]` and `landmark_point[6][2]` indicate the y-coordinate of the fingertip of the index finger and  the second joint of the index finger respectively.
 ````python
     if landmark_point[8][2] < landmark_point[6][2]:
+        cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 ````
 
 ## Exercise[Hand3]
