@@ -4,7 +4,7 @@
 This page explains how to make a program for pose detection and get information.
 
 ## Prerequisite
-You have to finish [MediaPipe (1)](mediapipe/hands.md).
+You have to finish [MediaPipe (1)](../hands.md).
 
 ## Pose landmark model
 By using MediaPipe, we can obtain 3D position information of 33 landmarks as shown by the red marker in the following figure.<br>
@@ -62,7 +62,7 @@ cap.release()
     
 ## Exercise[Pose1]
  - Calculate and display the center of gravity from all the obtained landmarks.
- - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](mediapipe/hands.md)<br>
+ - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](../hands.md)<br>
     <image src="../image/pose_center.png" width="30%" height="30%"><br>
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
