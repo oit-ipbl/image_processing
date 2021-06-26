@@ -191,17 +191,11 @@ def check_open_finger(image, landmarks):
         landmark_point.append((index, landmark_x, landmark_y))
 
         if len(landmark_point) != 0 and len(landmark_point)==21:
-            fingerlist=[]
-
             if landmark_point[8][2] < landmark_point[6][2]:
-                fingerlist.append(1)
+                cv2.putText(image, "opened", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
             else:
-                fingerlist.append(0)
-            
-            if len(fingerlist)!=0:
-                fingercount=fingerlist.count(1)
+                cv2.putText(image, "closeed", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 
-            cv2.putText(image, str(fingercount), (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
             cv2.circle(image, (landmark_point[6][1], landmark_point[6][2]), 7, (0, 0, 255), 3)
             cv2.circle(image, (landmark_point[7][1], landmark_point[7][2]), 7, (0, 0, 255), 3)
             cv2.circle(image, (landmark_point[8][1], landmark_point[8][2]), 7, (0, 0, 255), 3)
@@ -217,8 +211,12 @@ if __name__ == '__main__':
   - If you want to stop this program, press "Esc" key while the preview window is active.                                                           
 
 ### How to judge whether the finger is opened
- - aaa.
-    
+ - In this Sample code, the y-coordinate of the fingertip and the second joint are compared to determine whether it is open or closed.
+    `landmark_point[8][2]` and `landmark_point[6][2]` indicate the fingertip of the index finger and  the second joint of the index finger espectively.
+````python
+    if landmark_point[8][2] < landmark_point[6][2]:
+````
+
 ## Challenge[Hand1]
  - Count and display the number of fingers opened.<br>
     <image src="../image/num.gif" width="30%" height="30%"><br>
