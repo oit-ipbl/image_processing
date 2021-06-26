@@ -14,7 +14,7 @@ By using MediaPipe, we can obtain 3D position information of 21 landmarks as sho
   Get information and display about an landmark of index finger.
   - Execute "vscode.bat" file, and open the VSCode.
   - Click the following button, and make a python file `myhands.py`. <br>
-  <image src="../image/newfile2.png" width="75%" height="75%"><br>
+  <image src="../image/newfile2.png" width="50%" height="50%"><br>
   - Type the following template. It's OK copy and paste.
 
 ### Sample code
