@@ -107,5 +107,6 @@ It's OK, you can finish the Exercise[Face3].
 ## Challenge[Face1]
  - Display "smile" when laughing. 
  - The position of facial parts is the basic information for classifying facial expressions.
+
 途中
 
