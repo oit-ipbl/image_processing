@@ -217,8 +217,9 @@ if __name__ == '__main__':
     if landmark_point[8][2] < landmark_point[6][2]:
 ````
 
-## Challenge[Hand1]
+## Exercise[Hand3]
  - Count and display the number of fingers opened.<br>
     <image src="../image/num.gif" width="30%" height="30%"><br>
-
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Hand3].
 途中
