@@ -220,6 +220,7 @@ if __name__ == '__main__':
 
 ## Exercise[Hand3]
  - Count and display the number of fingers opened.<br>
+    - It is necessary to think about the judgment method with each finger.
     <image src="../image/num.gif" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand3].
