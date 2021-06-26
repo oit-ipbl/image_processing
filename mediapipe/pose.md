@@ -3,6 +3,9 @@
 ## Objectives
 This page explains how to make a program for pose detection and get information.
 
+## Prerequisite
+You have to finish [MediaPipe (1)](mediapipe/hands.md).
+
 ## Pose landmark model
 By using MediaPipe, we can obtain 3D position information of 33 landmarks as shown by the red marker in the following figure.<br>
 <image src="../image/pose_tracking_full_body_landmarks.png" width="75%" height="75%"><br>
@@ -57,7 +60,9 @@ cap.release()
  - `landmark.x` and `landmark.y` are normalized to [0.0-1.0]. `landmark.z` represents  the landmark depth with the depth at the midpoint of hips being the origin, and the smaller the value the closer the landmark is to the camera.
     
 ## Exercise[Pose1]
- - ***.
+ - Calculate and display the center of gravity from all the obtained landmarks.
+ - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](mediapipe/hands.md)<br>
+    <image src="../image/pose_center.png" width="30%" height="30%"><br>
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Pose1].
