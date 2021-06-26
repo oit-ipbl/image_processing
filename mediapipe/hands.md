@@ -179,7 +179,6 @@ def main():
 def check_open_finger(image, landmarks):
     image_width, image_height = image.shape[1], image.shape[0]
     landmark_point = []
-    tipids = [4,8,12,16,20]   #list of all landmarks of the tips of fingers
 
     for index, landmark in enumerate(landmarks.landmark):
         if landmark.visibility < 0 or landmark.presence < 0:
