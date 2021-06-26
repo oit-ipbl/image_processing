@@ -101,4 +101,11 @@ It's OK, you can finish the Exercise[Face2].
 ## Exercise[Face3]
  - aaa.
 
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Face3].
+      
+## Challenge[Face1]
+ - Display "smile" when laughing. 
+ - The position of facial parts is the basic information for classifying facial expressions.
 途中
+
