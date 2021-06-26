@@ -212,7 +212,7 @@ if __name__ == '__main__':
 
 ### How to judge whether the finger is opened
  - In this Sample code, the y-coordinate of the fingertip and the second joint are compared to determine whether it is open or closed.
-    `landmark_point[8][2]` and `landmark_point[6][2]` indicate the fingertip of the index finger and  the second joint of the index finger espectively.
+    `landmark_point[8][2]` and `landmark_point[6][2]` indicate the y-coordinate of the fingertip of the index finger and  the second joint of the index finger espectively.
 ````python
     if landmark_point[8][2] < landmark_point[6][2]:
 ````
