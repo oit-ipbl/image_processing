@@ -70,8 +70,9 @@ def draw_fingertip_landmarks(image, landmarks):
         # Convert the obtained landmark values x and y to the coordinates on the image
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
+        landmark_z = landmark.z
 
-        landmark_point.append((landmark_x, landmark_y))
+        landmark_point.append((index, landmark_x, landmark_y, landmark_z))
 
     # Draw a circle on index finger and display the coordinate value
     cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
@@ -190,8 +191,9 @@ def check_open_finger(image, landmarks):
         # Convert the obtained landmark values x and y to the coordinates on the image
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
+        landmark_z = landmark.z
 
-        landmark_point.append((index, landmark_x, landmark_y))
+        landmark_point.append((index, landmark_x, landmark_y, landmark_z))
 
         if len(landmark_point) != 0 and len(landmark_point)==21:
             if landmark_point[8][2] < landmark_point[6][2]:
