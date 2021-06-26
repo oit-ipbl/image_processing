@@ -7,7 +7,7 @@ This page explains how to make a program for face detection and get information.
 You have to finish [MediaPipe (2)](../mediapipe/pose.md).
 
 ## Face landmark model
-By using MediaPipe, we can obtain 3D position information of 468 landmarks as shown by the red marker in the following figure.<br>
+By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D position information of 468 landmarks as shown by the red marker in the following figure.<br>
 <image src="../image/face_landmark1.png" width="50%" height="50%"><br>
 
 ## Practice[Display all face landmarks]
