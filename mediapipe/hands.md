@@ -7,7 +7,7 @@ This page explains how to make a program for palm detection and get information.
 You have to finish [Image processing basics (1)](../basics/basics_01.md), [Image processing basics (2)](../basics/basics_02.md).
 
 ## Hand landmark model
-By using MediaPipe, we can obtain 3D position information of 21 landmarks as shown by the red marker in the following figure.<br>
+By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D position information of 21 landmarks as shown by the red marker in the following figure.<br>
 <image src="../image/hand_landmarks.png" width="75%" height="75%"><br>
 
 ## Practice[Get information of arbitrary landmark]
