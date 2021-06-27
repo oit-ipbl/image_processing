@@ -97,9 +97,6 @@ It's OK, you can finish the Exercise[Face1].
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face2].
-      
-## Exercise[Face3]
- - aaa.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face3].
