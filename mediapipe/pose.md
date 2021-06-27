@@ -58,7 +58,7 @@ cap.release()
 
 ### How to refer to landmark information
  - `landmark.x` and `landmark.y` are normalized to [0.0-1.0]. `landmark.z` represents  the landmark depth with the depth at the midpoint of hips being the origin, and the smaller the value the closer the landmark is to the camera.
-    
+
 ## Exercise[Pose1]
  - Calculate and display the center of gravity from all the obtained landmarks.
  - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](../mediapipe/hands.md)<br>
@@ -66,7 +66,7 @@ cap.release()
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Pose1].
-    
+
 ## Exercise[Pose2]
  - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands.
     - Use relative positions in 3D coordinates.<br>
@@ -75,6 +75,13 @@ It's OK, you can finish the Exercise[Pose1].
         <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Pose2].
-      
+
+## Exercise[Pose3]
+ - Make a shape of 〇 or × with your arm and display it on the screen according to the shape.<br>
+    <image src="../image/pose_q3.gif" width="30%" height="30%">
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Pose3].
+          
 途中
 
