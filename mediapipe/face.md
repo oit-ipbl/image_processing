@@ -110,4 +110,3 @@ It's OK, you can finish the Exercise[Face3].
  - Think so that you can judge correctly even if you tilt your face.
 
 途中
-
