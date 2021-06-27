@@ -75,9 +75,9 @@ def draw_fingertip_landmarks(image, landmarks):
         landmark_point.append((index, landmark_x, landmark_y, landmark_z))
 
     # Draw a circle on index finger and display the coordinate value
-    cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
-    cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
-        (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+    cv2.circle(image, (landmark_point[8][1], landmark_point[8][2]), 7, (0, 0, 255), 3)
+    cv2.putText(image, "(" + str(landmark_point[8][1]) + ", " + str(landmark_point[8][2]) + ")", 
+        (landmark_point[8][1] - 20, landmark_point[8][2] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 
 if __name__ == '__main__':
     main()
