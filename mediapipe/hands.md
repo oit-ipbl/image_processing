@@ -261,7 +261,8 @@ if __name__ == '__main__':
 
 ### How to judge whether your finger is bent or not
  - In this Sample code, the angle between the vectors obtained from the joint position of the finger is calculated and judged whether the finger is bent or not.
-  - If the angle between vector `landmark_point[5] - landmark_point[6]` and vector `landmark_point[7] - landmark_point[6]` is greater than 90 degrees, display "open".
+  - If the angle between vector `landmark_point[5] - landmark_point[6]` and vector `landmark_point[7] - landmark_point[6]` is greater than 90 degrees, display "open".<br>
+    <image src="../image/vec.png" width="30%" height="30%"><br>
 ````python
     if v_angle3d(vec1, vec2) > 90:
         cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
