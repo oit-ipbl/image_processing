@@ -103,7 +103,7 @@ if __name__ == '__main__':
     landmark_x = min(int(landmark.x * image_width), image_width - 1)
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
 ```
- - In the draw_fingertip_landmarks function, the 3D coordinates of each landmark are stored in the list `landmark_point`. 
+ - In the `draw_fingertip_landmarks` function, the 3D coordinates of each landmark are stored in the list `landmark_point`. 
     The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][0]`, and the y-coordinate is stored in `landmark_point[8][1]`.
 ```python
     cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
@@ -131,7 +131,7 @@ It's OK, you can finish the Exercise[Hand1].
 It's OK, you can finish the Exercise[Hand2].
 
 ## Practice[Judgement of whether the finger is bent or not]
-  Judge whether the index finger is open by using the 3D coordinates of the landmark.
+ - Judge whether the index finger is open by using the 3D coordinates of the landmark.
   - Make a python file `OpenFinger.py`. 
   - Type the following template. It's OK copy and paste.
 
@@ -229,5 +229,37 @@ if __name__ == '__main__':
     <image src="../image/num.gif" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand3].
+
+## Practice[Calculate the angle between two vectors]
+ - In order to calculate the direction in which the finger is pointing, it is necessary to calculate the angle between the vectors.
+  - Make a python file `calc2vec.py`. 
+  - Type the following template. It's OK copy and paste.
+### Sample code
+````python
+import numpy as np
+
+def main():
+    vec1 = np.array([0, 1])
+    vec2 = np.array([1, 0])
+
+    print(v_angle(vec1, vec2))
+    
+def v_angle(v1, v2):
+    v1_n = np.linalg.norm(v1)
+    v2_n = np.linalg.norm(v2)
+
+    cos_theta = np.inner(v1, v2) / (v1_n * v2_n)
+
+    return np.degrees(np.arccos(cos_theta))
+
+if __name__ == '__main__':
+    main()
+````
+ - Execute "calc2vec.py" by clicking the execution button.
+ - In this Sample code, calclate the angle between vec1 and vec2. The `v_angle` function takes two vectors as input and returns the angle(degree) between the two vectors.
+      
+## Challenge[Hand1]
+ - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.<br>
+    <image src="../image/angle.gif" width="30%" height="30%"><br>
 
 途中
