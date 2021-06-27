@@ -84,6 +84,13 @@ if __name__ == '__main__':
   <image src="../image/face.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
 
+### How to refer all landmarks in the list
+ - Draw by referring to all the landmarks stored in the list by the following code.
+````python
+    for i in range(0, len(landmark_point)):
+        cv2.circle(image, (int(landmark_point[i][1]),int(landmark_point[i][2])), 1, (0, 255, 0), 1)
+````
+
 ## Exercise[Face1]
  - Calculate the center of gravity of all face landmarks, and draw green circle.<br>
     <image src="../image/q1_face.png" width="30%" height="30%"><br>
