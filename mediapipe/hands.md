@@ -104,11 +104,11 @@ if __name__ == '__main__':
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
 ```
  - In the `draw_fingertip_landmarks` function, the 3D coordinates of each landmark are stored in the list `landmark_point`. 
-    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][0]`, and the y-coordinate is stored in `landmark_point[8][1]`.
+    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][1]`, the y-coordinate is stored in `landmark_point[8][2]`, and the z-doordinate is stored in `landmark_point[8][3]`.
 ```python
-    cv2.circle(image, landmark_point[8], 7, (0, 0, 255), 3)
-    cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
-        (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+    cv2.circle(image, (landmark_point[8][1], landmark_point[8][2]), 7, (0, 0, 255), 3)
+    cv2.putText(image, "(" + str(landmark_point[8][1]) + ", " + str(landmark_point[8][2]) + ")", 
+        (landmark_point[8][1] - 20, landmark_point[8][2] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 ````
   - `landmark.visibility` indicates whether landmark is visible or occluded by other objects. `landmark.presence` indicates whether landmark is present on the scene.
     Both value ranges are [0.0-1.0].
@@ -130,6 +130,34 @@ It's OK, you can finish the Exercise[Hand1].
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand2].
 
+## Practice[Calculate the angle between two vectors]
+ - To recognize the shape of the finger, it is necessary to calculate the angle between the vectors.
+  - Make a python file `calc2vec.py`. 
+  - Type the following template. It's OK copy and paste.
+### Sample code
+````python
+import numpy as np
+
+def main():
+    vec1 = np.array([1, 1, 1])
+    vec2 = np.array([1, 1, 0])
+
+    print(v_angle3d(vec1, vec2))
+    
+def v_angle3d(v1, v2):
+    v1_n = np.linalg.norm(v1)
+    v2_n = np.linalg.norm(v2)
+
+    cos_theta = np.inner(v1, v2) / (v1_n * v2_n)
+
+    return np.rad2deg(np.arccos(cos_theta))
+
+if __name__ == '__main__':
+    main()
+````
+ - Execute "calc2vec.py" by clicking the execution button.
+ - In this Sample code, calculate the angle between vec1 and vec2. The `v_angle` function takes two vectors as input and returns the angle(degree) between the two vectors.
+
 ## Practice[Judgement of whether the finger is bent or not]
  - Judge whether the index finger is open by using the 3D coordinates of the landmark.
   - Make a python file `OpenFinger.py`. 
@@ -139,6 +167,7 @@ It's OK, you can finish the Exercise[Hand2].
 ```python
 import cv2
 import mediapipe as mp
+import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
@@ -196,17 +225,32 @@ def check_open_finger(image, landmarks):
         landmark_point.append((index, landmark_x, landmark_y, landmark_z))
 
         if len(landmark_point) != 0 and len(landmark_point)==21:
-            if landmark_point[8][2] < landmark_point[6][2]:
+            vec1 = (landmark_point[5][1] - landmark_point[6][1], 
+            landmark_point[5][2] - landmark_point[6][2], 
+            landmark_point[5][3] - landmark_point[6][3])
+            vec2 = (landmark_point[7][1] - landmark_point[6][1], 
+            landmark_point[7][2] - landmark_point[6][2], 
+            landmark_point[7][3] - landmark_point[6][3])
+            if v_angle3d(vec1, vec2) > 90:
                 cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
             else:
                 cv2.putText(image, "bend", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 
+            cv2.circle(image, (landmark_point[5][1], landmark_point[5][2]), 7, (0, 0, 255), 3)
             cv2.circle(image, (landmark_point[6][1], landmark_point[6][2]), 7, (0, 0, 255), 3)
             cv2.circle(image, (landmark_point[7][1], landmark_point[7][2]), 7, (0, 0, 255), 3)
-            cv2.circle(image, (landmark_point[8][1], landmark_point[8][2]), 7, (0, 0, 255), 3)
+            cv2.line(image, (landmark_point[5][1], landmark_point[5][2]), (landmark_point[6][1], landmark_point[6][2]), (0, 255, 0))
             cv2.line(image, (landmark_point[6][1], landmark_point[6][2]), (landmark_point[7][1], landmark_point[7][2]), (0, 255, 0))
-            cv2.line(image, (landmark_point[7][1], landmark_point[7][2]), (landmark_point[8][1], landmark_point[8][2]), (0, 255, 0))
 
+def v_angle3d(v1, v2):
+    v1_n = np.linalg.norm(v1)
+    v2_n = np.linalg.norm(v2)
+
+    cos_theta = np.inner(v1, v2) / (v1_n * v2_n)
+
+    print(cos_theta)
+
+    return np.rad2deg(np.arccos(cos_theta))
 
 if __name__ == '__main__':
     main()
@@ -216,10 +260,10 @@ if __name__ == '__main__':
   - If you want to stop this program, press "Esc" key while the preview window is active.                                                           
 
 ### How to judge whether your finger is bent or not
- - In this Sample code, the y-coordinate of the fingertip and the second joint are compared to judge whether the finger is bent or not.
-    `landmark_point[8][2]` and `landmark_point[6][2]` indicate the y-coordinate of the fingertip of the index finger and  the second joint of the index finger respectively.
+ - In this Sample code, the angle between the vectors obtained from the joint position of the finger is calculated and judged whether the finger is bent or not.
+  - If the angle between vector `landmark_point[5] - landmark_point[6]` and vector `landmark_point[7] - landmark_point[6]` is greater than 90 degrees, display "open".
 ````python
-    if landmark_point[8][2] < landmark_point[6][2]:
+    if v_angle3d(vec1, vec2) > 90:
         cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 ````
 
@@ -229,34 +273,6 @@ if __name__ == '__main__':
     <image src="../image/num.gif" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand3].
-
-## Practice[Calculate the angle between two vectors]
- - In order to calculate the direction in which the finger is pointing, it is necessary to calculate the angle between the vectors.
-  - Make a python file `calc2vec.py`. 
-  - Type the following template. It's OK copy and paste.
-### Sample code
-````python
-import numpy as np
-
-def main():
-    vec1 = np.array([0, 1])
-    vec2 = np.array([1, 0])
-
-    print(v_angle(vec1, vec2))
-    
-def v_angle(v1, v2):
-    v1_n = np.linalg.norm(v1)
-    v2_n = np.linalg.norm(v2)
-
-    cos_theta = np.inner(v1, v2) / (v1_n * v2_n)
-
-    return np.degrees(np.arccos(cos_theta))
-
-if __name__ == '__main__':
-    main()
-````
- - Execute "calc2vec.py" by clicking the execution button.
- - In this Sample code, calclate the angle between vec1 and vec2. The `v_angle` function takes two vectors as input and returns the angle(degree) between the two vectors.
       
 ## Challenge[Hand1]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.<br>
