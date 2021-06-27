@@ -77,7 +77,7 @@ It's OK, you can finish the Exercise[Pose1].
 It's OK, you can finish the Exercise[Pose2].
 
 ## Exercise[Pose3]
- - Make a shape of 〇 or × with your arm and display it on the screen according to the shape.<br>
+ - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
     <image src="../image/pose_q3.gif" width="30%" height="30%">
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
