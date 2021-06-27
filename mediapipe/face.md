@@ -84,7 +84,7 @@ if __name__ == '__main__':
   <image src="../image/face.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
 
-### How to refer all landmarks in the list
+### How to refer all the landmarks stored in the list
  - Draw by referring to all the landmarks stored in the list by the following code.
 ````python
     for i in range(0, len(landmark_point)):
