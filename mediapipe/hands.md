@@ -270,13 +270,15 @@ if __name__ == '__main__':
 
 ## Exercise[Hand3]
  - Count and display the number of fingers opened.
-    - It is necessary to think about the judgment method with each finger.<br>
+    - It is necessary to think about the judgment method with each finger.
+    - To be robust to changes in hand orientation, we need to use 3D vectors to calculate the angle.<br>
     <image src="../image/num.gif" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand3].
       
 ## Challenge[Hand1]
- - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.<br>
+ - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
+ - In this program we need to calculate the angle using 2D vectors.<br>
     <image src="../image/angle.gif" width="30%" height="30%"><br>
 
 途中
