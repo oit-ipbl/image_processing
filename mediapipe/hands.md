@@ -72,12 +72,12 @@ def draw_fingertip_landmarks(image, landmarks):
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
 
-        landmark_point.append((index, landmark_x, landmark_y, landmark_z))
+        landmark_point.append([landmark_x, landmark_y, landmark_z])
 
     # Draw a circle on index finger and display the coordinate value
-    cv2.circle(image, (landmark_point[8][1], landmark_point[8][2]), 7, (0, 0, 255), 3)
-    cv2.putText(image, "(" + str(landmark_point[8][1]) + ", " + str(landmark_point[8][2]) + ")", 
-        (landmark_point[8][1] - 20, landmark_point[8][2] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+    cv2.circle(image, (landmark_point[8][0], landmark_point[8][1]), 7, (0, 0, 255), 3)
+    cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
+        (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 
 if __name__ == '__main__':
     main()
@@ -104,11 +104,11 @@ if __name__ == '__main__':
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
 ```
  - In the `draw_fingertip_landmarks` function, the 3D coordinates of each landmark are stored in the list `landmark_point`. 
-    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][1]`, the y-coordinate is stored in `landmark_point[8][2]`, and the z-doordinate is stored in `landmark_point[8][3]`.
+    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][0]`, the y-coordinate is stored in `landmark_point[8][1]`, and the z-doordinate is stored in `landmark_point[8][2]`.
 ```python
-    cv2.circle(image, (landmark_point[8][1], landmark_point[8][2]), 7, (0, 0, 255), 3)
-    cv2.putText(image, "(" + str(landmark_point[8][1]) + ", " + str(landmark_point[8][2]) + ")", 
-        (landmark_point[8][1] - 20, landmark_point[8][2] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+    cv2.circle(image, (landmark_point[8][0], landmark_point[8][1]), 7, (0, 0, 255), 3)
+    cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
+        (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 ````
   - `landmark.visibility` indicates whether landmark is visible or occluded by other objects. `landmark.presence` indicates whether landmark is present on the scene.
     Both value ranges are [0.0-1.0].
@@ -222,25 +222,25 @@ def check_open_finger(image, landmarks):
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
 
-        landmark_point.append((index, landmark_x, landmark_y, landmark_z))
+        landmark_point.append([landmark_x, landmark_y, landmark_z])
 
         if len(landmark_point) != 0 and len(landmark_point)==21:
-            vec1 = (landmark_point[5][1] - landmark_point[6][1], 
-            landmark_point[5][2] - landmark_point[6][2], 
-            landmark_point[5][3] - landmark_point[6][3])
-            vec2 = (landmark_point[7][1] - landmark_point[6][1], 
-            landmark_point[7][2] - landmark_point[6][2], 
-            landmark_point[7][3] - landmark_point[6][3])
+            vec1 = (landmark_point[5][0] - landmark_point[6][0], 
+            landmark_point[5][1] - landmark_point[6][1], 
+            landmark_point[5][2] - landmark_point[6][2])
+            vec2 = (landmark_point[7][0] - landmark_point[6][0], 
+            landmark_point[7][1] - landmark_point[6][1], 
+            landmark_point[7][2] - landmark_point[6][2])
             if v_angle3d(vec1, vec2) > 140:
                 cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
             else:
                 cv2.putText(image, "bend", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 
-            cv2.circle(image, (landmark_point[5][1], landmark_point[5][2]), 7, (0, 0, 255), 3)
-            cv2.circle(image, (landmark_point[6][1], landmark_point[6][2]), 7, (0, 0, 255), 3)
-            cv2.circle(image, (landmark_point[7][1], landmark_point[7][2]), 7, (0, 0, 255), 3)
-            cv2.line(image, (landmark_point[5][1], landmark_point[5][2]), (landmark_point[6][1], landmark_point[6][2]), (0, 255, 0))
-            cv2.line(image, (landmark_point[6][1], landmark_point[6][2]), (landmark_point[7][1], landmark_point[7][2]), (0, 255, 0))
+            cv2.circle(image, (landmark_point[5][0], landmark_point[5][1]), 7, (0, 0, 255), 3)
+            cv2.circle(image, (landmark_point[6][0], landmark_point[6][1]), 7, (0, 0, 255), 3)
+            cv2.circle(image, (landmark_point[7][0], landmark_point[7][1]), 7, (0, 0, 255), 3)
+            cv2.line(image, (landmark_point[5][0], landmark_point[5][1]), (landmark_point[6][0], landmark_point[6][1]), (0, 255, 0))
+            cv2.line(image, (landmark_point[6][0], landmark_point[6][1]), (landmark_point[7][0], landmark_point[7][1]), (0, 255, 0))
 
 def v_angle3d(v1, v2):
     v1_n = np.linalg.norm(v1)
