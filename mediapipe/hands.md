@@ -248,8 +248,6 @@ def v_angle3d(v1, v2):
 
     cos_theta = np.inner(v1, v2) / (v1_n * v2_n)
 
-    print(cos_theta)
-
     return np.rad2deg(np.arccos(cos_theta))
 
 if __name__ == '__main__':
