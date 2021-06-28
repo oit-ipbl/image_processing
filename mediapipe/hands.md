@@ -281,4 +281,7 @@ It's OK, you can finish the Exercise[Hand3].
  - In this program we need to calculate the angle using 2D vectors.<br>
     <image src="../image/angle.gif" width="30%" height="30%"><br>
 
-途中
+
+---
+
+[README](../README.md)
