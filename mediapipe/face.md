@@ -20,7 +20,6 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 ```python
 import cv2
 import mediapipe as mp
-import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
@@ -51,6 +50,7 @@ def main():
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
             if results.multi_face_landmarks:
                 for face_landmarks in results.multi_face_landmarks:
+                    #mp_drawing.draw_landmarks(image, face_landmarks, mp_face_mesh.FACE_CONNECTIONS)
                     my_draw_face(image, face_landmarks)
             cv2.imshow('MediaPipe FaceMesh', image)
             if cv2.waitKey(5) & 0xFF == 27:
@@ -70,11 +70,11 @@ def my_draw_face(image, landmarks):
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
 
-        landmark_point.append((index, landmark_x, landmark_y, landmark_z))
+        landmark_point.append([landmark_x, landmark_y, landmark_z])
 
     if len(landmark_point) != 0:
         for i in range(0, len(landmark_point)):
-            cv2.circle(image, (int(landmark_point[i][1]),int(landmark_point[i][2])), 1, (0, 255, 0), 1)
+            cv2.circle(image, (int(landmark_point[i][0]),int(landmark_point[i][1])), 1, (0, 255, 0), 1)
 
 
 if __name__ == '__main__':
@@ -88,7 +88,7 @@ if __name__ == '__main__':
  - Draw by referring to all the landmarks stored in the list by the following code.
 ````python
     for i in range(0, len(landmark_point)):
-        cv2.circle(image, (int(landmark_point[i][1]),int(landmark_point[i][2])), 1, (0, 255, 0), 1)
+        cv2.circle(image, (int(landmark_point[i][0]),int(landmark_point[i][1])), 1, (0, 255, 0), 1)
 ````
 
 ## Exercise[Face1]
