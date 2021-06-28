@@ -84,5 +84,7 @@ It's OK, you can finish the Exercise[Pose2].
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Pose3].
           
-途中
 
+---
+
+[README](../README.md)
