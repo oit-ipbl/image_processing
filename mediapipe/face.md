@@ -109,7 +109,8 @@ It's OK, you can finish the Exercise[Face2].
 ## Challenge[Face1]
  - Display "smile" when smile. 
  - The position of facial parts is the basic information for classifying facial expressions.
- - Think so that you can judge correctly even if you tilt your face.
+ - Think so that you can judge correctly even if you tilt your face.<br>
+<image src="../image/smile.gif" width="30%" height="30%"><br>
 
 
 ---
