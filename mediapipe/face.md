@@ -105,8 +105,17 @@ It's OK, you can finish the Exercise[Face1].
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face2].
-      
+
 ## Challenge[Face1]
+ - Display the directions randomly, and display "Congratulations" when facing the same direction.<br>
+ <image src="../image/ques.gif" width="30%" height="30%"><br>
+ - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
+````python
+    import random
+    random.randint(0, 5)
+````
+  
+## Challenge[Face2]
  - Display "smile" when smile. 
  - The position of facial parts is the basic information for classifying facial expressions.
  - Think so that you can judge correctly even if you tilt your face.<br>
