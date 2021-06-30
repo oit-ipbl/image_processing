@@ -107,14 +107,20 @@ It's OK, you can finish the Exercise[Face1].
 It's OK, you can finish the Exercise[Face2].
 
 ## Challenge[Face1]
- - Display the directions randomly, and display "Congratulations" when facing the same direction.<br>
+ - Display the directions randomly, And display the number of times you turned in the same direction.<br>
  <image src="../image/ques.gif" width="30%" height="30%"><br>
  - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
 ````python
     import random
     random.randint(0, 5)
 ````
-  
+ - You can randomly select and display the elements of the array with the following code.
+````python
+   msg_array = ("msg1", "msg2", "msg3")
+   select = msg_array[random.randint(0, len(msg_array)-1)]
+   print(select)
+````
+   
 ## Challenge[Face2]
  - Display "smile" when smile. 
  - The position of facial parts is the basic information for classifying facial expressions.
