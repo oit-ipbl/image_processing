@@ -107,7 +107,7 @@ It's OK, you can finish the Exercise[Face1].
 It's OK, you can finish the Exercise[Face2].
 
 ## Challenge[Face1]
- - Display the directions randomly, And display the number of times you turned in the same direction.<br>
+ - Display the directions randomly, and display the number of times you turned in the same direction.<br>
  <image src="../image/ques.gif" width="30%" height="30%"><br>
  - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
 ````python
