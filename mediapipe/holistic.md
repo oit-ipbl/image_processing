@@ -8,7 +8,7 @@ You have to finish [MediaPipe Face](../mediapipe/face.md).
 
 ## Face landmark model
 MediaPipe Holistic utilizes the pose, face and hand landmark models,  respectively to generate a total of 543 landmarks (33 pose landmarks, 468 face landmarks, and 21 hand landmarks per hand).<br>
-<image src="../image/holistic_sports_and_gestures_example.gif" width="30%" height="30%">
+<image src="../image/holistic_sports_and_gestures_example.gif" width="50%" height="50%">
 
 ## Practice[Display all face landmarks]
   Get information and display about holistic landmarks.
@@ -64,42 +64,24 @@ cap.release()
   - If you want to stop this program, press "Esc" key while the preview window is active.
 
 
-## Exercise[Face1]
- - Calculate the center of gravity of all face landmarks, and draw green circle.<br>
-    <image src="../image/q1_face.png" width="30%" height="30%"><br>
+## Exercise[Holistic1]
+ - Make a simple game like Exercise[Face3] using the information from hands.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Face1].
+It's OK, you can finish the Exercise[Holistic1].
 
-## Exercise[Face2]
- - Display "left" or "right" according to the orientation of the face.<br>
-    <image src="../image/q2_face.gif" width="30%" height="30%"><br>
+## Exercise[Holistic2]
+ - Make a simple game like Exercise[Face3] using the information from pose.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Face2].
+It's OK, you can finish the Exercise[Holistic2].
 
-## Challenge[Face1]
- - Display the directions randomly, and display the number of times you turned in the same direction.<br>
- <image src="../image/ques.gif" width="30%" height="30%"><br>
- - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
-````python
-    import random
-    random.randint(0, 5)
-````
- - You can randomly select and display the elements of the array with the following code.
-````python
-   msg_array = ("msg1", "msg2", "msg3")
-   select = msg_array[random.randint(0, len(msg_array)-1)]
-   print(select)
-````
-   
-## Challenge[Face2]
- - Display "smile" when smile. 
- - The position of facial parts is the basic information for classifying facial expressions.
- - Think so that you can judge correctly even if you tilt your face.<br>
-<image src="../image/smile.gif" width="30%" height="30%"><br>
+## Exercise[Holistic3]
+ - Make a simple game like Exercise[Face3] using the information from face.
 
-
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Holistic3].
+    
 ---
 
 [README](../README.md)
