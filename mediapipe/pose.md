@@ -4,7 +4,7 @@
 This page explains how to make a program for pose detection and get information.
 
 ## Prerequisite
-You have to finish [MediaPipe (1)](../mediapipe/hands.md).
+You have to finish [MediaPipe Hands](../mediapipe/hands.md).
 
 ## Pose landmark model
 By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D position information of 33 landmarks as shown by the red marker in the following figure.<br>
