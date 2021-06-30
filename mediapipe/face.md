@@ -4,7 +4,7 @@
 This page explains how to make a program for face detection and get information.
 
 ## Prerequisite
-You have to finish [MediaPipe (2)](../mediapipe/pose.md).
+You have to finish [MediaPipe Pose](../mediapipe/pose.md).
 
 ## Face landmark model
 By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D position information of 468 landmarks as shown by the red marker in the following figure.<br>
@@ -106,7 +106,7 @@ It's OK, you can finish the Exercise[Face1].
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face2].
 
-## Challenge[Face1]
+## Exercise[Face3]
  - Display the directions randomly, and display the number of times you turned in the same direction.<br>
  <image src="../image/ques.gif" width="30%" height="30%"><br>
  - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
@@ -120,8 +120,10 @@ It's OK, you can finish the Exercise[Face2].
    select = msg_array[random.randint(0, len(msg_array)-1)]
    print(select)
 ````
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+It's OK, you can finish the Exercise[Face3].
    
-## Challenge[Face2]
+## Challenge[Face1]
  - Display "smile" when smile. 
  - The position of facial parts is the basic information for classifying facial expressions.
  - Think so that you can judge correctly even if you tilt your face.<br>
