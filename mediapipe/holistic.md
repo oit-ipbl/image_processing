@@ -65,19 +65,19 @@ cap.release()
 
 
 ## Exercise[Holistic1]
- - Make a simple game like Exercise[Face3] using the information from hands.
+ - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from hands.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Holistic1].
 
 ## Exercise[Holistic2]
- - Make a simple game like Exercise[Face3] using the information from pose.
+ - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from pose.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Holistic2].
 
 ## Exercise[Holistic3]
- - Make a simple game like Exercise[Face3] using the information from face.
+ - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from face.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Holistic3].
