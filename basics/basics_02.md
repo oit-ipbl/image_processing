@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
     | code | comment |
     :--- | :---
-    | cv2.imwrite("name", variable) | 1.1st argument is the file name(path) of the image which is saved. <br>2.2nd argument is the variable of the image. | 
+    | cv2.imwrite("name", variable) | 1st argument is the file name(path) of the image which is saved. <br>2nd argument is the variable of the image. | 
 
   - Compare a received key with a key that you want to detect.
 
