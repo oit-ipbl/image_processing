@@ -69,3 +69,6 @@ if __name__ == '__main__':
 - It exits the while loop when the user inputs the "q" key.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+- Set a value of the global variable "device" to adapt your PC environment.
+- Run the sample program.
+- Check the video window come up and quit the program with the "q" button press.
