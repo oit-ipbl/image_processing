@@ -135,8 +135,8 @@ if __name__ == '__main__':
   if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
   ```
 
-### Exercise
-- Try to make "Let's selfie program" by editing the [video_viewer1.py](#video_viewer1py) or the [video_viewer2.py](#video_viewer2py).
+### Exercise (Selfie.py)
+- Try to make "Let's selfie program"(selfie.py) by editing the [video_viewer1.py](#video_viewer1py) or the [video_viewer2.py](#video_viewer2py).
 - Save the video frame to the still image file at that time when the user presses the "s" key.
     | Key | Details | 
     :---: | :---
