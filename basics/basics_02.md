@@ -144,11 +144,11 @@ if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
     | s |  |
 
   ```python
-#Hint
-key = cv2.waitKey(1)
-if key & 0xFF == ord('q'):
-    break
-elif key & 0xFF == ord('s'):
-    cv2.imshow("video", frame)
-    cv2.imwrite("selfy.jpg", frame)
-    ```
+  #Hint
+  key = cv2.waitKey(1)
+  if key & 0xFF == ord('q'):
+      break
+  elif key & 0xFF == ord('s'):
+      cv2.imshow("video", frame)
+      cv2.imwrite("selfy.jpg", frame)
+  ```
