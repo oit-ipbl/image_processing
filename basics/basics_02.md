@@ -152,9 +152,9 @@ if __name__ == '__main__':
       cv2.imshow("video", frame)
       cv2.imwrite("selfie.jpg", frame)
   ```
--- 
+-- Write a still image 
     | code | comment |
     :--- | :---
-    | cv2.VideoCapture(device) | Open the video stream | 
+    | cv2.imwrite | 1. <br>2. | 
 
 - If your program is correct, you will be able to find a jpeg file named "selfie.jpg" in the current folder when you press the "s" key.  
