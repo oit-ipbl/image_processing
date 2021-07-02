@@ -1,41 +1,32 @@
-# Tutorials for image processing
+# Basics of image processing
 
-## Python3 basic tutorial
-### Check version
-You can check python and python module version with following command.
-- python version
-  ```sh
-  % python --version
-  ```
-- python module version
-  - show information of the all installed modules
-    ```sh
-    % python -m pip list
-    ```
-  - show information of the specified module
-    ```sh
-    % python -m pip show [module_name]
-    % python -m pip show opencv-python
-    ```
-### Install python module
-You can install modules with following command.
-- install modules
-  ```sh
-  % python -m pip install [module_name]
-  % python -m pip install opencv-python
-  ```
-- install modules at specified version
-  ```sh
-  % python -m pip install [module_name]==[version]
-  % python -m pip install opencv-python=3.4.0
-  ```
-- upgrade module
-  ```sh
-  % python -m pip install -U [module_name]==[version]
-  % python -m pip install -U opencv-python=3.4.0
-  ```
+## Objectives
+- This page explains basics of digital images and image processing with Python3.
 
-## Python3 tutorial for image processing
+## prerequisite
+- "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already be installed.
+
+## Basics of digital images
+### Color (Additive color) 
+- Many colors can be created by mixing the primary colors (Blue, Green, Red).<br>
+  <image src="../image/Color-additive-mixing.png" height=25% width=25%><br>
+  Additive color mixing([wikipedia](https://commons.wikimedia.org/wiki/File:Color-additive-mixing.png))
+
+### Digital images
+- Digital images consist of many pixels. Pixel is the smallest unit in image space.
+- Each pixel has a color (three values: Blue, Green, Red).<br>
+  <image src="../image/pixels.png"><br>
+  Digital image & pixels
+
+### Data structure of digital images
+- Digital color images can be represented by 3 dimensional array.<br>
+  <image src="../image/imageArray.png" height=30% width=30%><br>
+  Color image array
+- Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.    
+
+
+
+## Image processing with Python3
 ### Basics of Python3 program
 - Indentation is very important in Python programming. Indentation level is used to determine the coding block (the grouping of statements) and scope of variables.
 - Variable is accessible from same block or nested block. Variable doesn't need to declare before using. Type of variable is determined by value to be assigned.Variable declared "global" has globally scope.
@@ -43,7 +34,7 @@ You can install modules with following command.
 - If you need more information about Python language, you can see the following site : [python3.8 docs](https://docs.python.org/3.8/index.html)
 - Sample code
   ```python
-  # example
+  # basic.py
   sum = 0
   for i in range(10):
     sum = sum + i
@@ -58,7 +49,7 @@ You can install modules with following command.
   ```
   <image src="../image/pys.png"><br>
   ```sh
-  % python ./basic.py
+  C:\oit\py21\code> python basic.py
   0:0
   1:1
   2:3
@@ -78,8 +69,12 @@ You can install modules with following command.
 - This module is the fundamental package for scientific computing.
   - a powerful N-dimensional array object
   - useful linear algebra, Fourier transform, and random number capabilities
+
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("numpy")
+- Save the following sample code as a python file and execute it.
 - Sample code
   ```python
+  # sample_numpy.py
   import numpy as np
   a = np.zeros((4, 3, 2))  # make zero array whose size is (4,3,2)
   a[0:2, 1:2, 1] = 1  # Note that, 0:2 means 0 to 1, and 1:2 means 1.
@@ -87,21 +82,54 @@ You can install modules with following command.
   print(np.average(a))
   print(np.max(a))
   ```
+- It is O.K., if it is executed as follows.
+  ```sh
+  C:\oit\py21\code> python sample_numpy.py
+  [[[0. 0.] 
+    [0. 1.] 
+    [0. 0.]]
+
+   [[0. 0.] 
+    [0. 1.] 
+    [0. 0.]]
+
+   [[0. 0.] 
+    [0. 0.] 
+    [0. 0.]]
+
+   [[0. 0.]
+    [0. 0.]
+    [0. 0.]]]
+  0.08333333333333333
+  1.0
+  ```
 
 #### cv2 (opencv-python)
 - more information: [OpenCV4.5.2 docs](https://docs.opencv.org/4.5.2/)
 - This is an open source module for Computer Vision.
 - It has many functions for image processing.
+
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("cv2")
+- Save the following sample code as a python file.
+- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory.
+- Execute the python code.
 - Sample code
   ```python
+  # sample_cv2.py
   import cv2
-  img = cv2.imread('img/flash/ambient.jpg') # read image file
+  img = cv2.imread('lena.jpg') # read image file
+  if img is None: # maybe Path is wrong
+      print("image file is not opened.")
+      exit(1)
   bimg = cv2.GaussianBlur(img, (51,51), 5) # gaussian filter (size=(51,51),sigma=5)
   cv2.imshow('img',img)
   cv2.imshow('blur img',bimg)
   cv2.waitKey(0) # pause until press any key
   cv2.destroyAllWindows # close all cv2's windows
   ```
+- It is O.K., if the following windows pop up.<br>
+  <image src="../image/lena_blur.png" height=50% width=50%>
+- The windows close when you press any key.
 
 #### matplotlib.pyplot (short name: plt)
 - more information: [matplotlib tutorials](https://matplotlib.org/tutorials/index.html), [pyplot](https://matplotlib.org/stable/api/pyplot_summary.html)
@@ -115,45 +143,43 @@ You can install modules with following command.
   |figure window|does not pause|pause and must be closed manually|
   |normalization at showing image|default:off|default:on|
   |displaying axis at showing image|default:off|default:on|
+
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("plt")
+- Save the following sample code as a python file.
+- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory.
+- Execute the python code.
 - Sample code
   ```python
+  # sample_plt.py
   import matplotlib.pyplot as plt
-  img = plt.imread('img/flash/ambient.jpg')
+  img = plt.imread('lena.jpg')
+  if img is None: # maybe Path is wrong
+      print("image file is not opened.")
+      exit(1)
   plt.subplot(121),plt.imshow(img)
   plt.subplot(122),plt.imshow(255-img) # negative-positive conversion
   plt.show() # required for showing figure
   ```
+- It is O.K., if the following window pops up.<br>
+  <image src="../image/lena_plt.png" height=50% width=50%>
+- The window closes when you click [x] button at upper right of the window.
 
-### About digital image
-#### Color (Additive color) 
-- Many colors can be created by mixing the primary colors (Blue, Green, Red).<br>
-  <image src="../image/Color-additive-mixing.png" height=25% width=25%><br>
-  Additive color mixing([wikipedia](https://commons.wikimedia.org/wiki/File:Color-additive-mixing.png))
 
-#### Digital images
-- Digital images consist of many pixels. Pixel is the smallest unit in image space.
-- Each pixel has a color (three values: Blue, Green, Red).<br>
-  <image src="../image/pixels.png"><br>
-  Digital image & pixels
-
-#### Data structure of digital images
-- Digital color images can be represented by 3 dimensional array.<br>
-  <image src="../image/imageArray.png" height=30% width=30%><br>
-  Color image array
-- Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.    
-
-### Image IO
-まず，スクリプトと関数の違いについて紹介する．
+### Script/Function in Python3 and image IO
+- All of the Python programs introduced above is a sequential program called scripts.
+- Making a Python script a function improves reusability.
+  - Functions can be call by other python programs.
 #### Python Script
 - Sample code
   ```python
+  # sample_imgIO.py
   import cv2
 
   # read image file
-  img = cv2.imread('img/flash/ambient.jpg')
+  img = cv2.imread('lena.jpg')
 
   # some image processing ==============
-  #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+  img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
   #   _____            _____
   #  /   B/__         /   R/__
   # /____/ G/__  ==> /____/ G/__
@@ -162,7 +188,7 @@ You can install modules with following command.
   # ====================================
 
   # write image file
-  cv2.imwrite('res/res.png', img)
+  cv2.imwrite('res.png', img)
 
   # show image file
   cv2.imshow('window name', img)
@@ -171,17 +197,17 @@ You can install modules with following command.
   ```
 
 #### Python Function
-- We define a function of above script. It increases reusability.
-- Sample code
+- Sample code 1
   ```python
+  # sample_imgIO_func.py
   import cv2
 
-  def imageIOdemo():
+  def imageIO(img_name_in, img_name_out):
       # read image file
-      img = cv2.imread('img/flash/ambient.jpg')
+      img = cv2.imread(img_name_in)
 
       # some image processing ==============
-      # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+      img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
       #   _____            _____
       #  /   B/__         /   R/__
       # /____/ G/__  ==> /____/ G/__
@@ -190,59 +216,79 @@ You can install modules with following command.
       # ====================================
 
       # write image file
-      cv2.imwrite('res/res.png', img)
+      cv2.imwrite(img_name_out, img)
+      return img
 
+  def main():
+      in_name = 'lena.jpg' # local
+      out_name = 'res_func1.png' # local
+      img = imageIOdemo(in_name, out_name)
       # show image file
       cv2.imshow('window name', img)
       cv2.waitKey(0)  # pause until any key pressed
       cv2.destroyAllWindows()  # close all windows
 
+  # The following equation holds when this program file is only executed.
   if __name__ == '__main__':
-      imageIOdemo()
+      a = 1 # global
+      main() # function name is free
   ```
-
-- cv2とpltの違いを体感する
-- Sample code
+- Sample code 2
   ```python
-  import cv2
-  import matplotlib.pyplot as plt
+  # other.py
+  import sample_imgIO_func as myImgIO
 
-  def imageIOdemo():
-      # read image file
-      img_BGR = cv2.imread('img/flash/ambient.jpg')
-
-      # some image processing ==============
-      img_RGB = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2RGB)
-      #   _____            _____
-      #  /   B/__         /   R/__
-      # /____/ G/__  ==> /____/ G/__
-      #   /____/ R/        /____/ B/
-      #     /____/           /____/
-      # ====================================
-
-      # write image file
-      cv2.imwrite('res/res1.png', img_BGR)
-      cv2.imwrite('res/res2.png', img_RGB)
-
-      # show images (cv2)
-      cv2.imshow('img_BGR', img_BGR)
-      cv2.imshow('img_RGB', img_RGB)
-      # cv2.waitKey(0) # pause until any key pressed
-
-      # show multi-images (plt)
-      plt.subplot(1, 2, 1), plt.imshow(img_BGR), plt.title('img_BGR'), plt.axis('off')
-      plt.subplot(1, 2, 2), plt.imshow(img_RGB), plt.title('img_RGB'), plt.axis('off')
-      plt.show()
-      # plt's figures must be closed manually.
-
-      # close all cv2 windows (cv2)
-      cv2.destroyAllWindows()
-
-
-  if __name__ == '__main__':
-      imageIOdemo()
+  myImgIO.imageIO('lena.jpg', 'res_func2.png')
   ```
 
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("python function")
+- 上記を試させる
+
+#### Difference of cv2 and plt
+- Sample code
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+def imageIOdemo(img_name_in, img_name_out_bgr, img_name_out_rgb):
+    # read image file
+    img_BGR = cv2.imread(img_name_in)
+
+    # some image processing ==============
+    img_RGB = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2RGB)
+    #   _____            _____
+    #  /   B/__         /   R/__
+    # /____/ G/__  ==> /____/ G/__
+    #   /____/ R/        /____/ B/
+    #     /____/           /____/
+    # ====================================
+
+    # write image file
+    cv2.imwrite(img_name_out_bgr, img_BGR)
+    cv2.imwrite(img_name_out_rgb, img_RGB)
+
+    # show images (cv2)
+    cv2.imshow('img_BGR', img_BGR)
+    cv2.imshow('img_RGB', img_RGB)
+    # cv2.waitKey(0) # pause until any key pressed
+
+    # show multi-images (plt)
+    plt.subplot(1, 2, 1), plt.imshow(img_BGR), plt.title('img_BGR'), plt.axis('off')
+    plt.subplot(1, 2, 2), plt.imshow(img_RGB), plt.title('img_RGB'), plt.axis('off')
+    plt.show()
+    # plt's figures must be closed manually.
+
+    # close all cv2 windows (cv2)
+    cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    imageIOdemo('lena.jpg', 'res_bgr.png', 'res_rgb.png')
+```
+
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("cv2 vs plt")
+- 上記を試させる
+
+    
 #### How to resize input images
 - The process with large size images is very heavy. If image size is huge, you should resize it to small.
   ```python
@@ -263,7 +309,6 @@ You can install modules with following command.
       return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
   ```
 
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("resize")
+- 上記を試させる
 
-
-    
-  途中
