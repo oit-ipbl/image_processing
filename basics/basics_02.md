@@ -143,7 +143,7 @@ if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
     | q |  |
     | s |  |
 
-```python
+  ```python
 #Hint
 key = cv2.waitKey(1)
 if key & 0xFF == ord('q'):
@@ -151,4 +151,4 @@ if key & 0xFF == ord('q'):
 elif key & 0xFF == ord('s'):
     cv2.imshow("video", frame)
     cv2.imwrite("selfy.jpg", frame)
- ```
+    ```
