@@ -65,12 +65,12 @@ if __name__ == '__main__':
      
 ### Wait for the user's key input
 - The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
-- It exits the while loop when the user inputs the "q" key.
+- It exits the while loop when the user presses the "q" key.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
 - Set a value of the global variable "device" to adapt your PC environment.
 - Run the sample code.
-- Check the video window is came up, and the program is terminated with the "q" button press.
+- Check the video window is came up, and the program is terminated with the "q" key press.
 
 ## Sample of video-image processing adapted the frame rate
 
@@ -137,13 +137,18 @@ if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
 
 ### Exercise
 - Try to make "Let's selfy program"
-- 
- ```python
+- Save the video frame to the still image file at that time when the user presses the "s" key.
+    | key | details | 
+    :--- | :---
+    | q |  |
+    | s |  |
+
+```python
 #Hint
 key = cv2.waitKey(1)
 if key & 0xFF == ord('q'):
     break
 elif key & 0xFF == ord('s'):
-    cv2.imshow("image", frame)
+    cv2.imshow("video", frame)
     cv2.imwrite("selfy.jpg", frame)
  ```
