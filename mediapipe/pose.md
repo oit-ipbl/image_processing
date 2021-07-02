@@ -11,10 +11,10 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 <image src="../image/pose_tracking_full_body_landmarks.png" width="75%" height="75%"><br>
 
 ## Practice[Display all pose landmarks]
-  Get information and display about pose landmarks.
+  Get pose landmarks and display it.<!--informationだと何か分からないかなと-->
   - Execute "vscode.bat" file, and open the VSCode.
   - Make a python file `mypose.py`. 
-  - Type the following template. It's OK copy and paste.
+  - Type the following sample code. It's OK copy and paste.
 
 ### Sample code
 ```python
@@ -63,29 +63,27 @@ cap.release()
  - `landmark.x` and `landmark.y` are normalized to [0.0-1.0].
  - `landmark.z` represents the landmark depth with the depth at the midpoint of hips being the origin, and the smaller the value the closer the landmark is to the camera.
 
+<!--ここでいう重心をどうやって求めるかが分かりませんでした．また，重心が分かると何に役に立つんでしょう？．スルーしてたことに気づいたんですが，Exercise[Hand2]のところで説明があれば分かるかもしれません．-->
 ## Exercise[Pose1]
  - Calculate and display the center of gravity from all the obtained landmarks.
  - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](../mediapipe/hands.md)<br>
     <image src="../image/pose_center.png" width="30%" height="30%"><br>
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose1].
-
+<!--ここは画像だけ見ると右手と左手が逆な気がするんですが，反転してるんですかね？だとすると説明が必要かもしれません-->
 ## Exercise[Pose2]
  - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands.
     - Use relative positions in 3D coordinates.<br>
     <image src="../image/pose_q2-1.png" width="30%" height="30%">
       <image src="../image/pose_q2-2.png" width="30%" height="30%">
         <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose2].
 
+<!--難しいかなと思いました．パッとアルゴリズムが思いつきません．ヒントがもう少し必要かと思います．ちょっとヒントを追加して，Challenge課題に回すのでも良いかもしれません-->
 ## Exercise[Pose3]
  - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
     <image src="../image/pose_q3.gif" width="30%" height="30%">
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose3].
+It's OK, you can finish the Exercise[Pose1~3].<!--まとめちゃっていいかもしれません-->
           
 
 ---
