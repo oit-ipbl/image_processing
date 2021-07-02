@@ -129,5 +129,5 @@ if __name__ == '__main__':
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
 - It's OK only to run the program.
-- Which program, [video_viewer2.py](###video_viewer2.py) or [Sample code(1)](### Sample code(2)), is better to use is dependent on the situation.
+- Which program, [video_viewer2.py](#video_viewer2py) or [Sample code(1)](### Sample code(2)), is better to use is dependent on the situation.
 - It is a more simple way for adapting the frame rate that the argument of the "waitKey" function in the [Sample code(1)](### Sample code(1)) is replaced to the time to the next frame is provided, like the following.
