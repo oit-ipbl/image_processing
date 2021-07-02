@@ -138,13 +138,13 @@ if __name__ == '__main__':
 ### Exercise
 - Try to make "Let's selfy program".
 - Save the video frame to the still image file at that time when the user presses the "s" key.
-    | key | details | 
+    | Key | Details | 
     :---: | :---
     | q | The program is terminated. |
     | s | The video frame is saved as the still image. |
 
+- Here is the hint code  
   ```python
-  #Hint
   key = cv2.waitKey(1)
   if key & 0xFF == ord('q'):
       break
