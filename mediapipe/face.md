@@ -11,10 +11,10 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
   <image src="../image/face_landmark2.png" width="38%" height="38%"><br>
 
 ## Practice[Display all face landmarks]
-  Get information and display about face landmarks.
+  Get face landmarks and display it.
   - Execute "vscode.bat" file, and open the VSCode.
   - Make a python file `myface.py`. 
-  - Type the following template. It's OK copy and paste.
+  - Type the following sample code. It's OK copy and paste.
 
 ### Sample code
 ```python
@@ -92,12 +92,13 @@ if __name__ == '__main__':
 ````
 
 ## Exercise[Face1]
- - Calculate the center of gravity of all face landmarks, and draw green circle.<br>
+ - Calculate the center of gravity of all face landmarks, and draw red circle.<br><!--red circleにみえます-->
     <image src="../image/q1_face.png" width="30%" height="30%"><br>
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face1].
 
+<!--もう少しヒントが欲しいかもです．アルゴリズムが思いつきません-->
 ## Exercise[Face2]
  - Display "left" or "right" according to the orientation of the face.<br>
     <image src="../image/q2_face.gif" width="30%" height="30%"><br>
@@ -105,8 +106,9 @@ It's OK, you can finish the Exercise[Face1].
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face2].
 
+<!--Face2ができたらわかりますか？あと，ちょっとだけ英語変えてみました-->
 ## Exercise[Face3]
- - Display the directions randomly, and display the number of times you turned in the same direction.<br>
+ - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
  <image src="../image/ques.gif" width="30%" height="30%"><br>
  - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
 ````python
