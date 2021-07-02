@@ -10,7 +10,6 @@ To process the video image in Python 3 with your camera device.
 # Sample of "Simple video-image processing"
 # -*- coding: utf-8 -*-
 import cv2
-import numpy as np
 
 device = 0 # camera device number
 
@@ -71,4 +70,60 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
 - Set a value of the global variable "device" to adapt your PC environment.
 - Run the sample code.
-- Check the video window come up and quit the program with the "q" button press.
+- Check the video window is came up, and the program is terminated with the "q" button press.
+
+## Sample of video-image processing adapted the frame rate
+
+### add the function to calculate the frame number from the processing time
+- Define the function for the frame number calculation to keep out of the read function calling multiple times.
+- The loop is continued without the frame reading process if the read function is called before the next frame is provided from the video stream.
+
+### Sample code
+```python
+# Sample of video-image processing adapted the frame rate
+# -*- coding: utf-8 -*-
+import cv2
+import time
+
+device = 2 # camera device number
+
+# added function -----------------------------------------
+def getFrameNumber(start:float, fps:int):
+    now = time.perf_counter() - start
+    frame_now = int(now * 1000 / fps)
+
+    return frame_now
+
+# main----------------------------------------------------
+def main():
+    global device
+
+    cap = cv2.VideoCapture(device)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    wt  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    ht  = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+    print("Size:", ht, "x", wt, "/Fps: ", fps)
+
+    start = time.perf_counter()
+    frame_prv = -1
+    while cap.isOpened() :
+        frame_now=getFrameNumber(start, fps)
+        if frame_now == frame_prv:
+            continue
+        frame_prv = frame_now
+
+        ret, frame = cap.read()
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+        cv2.imshow("video", frame)
+
+    cv2.destroyAllWindows()
+    cap.release()
+
+# run-----------------------------------------------------
+if __name__ == '__main__':
+    main()
+```
+
