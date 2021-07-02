@@ -136,12 +136,12 @@ if __name__ == '__main__':
   ```
 
 ### Exercise
-- Try to make "Let's selfy program"
+- Try to make "Let's selfy program".
 - Save the video frame to the still image file at that time when the user presses the "s" key.
     | key | details | 
-    :--- | :---
-    | q |  |
-    | s |  |
+    --- | ---
+    | q | The program is terminated. |
+    | s | The video frame is saved as the still image. |
 
   ```python
   #Hint
