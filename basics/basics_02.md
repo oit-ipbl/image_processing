@@ -132,5 +132,18 @@ if __name__ == '__main__':
 - Which program, [video_viewer2.py](#video_viewer2py) or [video_viewer1.py](#video_viewer1py), is better to use is dependent on the situation.
 - It's a more simple way for adapting the frame rate that a value of the argument in the "waitKey" function in the [video_viewer1.py](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
  ```python
-  if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
+if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
+ ```
+
+### Exercise
+- Try to make "Let's selfy program"
+- 
+ ```python
+#Hint
+key = cv2.waitKey(1)
+if key & 0xFF == ord('q'):
+    break
+elif key & 0xFF == ord('s'):
+    cv2.imshow("image", frame)
+    cv2.imwrite("selfy.jpg", frame)
  ```
