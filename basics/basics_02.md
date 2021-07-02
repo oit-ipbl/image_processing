@@ -67,3 +67,5 @@ if __name__ == '__main__':
 ### Wait for the user's key input
 - The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
 - It exits the while loop when the user inputs the "q" key.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
