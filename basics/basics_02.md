@@ -40,6 +40,19 @@ if __name__ == '__main__':
 
 ### Video propaties
 - A value of grobal variable "device" (line 11)  is the device numbers of the camera starting from 0. 
+  - If there is a camera on your device, including the built-in, the number of your camera device is 0.
+  - You can check which device number that the camera is connected is with running the following program (camera_detect.py).
+    ```python
+    import cv2
+
+    for i in range(0, 10): 
+        cap = cv2.VideoCapture(i, cv2.CAP_DSHOW)
+        if cap.isOpened(): 
+            print("VideoCapture(", i, ") : Found")
+    else:
+        print("VideoCapture(", i, ") : None")
+    cap.release() 
+    ```
   - The value is set as a file name if you want to process the movie file.
 - Open the video stream and get the propaties of the video image
     | code | comment |
