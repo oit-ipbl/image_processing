@@ -246,7 +246,7 @@
 
 #### Difference of cv2 and plt
 - Sample code
-  ```python
+```python
 import cv2
 import matplotlib.pyplot as plt
 
