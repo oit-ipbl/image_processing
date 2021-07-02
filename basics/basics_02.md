@@ -26,7 +26,7 @@ def main():
     while cap.isOpened() :
         ret, frame = cap.read()
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == 27:
             break
         cv2.imshow("video", frame)
 
@@ -65,12 +65,17 @@ if __name__ == '__main__':
      
 ### Wait for the user's key input
 - The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
-- It exits the while loop when the user presses the "q" key.
-
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+- It exits the while loop when the user presses the "Esc" key.
+- "Esc" key is coded at 27.
+- 
+### Practice
 - Set a value of the global variable "device" to adapt your PC environment.
 - Run the sample code.
-- Check the video window is came up, and the program is terminated with the "q" key press.
+- Check the video window is came up, and the program is terminated with the "Esc" key press.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+- It's OK, you can show the video image with your camera device.
+
 
 ## Sample of video-image processing adapted the frame rate
 
@@ -115,7 +120,7 @@ def main():
 
         ret, frame = cap.read()
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == 27:
             break
         cv2.imshow("video", frame)
 
@@ -128,11 +133,11 @@ if __name__ == '__main__':
 ```
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
-- It's OK only to run the program.
+- It's OK, you confirm only to be able to run the program.
 - Which program, [video_viewer2.py](#video_viewer2py) or [video_viewer1.py](#video_viewer1py), is better to use is dependent on the situation.
 - It's a more simple way for adapting the frame rate that a value of the argument in the "waitKey" function in the [video_viewer1.py](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
   ```python
-  if cv2.waitKey(int(1000/fps)) & 0xFF == ord('q'):
+  if cv2.waitKey(int(1000/fps)) & 0xFF == 27:
   ```
 
 ### Exercise (Selfie.py)
@@ -156,6 +161,12 @@ if __name__ == '__main__':
 
     | code | comment |
     :--- | :---
-    | cv2.imwrite | 1. <br>2. | 
+    | cv2.imwrite("name", variable) | 1.1st argument is the file name(path) of the image which is saved. <br>2.2nd argument is the variable of the image. | 
+
+  - Compare the recieved key with the key which you want to detect.
+
+    | code | comment |
+    :--- | :---
+    | ord('caracter') | It's changed the character value of the argument to the number of Unicode. |
 
 - If your program is correct, you will be able to find a jpeg file named "selfie.jpg" in the current folder when you press the "s" key.  
