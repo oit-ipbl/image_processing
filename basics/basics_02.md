@@ -5,7 +5,7 @@ To process the video image in Python 3 with your camera device.
 
 ## Sample of simple video-image processing
 
-### Sample code(1)
+### video_viewer1.py
 ```python
 # Sample of "Simple video-image processing"
 # -*- coding: utf-8 -*-
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 - Define the function for the frame number calculation to keep out of the read function calling multiple times.
 - The loop is continued without the frame reading process if the read function is called before the next frame is provided from the video stream.
 
-### Sample code(2)
+### video_viewer2.py
 ```python
 # Sample of video-image processing adapted the frame rate
 # -*- coding: utf-8 -*-
@@ -129,5 +129,5 @@ if __name__ == '__main__':
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
 - It's OK only to run the program.
-- Which program, [Sample code(2)](### Sample code(2)) or [Sample code(1)](### Sample code(2)), is better to use is dependent on the situation.
+- Which program, [video_viewer2.py](#video_viewer2.py) or [Sample code(1)](### Sample code(2)), is better to use is dependent on the situation.
 - It is a more simple way for adapting the frame rate that the argument of the "waitKey" function in the [Sample code(1)](### Sample code(1)) is replaced to the time to the next frame is provided, like the following.
