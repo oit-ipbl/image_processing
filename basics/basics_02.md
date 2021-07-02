@@ -164,7 +164,7 @@ if __name__ == '__main__':
 - Here is the hint code.  
   ```python
   key = cv2.waitKey(1)
-  if key & 0xFF == ord('q'):
+  if key & 0xFF == 27:
       break
   elif key & 0xFF == ord('s'):
       cv2.imshow("video", frame)
