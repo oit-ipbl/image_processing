@@ -13,10 +13,11 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 ## Practice[Get information of arbitrary landmark]
   Get information and display about an landmark of index finger.
   - Execute "vscode.bat" file, and open the VSCode.
-  - Click the following button, and make a python file `myhands.py`. <br>
+  - Click the following button, and make a python file `myhands.py` in the `code` directory. <br><!--場所を書いたほうが良いかなと思いいました-->
   <image src="../image/newfile2.png" width="50%" height="50%"><br>
-  - Type the following template. It's OK copy and paste.
-
+  - Type the following sample code. It's OK copy and paste.
+<!-- templateとsample codeでずれがあると分かりにくいかもしれません-->
+<!-- 以下のプログラムの cap = cv2.VideoCapture(0) のところですが，数字を変えても外付けのWebカメラでは認識できませんでした．PC内蔵カメラやバーチャルカメラは適当に数字をあげていくといけたようなんですが．．どこかでカメラ番号を確認ってできないものでしょうか？ -->
 ### Sample code
 ```python
 import cv2
@@ -104,7 +105,7 @@ if __name__ == '__main__':
     landmark_y = min(int(landmark.y * image_height), image_height - 1)
 ```
  - In the `draw_fingertip_landmarks` function, the 3D coordinates of each landmark are stored in the list `landmark_point`. 
-    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][0]`, the y-coordinate is stored in `landmark_point[8][1]`, and the z-doordinate is stored in `landmark_point[8][2]`.
+    The 3D coordinates of the index finger are stored in `landmark_point[8]`, the x-coordinate is stored in `landmark_point[8][0]`, the y-coordinate is stored in `landmark_point[8][1]`, and the z-doordinate is stored in `landmark_point[8][2]`. The number 8 is based on the hand landmark model. <!--8がどこからでてきたのかなと思いました-->
 ```python
     cv2.circle(image, (landmark_point[8][0], landmark_point[8][1]), 7, (0, 0, 255), 3)
     cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
@@ -121,19 +122,19 @@ if __name__ == '__main__':
  - Draw red circles on all fingertips.<br>
     <image src="../image/q1_fingertips.png" width="30%" height="30%"><br>
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Hand1].
-      
 ## Exercise[Hand2]
  - Calculate the center of gravity of fingertips, and draw green circle.<br>
     <image src="../image/q2_fingertips_c.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Hand2].
+It's OK, you can finish the Exercise[Hand1] and [Hand2].
+<!-- ここのCheckpointは1つにまとめちゃって良いかと思います-->
 
 ## Practice[Calculate the angle between two vectors]
  - To recognize the shape of the finger, it is necessary to calculate the angle between the vectors.
   - Make a python file `calc2vec.py`. 
-  - Type the following template. It's OK copy and paste.
+  - Type the following sample code. It's OK copy and paste.
+  <!--他にも何か所かありました-->
+
 ### Sample code
 ````python
 import numpy as np
@@ -158,7 +159,8 @@ if __name__ == '__main__':
  - Execute "calc2vec.py" by clicking the execution button.
  - In this Sample code, calculate the angle between vec1 and vec2. The `v_angle` function takes two vectors as input and returns the angle(degree) between the two vectors.
 
-## Practice[Judgement of whether the finger is bent or not]
+## Practice[Judgement of whether the finger is bend or not]
+<!--not bent．他にもあったような気がします．-->
  - Judge whether the index finger is open by using the 3D coordinates of the landmark.
   - Make a python file `OpenFinger.py`. 
   - Type the following template. It's OK copy and paste.
