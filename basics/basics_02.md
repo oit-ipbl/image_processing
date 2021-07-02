@@ -158,7 +158,7 @@ if __name__ == '__main__':
 - Save the video frame to the still image file at that time when the user presses the "s" key.
     | Key | Details | 
     :---: | :---
-    | q | The program is terminated. |
+    | Esc | The program is terminated. |
     | s | The video frame is saved as the still image. |
 
 - Here is the hint code.  
