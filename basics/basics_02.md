@@ -261,7 +261,8 @@ if __name__ == '__main__':
         faces = cascade.detectMultiScale(img)
         ```
     - The return value of `cascade.detectMultiScale(img)` (`faces`) is an array which is listed the detected faces.<br>
-        faces \[ face\[0\],  face\[1\],  face\[2\], ... \]
+        faces \[ face\[0\],  face\[1\],  face\[2\], ... \]<br>
+        The values of each face variable are consist of the x and y coordinates of upper-left, the width and height, for the area of the detected face. 
     
     - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
 
