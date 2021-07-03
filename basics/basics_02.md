@@ -216,7 +216,7 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 
---
+
 
 ## Sample of face/facial landmarks detection 
 
