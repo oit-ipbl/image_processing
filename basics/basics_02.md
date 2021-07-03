@@ -4,7 +4,7 @@
 - To process the video image in Python 3 with your camera device.
 
 ## Prerequisite
-- Open the VS Code by the running the `vscode.bat`. Confirm that the current directory in the terminal window is `code`.
+- Open the VS Code by the running the `vscode.bat`. Confirm that the current directory shown in the terminal window is `code`.
 - The python program (.py) has to be made in the `code` folder. And all image files are saved (downloaded) in the `img` folder and read from there. 
 - You can run the python program with input the following command in the terminal
     ```
