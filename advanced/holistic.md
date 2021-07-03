@@ -24,7 +24,7 @@ import time
 mp_drawing = mp.solutions.drawing_utils
 mp_holistic = mp.solutions.holistic
 
-device = 0 # cameera device number
+device = 0 # camera device number
 
 def getFrameNumber(start:float, fps:int):
     now = time.perf_counter() - start
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 ## Challenge[Hands2]
  - Create an interactive simple game using the information from **hands** by referring to the sample code below.
 ```python
-      import cv2
+import cv2
 import mediapipe as mp
 import numpy as np
 import time
@@ -106,20 +106,13 @@ import random
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
-device = 0 # cameera device number
+device = 0 # camera device number
 
 def getFrameNumber(start:float, fps:int):
     now = time.perf_counter() - start
     frame_now = int(now * 1000 / fps)
 
     return frame_now
-
-# check the index finger
-def checkAngle(image, landmarks):
-    angle = 0
-    cv2.putText(image, str(angle), (100, 200), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
-
-    return angle
 
 def calcAngle(v1, v2):
     v1_n = np.linalg.norm(v1)
@@ -129,6 +122,13 @@ def calcAngle(v1, v2):
 
     return np.degrees(np.arccos(cos_theta))
 
+# check the angle between the vertical upward direction and the direction pointed by the index finger
+def checkAngle(image, landmarks):
+    angle = 0
+    cv2.putText(image, str(angle), (100, 200), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
+
+    return angle
+      
 def main():
     # For webcam input:
     global device
@@ -209,12 +209,15 @@ if __name__ == '__main__':
  - In the `checkAngle` function, the angle between the vertical upward direction and the index finger is calculated.
  - Complete the `calcAngle` function using the program created in Challenge [Hands1].
 
+## Challenge[Hans3]
+ - Make a simple game like [Exercise[Hands2]](./holistic.md#exercisehands2) using the information from **hands**.
+      
 ## Challenge[Pose1]
  - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
     <image src="../image/pose_q3.gif" width="30%" height="30%">
 
 ## Challenge[Pose2]
- - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from **pose**.
+ - Make a simple game like [Exercise[Hands2]](./holistic.md#exercisehands2) using the information from **pose**.
 
 ## Challenge[Face1]
  - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
@@ -240,7 +243,7 @@ It's OK, you can finish the Exercise[Face3].
 <image src="../image/smile.gif" width="30%" height="30%"><br>
   
 ## Challenge[Face3]
- - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from **face**.
+ - Make a simple game like [Exercise[Hands2]](./holistic.md#exercisehands2) using the information from **face**.
     
 ---
 
