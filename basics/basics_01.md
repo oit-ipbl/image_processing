@@ -5,6 +5,7 @@
 
 ## prerequisite
 - "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already be installed.
+- The python program (.py) has to be made in the directory `code`. And the all image files are saved/downloaded in the directory `img` and read from there. 
 
 ## Basics of digital images
 ### Color (Additive color) 
@@ -50,7 +51,7 @@
 - more information: [python3.8 docs](https://docs.python.org/3.8/index.html)
 - Indentation is very important in Python programming. Indentation level is used to determine the coding block (the grouping of statements) and scope of variables.
 - Variable is accessible from same block or nested block. Variable doesn't need to declare before using. Type of variable is determined by value to be assigned.Variable declared "global" has globally scope.
-- A comment starts with a hash character (#)<br>
+- A comment starts with a hash character `#`<br>
   <image src="../image/pys.png"><br>
 
 #### Practice[basic]
