@@ -44,7 +44,7 @@ if __name__ == '__main__':
   ```python
   device = "moviefile.mp3"
   ```
-- The following functions in `video_viewer1.py` are in order to Open the video stream and get the propaties of the video image. 
+- The following codes in `video_viewer1.py` are in order to Open the video stream and get the propaties of the video image. 
     | code | comment |
     :--- | :---
     | cv2.VideoCapture(device) | Open the video stream | 
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     | cv2.CAP_PROP_FRAME_HEIGHT | Frame height | 
 
 ### Read a frame from video stream
-- The following functions in `video_viewer1.py` are in order to read a frame form video steram
+- The following function in `video_viewer1.py` are in order to read a frame form video steram
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
@@ -166,15 +166,15 @@ if __name__ == '__main__':
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
 - It's OK, you confirm only to be able to run the program.
-- Which program, [video_viewer2.py](#video_viewer2py) or [video_viewer1.py](#video_viewer1py), is better to use is dependent on the situation.
-- It's a more simple way for adapting the frame rate that a value of the argument in the "waitKey" function in the [video_viewer1.py](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
+- Which program, [`video_viewer2.py`](#video_viewer2py) or [`video_viewer1.py`](#video_viewer1py), is better to use is dependent on the situation.
+- It's a more simple way for adapting the frame rate that a value of the argument in the `waitKey` function in the [`video_viewer1.py`](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
   ```python
   if cv2.waitKey(int(1000/fps)) & 0xFF == 27:
   ```
 
 ### Exercise (selfie.py)
-- Try to make "Let's selfie program"(selfie.py) by editing the [`video_viewer1.py`](#video_viewer1py) or the [video_viewer2.py](#video_viewer2py).
-- Save the video frame to the still image file at that time when the user presses the "s" key.
+- Try to make "Let's selfie program"(`selfie.py`) by editing the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
+- Save the video frame to the still image file at that time when the user presses the `s` key.
     | Key | Details | 
     :---: | :---
     | Esc | The program is terminated. |
