@@ -261,7 +261,7 @@ if __name__ == '__main__':
         ```python
         faces = cascade.detectMultiScale(img)
         ```
-    - The return value of `cascade.detectMultiScale(img)` (`faces`) is an array which is listed the detected faces.
+    - The return value of `cascade.detectMultiScale(img)` is an array which is listed the detected faces.
     - The element in `faces` array is the list of the area for each detected face.
     - The values of each element in `faces` array are consist of the x and y coordinates of upper-left, the width and height, for the area of the detected face. <br>
          ```
