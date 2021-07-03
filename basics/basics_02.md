@@ -219,15 +219,66 @@ if __name__ == '__main__':
 ## Sample of face/facial landmark detection 
 
 ### preparation
-- Download [`haarcascade_frontalface_default.xml`]() which is provied by OpenCV, and save it to `code` folder.
+- Download [`haarcascade_frontalface_default.xml`]() which is provied by [OpenCV](https://github.com/opencv), and save it to `code` folder.
     - It's a trained dataset file to detect the faces with the Haarcascade.
-- Download [`lbfmodel.ymal`]() which is provied by kurnianggoro, and save it to `code` folder.
+- Download [`lbfmodel.ymal`]() which is provied by [kurnianggoro](https://github.com/kurnianggoro), and save it to `code` folder.
     - It's a trained dateset file to detect the face marks with the LBF(Local binary fitting) model.
-    - 
-### face_detection.py
+
+### cvface_detection.py
 ```python
+# -*- coding: utf-8 -*-
+import cv2
+
+# main--------------------------------------------------------------------------------------
+def main():  
+    cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
+
+    img = cv2.imread('./img/lena.jpg')
+    faces = cascade.detectMultiScale(img, 1.1, 5)
+
+    for i, face in enumerate(faces):
+        fx, fy, fw, fh = face
+        cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+
+    cv2.imshow("face", img)
+    
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# run---------------------------------------------------------------------------------------
+if __name__ == '__main__':
+    main()
 ```
 
-### facemark_detection.py
+### cvfacemark_detection.py
 ```python
+# -*- coding: utf-8 -*-
+import cv2
+
+# main--------------------------------------------------------------------------------------
+def main():  
+    cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
+    lbf = cv2.face.createFacemarkLBF()
+    lbf.loadModel("lbfmodel.yaml")
+
+    img = cv2.imread('./img/lena.jpg')
+    faces = cascade.detectMultiScale(img, 1.1, 5)
+    
+    for i,face in enumerate(faces):
+        fx, fy, fw, fh = face
+        cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+        landmarks = lbf.fit(img, faces)
+        _, list = landmarks
+
+        for x, y in list[i][0]:
+            cv2.circle(img, (x, y), 2,(0,255, 0), -1)
+
+    cv2.imshow("face+facemark", img)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# run---------------------------------------------------------------------------------------
+if __name__ == '__main__':
+    main()
 ```
