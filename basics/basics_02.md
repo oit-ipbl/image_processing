@@ -219,4 +219,15 @@ if __name__ == '__main__':
 ## Sample of face/facial landmark detection 
 
 ### preparation
-- Download the [`haarcascade_frontalface_default.xml`] <a href='https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml'>dl</a> from OpenCV github page.
+- Download [`haarcascade_frontalface_default.xml`]() which is provied by OpenCV, and save it to `code` folder.
+    - It's a trained dataset file to detect the faces with the Haarcascade.
+- Download [`lbfmodel.ymal`]() which is provied by kurnianggoro, and save it to `code` folder.
+    - It's a trained dateset file to detect the face marks with the LBF(Local binary fitting) model.
+    - 
+### face_detection.py
+```python
+```
+
+### facemark_detection.py
+```python
+```
