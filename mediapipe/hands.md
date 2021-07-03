@@ -329,12 +329,6 @@ if __name__ == '__main__':
     <image src="../image/num.gif" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hand3].
-      
-## Challenge[Hand1]
- - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
- - In this program we need to calculate the angle using 2D vectors.<br>
-    <image src="../image/angle.gif" width="30%" height="30%"><br>
-
 
 ---
 
