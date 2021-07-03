@@ -234,7 +234,7 @@ def main():
     cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
 
     img = cv2.imread('./img/lena.jpg')
-    faces = cascade.detectMultiScale(img, 1.1, 5)
+    faces = cascade.detectMultiScale(img)
 
     for i, face in enumerate(faces):
         fx, fy, fw, fh = face
@@ -249,6 +249,15 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+### face detection propaties
+- It's a face detection program using Haar Cascade.
+    - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
+    - The following line is prepare the face detection to read a trained dataset file.
+        ```python
+        cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
+        ```        
+    - You can see `cv2.CascadeClassifier()` function's arguments and more detiels [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
+
 ### Practice
 - You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
 - Check it can detect the face on Lenna's face.<br>
@@ -268,7 +277,7 @@ def main():
     lbf.loadModel("lbfmodel.yaml")
 
     img = cv2.imread('./img/lena.jpg')
-    faces = cascade.detectMultiScale(img, 1.1, 5)
+    faces = cascade.detectMultiScale(img)
     
     for i,face in enumerate(faces):
         fx, fy, fw, fh = face
