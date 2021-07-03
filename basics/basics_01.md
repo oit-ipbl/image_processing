@@ -5,7 +5,7 @@
 
 ## prerequisite
 - "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already be installed.
-- The python program (.py) has to be made in the directory `code`. And the all image files are saved/downloaded in the directory `img` and read from there. 
+- The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `img` and read from there.
 
 ## Basics of digital images
 ### Color (Additive color) 
