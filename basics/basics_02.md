@@ -2,8 +2,8 @@
 
 ## Objectives
 - To process the video image in Python 3 with your camera device.
-- Open the VS Code by the running the vscode.bat. Confirm that the current directory in the terminal window is "code".
-- The python program (.py) has to be made in the "code" folder. And all image files are saved (downloaded) in the "img" folder and read from there. 
+- Open the `VS Code` by the running the `vscode.bat`. Confirm that the current directory in the terminal window is `code`.
+- The python program (.py) has to be made in the `code` folder. And all image files are saved (downloaded) in the `img` folder and read from there. 
 - You can run the python program with input the following command in the terminal
     ```
     C:\\...\code> python XXX.py
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 - `Esc` key is coded at 27.
 
 ### Practice
-- You should be copy and paste `video_viewer1.py` with the upper right button to the VS code, and save it as the `video_viewer1.py` in the `code` folder.
+- You should be copy [`video_viewer1.py`](# video_viewer1py) with the `clipboard` button and paste it to the VS Code, and save it as the `video_viewer1.py` in the `code` folder.
 - If there is a camera on your device, including the built-in, the number of your camera device is 0.
 - You can check which device number that the camera is connected is with running the following program (`camera_detect.py`).
     ```python
@@ -181,7 +181,7 @@ if __name__ == '__main__':
   ```
 
 ### Exercise (selfie.py)
-- Try to make "Let's selfie program"(`selfie.py`) by editing the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
+- Try to make "Let's selfie program"(`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
 - Save the video frame to the still image file at that time when the user presses the `s` key.
     | Key | Details | 
     :---: | :---
