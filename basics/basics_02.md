@@ -88,6 +88,7 @@ if __name__ == '__main__':
         cap = cv2.VideoCapture(i)
         if cap.isOpened(): 
             print("VideoCapture(", i, ") : Found")
+            cap.release() 
         else:
             print("VideoCapture(", i, ") : None")
     cap.release() 
