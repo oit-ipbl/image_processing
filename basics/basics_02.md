@@ -53,7 +53,7 @@ if __name__ == '__main__':
     | cv2.CAP_PROP_FRAME_HEIGHT | Frame height | 
 
 ### Read a frame from video stream
-- The following function in `video_viewer1.py` are in order to read a frame form video steram
+- The following function in `video_viewer1.py` are in order to read a frame form video steram.
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
@@ -189,7 +189,7 @@ if __name__ == '__main__':
       cv2.imshow("video", frame)
       cv2.imwrite("selfie.jpg", frame)
   ```
-  - The following function in the hint code in order to write a still image 
+  - The following function in the hint code in order to write a still image. 
 
     | code | comment |
     :--- | :---
