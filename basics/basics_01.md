@@ -1,4 +1,4 @@
-# image processing basics (1)
+# Image processing basics (1)
 
 ## Objectives
 - This page explains basics of digital images and image processing with Python3.
