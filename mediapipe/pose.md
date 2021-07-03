@@ -99,9 +99,6 @@ if __name__ == '__main__':
  - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](../mediapipe/hands.md)<br>
     <image src="../image/pose_center.png" width="30%" height="30%"><br>
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose1].
-
 ## Exercise[Pose2]
  - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands. 
     - Use relative positions in 3D coordinates.<br>
@@ -111,7 +108,7 @@ It's OK, you can finish the Exercise[Pose1].
 ```
  <image src="../image/pose_q2-1.png" width="30%" height="30%"> <image src="../image/pose_q2-2.png" width="30%" height="30%"> <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose2].
+It's OK, you can finish the Exercise[Pose1] and [Pose2].
 
 ## Exercise[Pose3]
  - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
