@@ -1,4 +1,4 @@
-# Tutorials for video image processing
+# Image processing basics (2)
 
 ## Objectives
 To process the video image in Python 3 with your camera device.
@@ -165,7 +165,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of video-image processing adapted the frame rate)
 - It's OK, you confirm only to be able to run the program.
 - Which program, [`video_viewer2.py`](#video_viewer2py) or [`video_viewer1.py`](#video_viewer1py), is better to use is dependent on the situation.
 - It's a more simple way for adapting the frame rate that a value of the argument in the `waitKey` function in the [`video_viewer1.py`](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
@@ -204,6 +204,6 @@ if __name__ == '__main__':
 
 - If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in the current folder when you press the `s` key.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 
