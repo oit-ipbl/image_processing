@@ -3,6 +3,7 @@
 ## Objectives
 To process the video image in Python 3 with your camera device.
 
+
 ## Sample of simple video-image processing
 
 ### video_viewer1.py
@@ -188,7 +189,7 @@ if __name__ == '__main__':
       break
   elif key & 0xFF == ord('s'):
       cv2.imshow("video", frame)
-      cv2.imwrite("selfie.jpg", frame)
+      cv2.imwrite("./img/selfie.jpg", frame)
   ```
   - The following function in the hint code in order to write a still image. 
 
@@ -202,7 +203,7 @@ if __name__ == '__main__':
     :--- | :---
     | ord('a caracter') | It's changed a character in the argument to the number of Unicode. |
 
-- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in the current folder when you press the `s` key.
+- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `img` folder when you press the `s` key.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
