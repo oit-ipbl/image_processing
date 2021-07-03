@@ -27,6 +27,25 @@
 
 
 ## Image processing with Python3
+### Directory structure for Image processing 
+- directory stucture
+  ```
+  +[code]                   <== work directory ("C:/oit/py21/code/hands.py")
+  |
+  |-+[test]                 <== this directory already exists.
+  | |-- testModule.py       <== this program already exists.
+  | |-- testWebcam.py       <== this program already exists.
+  |
+  |-+[img]                  <== make this directory.
+  | |--lena.jpg             <== save the image "[lena.jpg](../image/lena.jpg)" at this place. ("C:/oit/py21/code/img/lena.jpg")
+  | |--xxx.jpg
+  | |--xxx.png
+  | |--
+  |
+  |--hands.py               <== this program already exists. ("C:/oit/py21/code/hands.py")
+  |--python programs(.py)   <== save new python programs at this place.
+  ```
+
 ### Basics of Python3 program
 - Indentation is very important in Python programming. Indentation level is used to determine the coding block (the grouping of statements) and scope of variables.
 - Variable is accessible from same block or nested block. Variable doesn't need to declare before using. Type of variable is determined by value to be assigned.Variable declared "global" has globally scope.
