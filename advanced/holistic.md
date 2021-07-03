@@ -90,24 +90,47 @@ if __name__ == '__main__':
   <image src="../image/holistic.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
 
-
-## Exercise[Holistic1]
+## Challenge[Hands1]
+ - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
+ - In this program we need to calculate the angle using 2D vectors.<br>
+    <image src="../image/angle.gif" width="30%" height="30%"><br>
+    
+## Challenge[Hands2]
  - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from **hands**.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Holistic1].
+## Challenge[Pose1]
+ - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
+    <image src="../image/pose_q3.gif" width="30%" height="30%">
 
-## Exercise[Holistic2]
+## Challenge[Pose2]
  - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from **pose**.
 
+## Challenge[Face1]
+ - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
+ <image src="../image/ques.gif" width="30%" height="30%"><br>
+ - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
+````python
+    import random
+    random.randint(0, 5)
+````
+ - You can randomly select and display the elements of the array with the following code.
+````python
+   msg_array = ("msg1", "msg2", "msg3")
+   select = msg_array[random.randint(0, len(msg_array)-1)]
+   print(select)
+````
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Holistic2].
-
-## Exercise[Holistic3]
+It's OK, you can finish the Exercise[Face3].
+   
+## Challenge[Face2]
+ - Display "smile" when smile. 
+ - The position of facial parts is the basic information for classifying facial expressions.
+ - Think so that you can judge correctly even if you tilt your face.<br>
+<image src="../image/smile.gif" width="30%" height="30%"><br>
+  
+## Challenge[Face3]
  - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from **face**.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Holistic3].
     
 ---
 
