@@ -271,12 +271,27 @@ if __name__ == '__main__':
     
     - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
 
-### Drawing functions of OpenCV
-- The following line is to detect the faces in the image which is set in the argument.
-```python
-cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
-```
-
+### Tips on OpenCV
+- The following line can extract the element (`face`) in order from `faces` array along with the index number (`i`).
+    ```python
+    for i, face in enumerate(faces):
+    ```
+    - It can extract only each element (`face`) if the for loop is written without `enumerate()` function.
+        ```python
+        for face in faces:
+        ```
+    
+- The following line is to draw the rectangle on the image.
+    ```python
+    cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+    ```
+    | argument | comment |
+    :--- | :---
+    | img | The image to draw the rectangle. |
+    | (fx, fy) | The x and y coordinates of the upper-left corner for the rectangle. |
+    | (fx+fw, fy+fh) | The x and y coordinates of the lower-right corner for the rectangle. |
+    | \[0,0,255\] | The line color of the rectangle. It's represented by the values of BGR color components. |
+    | 1 | The line width of the rectangle. The rectangle is filled in with the color if its value sets -1. |
 
 ### Practice
 - You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
@@ -320,7 +335,7 @@ if __name__ == '__main__':
 
 ### Practice
 - You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
-- Check it can detect the face and facial landmarks on Lenna's face.
+- Check it can detect the face and facial landmarks on Lenna's face.<br>
     ![result](../image/dfmlenna.jpg)
 - The program is terminated with any key press.
 
