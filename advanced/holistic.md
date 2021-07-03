@@ -124,7 +124,7 @@ if __name__ == '__main__':
 ```
  - In this sample code, 1 to 359 degrees are displayed randomly, and "OK!" is displayed when the user points to the same angle.
  - In the `checkAngle` function, the angle between the vertical upward direction and the index finger is calculated.
- - Complete the `calcAngle` function using the program created in Challenge [Hands1].<br>
+ - **Complete the `calcAngle` function using the program created in Challenge [Hands1].**<br>
   <image src="../image/angle_app.gif" width="30%" height="30%"><br>
 
 ## Challenge[Hans3]
