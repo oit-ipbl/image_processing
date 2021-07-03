@@ -130,7 +130,6 @@ It's OK, you can finish the Exercise[Face3].
   
 ## Challenge[Face3]
  - Make a simple game like [Exercise[Face3]](../mediapipe/face.md#exerciseface3) using the information from **face**.
-
     
 ---
 
