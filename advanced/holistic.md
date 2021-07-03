@@ -211,14 +211,14 @@ if __name__ == '__main__':
  - Complete the `calcAngle` function using the program created in Challenge [Hands1].
 
 ## Challenge[Hans3]
- - Make a simple game like [Exercise[Hands2]](./holistic.md#exercisehands2) using the information from **hands**.
+ - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **hands**.
       
 ## Challenge[Pose1]
  - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
     <image src="../image/pose_q3.gif" width="30%" height="30%">
 
 ## Challenge[Pose2]
- - Make a simple game like [Exercise[Hands2]](./holistic.md#challenge[hands2]) using the information from **pose**.
+ - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **pose**.
 
 ## Challenge[Face1]
  - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
@@ -242,7 +242,7 @@ if __name__ == '__main__':
 <image src="../image/smile.gif" width="30%" height="30%"><br>
   
 ## Challenge[Face3]
- - Make a simple game like [Exercise[Hands2]](./holistic.md#exercisehands2) using the information from **face**.
+ - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **face**.
     
 ---
 
