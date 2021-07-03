@@ -278,8 +278,8 @@
 - It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) are the same.
 
 #### Difference of cv2 and plt
-- There are differences between cv2 and plt. 
-- `plt` has many differences from `cv2. The following table shows the main examples in image IO. (*Repost*)
+- There are differences between `cv2` and `plt`. 
+- `plt` has many differences from `cv2`. The following table shows the main examples in image IO. (*Repost*)
   ||cv2|plt|
   |----|----|----|
   |color space (order of color channels)|BGR|RGB|
