@@ -121,7 +121,7 @@ if __name__ == '__main__':
 
 ## Sample of video-image processing adapted the frame rate
 
-### add the function to calculate the frame number from the processing time
+### Add the function to calculate the frame number from the processing time
 - Define the function for the frame number calculation to keep out of the read function calling multiple times.
 - The loop is continued without the frame reading process if the read function is called before the next frame is provided from the video stream.
 
@@ -218,7 +218,7 @@ if __name__ == '__main__':
 
 ## Sample of face/facial landmarks detection 
 
-### preparation
+### Preparation
 - Download [`haarcascade_frontalface_default.xml`]() which is provied by [OpenCV](https://github.com/opencv), and save it to `code` folder.
     - It's a trained dataset file to detect the faces with the Haarcascade.
 - Download [`lbfmodel.ymal`]() which is provied by [kurnianggoro](https://github.com/kurnianggoro), and save it to `code` folder.
@@ -249,6 +249,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
 ### face detection propaties
 - It's a face detection program using Haar Cascade.
     - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
@@ -269,6 +270,13 @@ if __name__ == '__main__':
          ```
     
     - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
+
+### Drawing functions of OpenCV
+- The following line is to detect the faces in the image which is set in the argument.
+```python
+cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+```
+
 
 ### Practice
 - You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
@@ -312,7 +320,7 @@ if __name__ == '__main__':
 
 ### Practice
 - You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
-- Check it can detect the face and facial landmarks on Lenna's face.<br>
+- Check it can detect the face and facial landmarks on Lenna's face.
     ![result](../image/dfmlenna.jpg)
 - The program is terminated with any key press.
 
