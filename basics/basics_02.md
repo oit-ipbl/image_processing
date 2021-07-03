@@ -255,8 +255,12 @@ if __name__ == '__main__':
     - The following line is to prepare the face detection by reading a trained dataset file.
         ```python
         cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
-        ```        
-    - You can see `cv2.CascadeClassifier()` function's arguments and more detiels [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
+        ```
+    - The following line is to detect the faces in the image which is set in the argument.
+        ```python
+        faces = cascade.detectMultiScale(img)
+        ```
+    - You can see the arguments and more detiels of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
 
 ### Practice
 - You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
