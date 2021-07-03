@@ -126,7 +126,8 @@ if __name__ == '__main__':
 It's OK, you can finish the Exercise[Face1].
 
 ## Exercise[Face2]
- - Display "left" or "right" according to the orientation of the face.<br>
+ - Display "left" or "right" according to the orientation of the face.
+ - There are several judgment methods, but the simple one is a judgment method that compares the x-coordinates of several landmarks.<br>
     <image src="../image/q2_face.gif" width="30%" height="30%"><br>
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
