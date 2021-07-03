@@ -252,7 +252,7 @@ if __name__ == '__main__':
 ### face detection propaties
 - It's a face detection program using Haar Cascade.
     - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
-    - The following line is prepare the face detection to read a trained dataset file.
+    - The following line is to prepare the face detection by reading a trained dataset file.
         ```python
         cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
         ```        
