@@ -260,7 +260,7 @@ if __name__ == '__main__':
         ```python
         faces = cascade.detectMultiScale(img)
         ```
-    - You can see the arguments and more detiels of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
+    - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
 
 ### Practice
 - You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
