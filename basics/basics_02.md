@@ -58,7 +58,7 @@ if __name__ == '__main__':
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
     - The read function is called by every loop in `video_viewer1.py`, independent of the FPS. 
-    - The looping time is costed the sum of the processing time with the "read" and any other functions in the while block and the sleep time with the "waitKey" function(1m sec).   
+    - The looping time is costed the sum of the processing time with the `read()` and any other functions in the while block and the sleep time with the `waitKey()` function(1m sec).   
     ```python
         while cap.isOpened() :
             ret, frame = cap.read()
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                 break
             cv2.imshow("video", frame)
     ```
-- In the video stream, the returned frame from `cap.read()` is the same as the previous frame when the time of the "read" function calling is shorter than 1/FPS sec.
+- In the video stream, the returned frame from `cap.read()` is the same as the previous frame when the time of the `cap.read()` function calling is shorter than 1/FPS sec.
 - In the movie file, the returned frame from `cap.read()` function is in order, independent of the loop time.
     | Device | The number of the returned frame |
     :--- | :--- 
@@ -80,7 +80,7 @@ if __name__ == '__main__':
 
 ### Practice
 - If there is a camera on your device, including the built-in, the number of your camera device is 0.
-- You can check which device number that the camera is connected is with running the following program (camera_detect.py).
+- You can check which device number that the camera is connected is with running the following program (`camera_detect.py`).
     ```python
     import cv2
 
