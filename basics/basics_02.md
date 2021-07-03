@@ -294,7 +294,7 @@ if __name__ == '__main__':
 ### Practice
 - You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as the `cvfacemark_detection.py` in the `code` folder.
 - Check it can detect the face and facial landmarks on Lenna's face.
-    ![result1](../img/dflenna.jpg)
+    ![result1](../image/dflenna.jpg)
 - The program is terminated with any key press.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of face/facial landmarks detection)
