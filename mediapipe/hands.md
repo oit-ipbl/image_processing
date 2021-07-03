@@ -150,7 +150,8 @@ if __name__ == '__main__':
     <image src="../image/q1_fingertips.png" width="30%" height="30%"><br>
       
 ## Exercise[Hands2]
- - Calculate the center of gravity of fingertips, and draw green circle.<br>
+ - Calculate the center of gravity of fingertips, and draw green circle.
+ - The center of gravity can be calculated by calculating the average position of the landmark.<br>
     <image src="../image/q2_fingertips_c.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hands1] and [Hands2].
