@@ -37,7 +37,7 @@
   | |-- testWebcam.py       <== this program already exists.
   |
   |-+[img]                  <== make this directory.
-  | |--lena.jpg             <== save the image "[lena.jpg](../image/lena.jpg)" at this place. ("C:/oit/py21/code/img/lena.jpg")
+  | |--lena.jpg             <== save the image "lena.jpg" at this place. ("C:/oit/py21/code/img/lena.jpg")
   | |--xxx.jpg
   | |--xxx.png
   | |--
