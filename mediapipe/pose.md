@@ -24,7 +24,7 @@ import time
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
-device = 0 # cameera device number
+device = 0 # camera device number
 
 def getFrameNumber(start:float, fps:int):
     now = time.perf_counter() - start
