@@ -145,15 +145,15 @@ if __name__ == '__main__':
         continue
 ```
     
-## Exercise[Hand1]
+## Exercise[Hands1]
  - Draw red circles on all fingertips.<br>
     <image src="../image/q1_fingertips.png" width="30%" height="30%"><br>
       
-## Exercise[Hand2]
+## Exercise[Hands2]
  - Calculate the center of gravity of fingertips, and draw green circle.<br>
     <image src="../image/q2_fingertips_c.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Hand1] and [Hand2].
+It's OK, you can finish the Exercise[Hands1] and [Hands2].
 
 ## Practice[Calculate the angle between two vectors]
  - To recognize the shape of the finger, it is necessary to calculate the angle between the vectors.
@@ -322,13 +322,13 @@ if __name__ == '__main__':
         cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 ```
 
-## Exercise[Hand3]
+## Exercise[Hands3]
  - Count and display the number of fingers opened.
     - It is necessary to think about the judgment method with each finger.
     - To be robust to changes in hand orientation, we need to use 3D vectors to calculate the angle.<br>
     <image src="../image/num.gif" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Hand3].
+It's OK, you can finish the Exercise[Hands3].
 
 ---
 
