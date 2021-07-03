@@ -216,13 +216,13 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 
-## Sample of face/facial landmark detection 
+## Sample of face/facial landmarks detection 
 
 ### preparation
 - Download [`haarcascade_frontalface_default.xml`]() which is provied by [OpenCV](https://github.com/opencv), and save it to `code` folder.
     - It's a trained dataset file to detect the faces with the Haarcascade.
 - Download [`lbfmodel.ymal`]() which is provied by [kurnianggoro](https://github.com/kurnianggoro), and save it to `code` folder.
-    - It's a trained dateset file to detect the face marks with the LBF(Local binary fitting) model.
+    - It's a trained dateset file to detect the facial landmarks with the LBF(Local binary fitting) model.
 
 ### cvface_detection.py
 ```python
@@ -249,6 +249,14 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+### Practice
+- You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as the `cvface_detection.py` in the `code` folder.
+- Check it can detect the face on Lenna's face.
+- The program is terminated with any key press.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+- It's OK, you can show the video image with your camera device.
+
 
 ### cvfacemark_detection.py
 ```python
@@ -282,3 +290,11 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+### Practice
+- You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as the `cvfacemark_detection.py` in the `code` folder.
+- Check it can detect the face and facial landmarks on Lenna's face.
+- The program is terminated with any key press.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of face/facial landmarks detection)
+- It's OK, you can run the program of face/facial landmarks detection.
