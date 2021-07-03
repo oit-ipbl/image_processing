@@ -107,7 +107,10 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-  - Execute "myhands.py" by clicking the execution button.<br>
+  - Run the sample code with input the following command in the terminal.
+```
+    C:\\...\code> python myhands.py
+``` 
   <image src="../image/index_finger_text.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
     
@@ -134,13 +137,13 @@ if __name__ == '__main__':
     cv2.circle(image, (landmark_point[8][0], landmark_point[8][1]), 7, (0, 0, 255), 3)
     cv2.putText(image, "(" + str(landmark_point[8][0]) + ", " + str(landmark_point[8][1]) + ")", 
         (landmark_point[8][0] - 20, landmark_point[8][1] - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
-````
+```
   - `landmark.visibility` indicates whether landmark is visible or occluded by other objects. `landmark.presence` indicates whether landmark is present on the scene.
     Both value ranges are [0.0-1.0].
-````python
+```python
     if landmark.visibility < 0 or landmark.presence < 0:
         continue
-````
+```
     
 ## Exercise[Hand1]
  - Draw red circles on all fingertips.<br>
@@ -157,15 +160,9 @@ It's OK, you can finish the Exercise[Hand1] and [Hand2].
   - Make a python file `calcAngle3D.py`. 
   - Type the following sample code. It's OK copy and paste.
 ### Sample code
-````python
+```python
 import numpy as np
 
-def main():
-    vec1 = np.array([1, 1, 1])
-    vec2 = np.array([1, 1, 0])
-
-    print(calcAngle(vec1, vec2))
-    
 def calcAngle(v1, v2):
     v1_n = np.linalg.norm(v1)
     v2_n = np.linalg.norm(v2)
@@ -174,10 +171,19 @@ def calcAngle(v1, v2):
 
     return np.rad2deg(np.arccos(cos_theta))
 
+def main():
+    vec1 = np.array([1, 1, 1])
+    vec2 = np.array([1, 1, 0])
+
+    print(calcAngle(vec1, vec2))  
+
 if __name__ == '__main__':
     main()
-````
- - Execute "calcAngle3D.py" by clicking the execution button.
+```
+  - Run the sample code with input the following command in the terminal.
+```
+    C:\\...\code> python calcAngle3D.py
+``` 
  - In this sample code, calculate the angle between vec1 and vec2. The `calcAngle` function takes two vectors as input and returns the angle(degree) between the two vectors.
 
 ## Practice[Judgement of whether the finger is bend or not]
@@ -299,8 +305,11 @@ def main():
 
 if __name__ == '__main__':
     main()
-````
-  - Execute "judgeOpen.py" by clicking the execution button.<br>
+```
+  - Run the sample code with input the following command in the terminal.
+```
+    C:\\...\code> python judgeOpen.py
+``` 
   <image src="../image/open.png" width="30%" height="30%"> <image src="../image/close.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.                                                           
 
@@ -308,10 +317,10 @@ if __name__ == '__main__':
  - In this sample code, the angle between the vectors obtained from the joint position of the finger is calculated and judged whether the finger is bend or not.
   - If the angle between vector `landmark_point[5] - landmark_point[6]` and vector `landmark_point[7] - landmark_point[6]` is greater than 140 degrees, display "open".<br>
     <image src="../image/vec.png" width="20%" height="20%"><br>
-````python
+```python
     if calcAngle(vec1, vec2) > 140:
         cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
-````
+```
 
 ## Exercise[Hand3]
  - Count and display the number of fingers opened.
