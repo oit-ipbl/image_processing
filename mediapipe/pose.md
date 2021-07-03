@@ -11,51 +11,82 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 <image src="../image/pose_tracking_full_body_landmarks.png" width="75%" height="75%"><br>
 
 ## Practice[Display all pose landmarks]
-  Get information and display about pose landmarks.
+  Get pose landmarks and display them.
   - Execute "vscode.bat" file, and open the VSCode.
   - Make a python file `mypose.py`. 
-  - Type the following template. It's OK copy and paste.
+  - Type the following sample code. It's OK copy and paste.
 
 ### Sample code
 ```python
 import cv2
 import mediapipe as mp
+import time
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
-# For webcam input:
-cap = cv2.VideoCapture(0)
-with mp_pose.Pose(
-    min_detection_confidence=0.5,
-    min_tracking_confidence=0.5) as pose:
-    while cap.isOpened():
-        success, image = cap.read()
-        if not success:
-            print("Ignoring empty camera frame.")
-            # If loading a video, use 'break' instead of 'continue'.
-            continue
+device = 0 # cameera device number
 
-        # Flip the image horizontally for a later selfie-view display, and convert
-        # the BGR image to RGB.
-        image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
-        # To improve performance, optionally mark the image as not writeable to
-        # pass by reference.
-        image.flags.writeable = False
-        results = pose.process(image)
+def getFrameNumber(start:float, fps:int):
+    now = time.perf_counter() - start
+    frame_now = int(now * 1000 / fps)
 
-        # Draw the pose annotation on the image.
-        image.flags.writeable = True
-        image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        
-        if results.pose_landmarks:
-            mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
-        cv2.imshow('MediaPipe Pose', image)
-        
-        if cv2.waitKey(5) & 0xFF == 27:
-            break
-cap.release()
+    return frame_now
+
+def main():
+    # For webcam input:
+    global device
+
+    cap = cv2.VideoCapture(device)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    wt  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    ht  = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+    print("Size:", ht, "x", wt, "/Fps: ", fps)
+
+    start = time.perf_counter()
+    frame_prv = -1
+
+    with mp_pose.Pose(
+        min_detection_confidence=0.5,
+        min_tracking_confidence=0.5) as pose:
+        while cap.isOpened():
+            frame_now=getFrameNumber(start, fps)
+            if frame_now == frame_prv:
+                continue
+            frame_prv = frame_now
+
+            ret, frame = cap.read()
+            if not ret:
+                print("Ignoring empty camera frame.")
+                # If loading a video, use 'break' instead of 'continue'.
+                continue
+
+            # Flip the image horizontally for a later selfie-view display, and convert
+            # the BGR image to RGB.
+            frame = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)
+            # To improve performance, optionally mark the image as not writeable to
+            # pass by reference.
+            frame.flags.writeable = False
+            results = pose.process(frame)
+
+            # Draw the pose annotation on the image.
+            frame.flags.writeable = True
+            frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+            if results.pose_landmarks:
+                mp_drawing.draw_landmarks(frame, results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
+                
+            cv2.imshow('MediaPipe Pose', frame)
+            if cv2.waitKey(5) & 0xFF == 27:
+                break
+    cap.release()
+
+if __name__ == '__main__':
+    main()
 ```
-  - Execute "mypose.py" by clicking the execution button.<br>
+  - Run the sample code with input the following command in the terminal.
+```
+    C:\\...\code> python mypose.py
+``` 
   <image src="../image/pose.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
 
@@ -72,11 +103,13 @@ cap.release()
 It's OK, you can finish the Exercise[Pose1].
 
 ## Exercise[Pose2]
- - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands.
+ - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands. 
     - Use relative positions in 3D coordinates.<br>
-    <image src="../image/pose_q2-1.png" width="30%" height="30%">
-      <image src="../image/pose_q2-2.png" width="30%" height="30%">
-        <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
+ - The following code flips the image horizontally.
+```python
+    image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
+```
+ <image src="../image/pose_q2-1.png" width="30%" height="30%"> <image src="../image/pose_q2-2.png" width="30%" height="30%"> <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Pose2].
 
