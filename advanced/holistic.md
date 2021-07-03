@@ -248,6 +248,7 @@ if __name__ == '__main__':
   <image src="../image/holistic.png" width="30%" height="30%"><br>
  - If you want to stop this program, press "Esc" key while the preview window is active.
  - You can use holistic in the same way as you use hans, pose, and face individually.
+ - You can find more information on website of [MediaPipe](https://google.github.io/mediapipe/).
 ---
     
 [README](../README.md)
