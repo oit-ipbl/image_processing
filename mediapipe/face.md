@@ -113,10 +113,10 @@ if __name__ == '__main__':
 
 ### How to refer all the landmarks stored in the list
  - Draw by referring to all the landmarks stored in the list by the following code.
-````python
+```python
     for i in range(0, len(landmark_point)):
         cv2.circle(image, (int(landmark_point[i][0]),int(landmark_point[i][1])), 1, (0, 255, 0), 1)
-````
+```
 
 ## Exercise[Face1]
  - Calculate the center of gravity of all face landmarks, and draw red circle.<br>
