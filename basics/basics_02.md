@@ -173,7 +173,7 @@ if __name__ == '__main__':
   ```
 
 ### Exercise (selfie.py)
-- Try to make "Let's selfie program"(selfie.py) by editing the [video_viewer1.py](#video_viewer1py) or the [video_viewer2.py](#video_viewer2py).
+- Try to make "Let's selfie program"(selfie.py) by editing the `[video_viewer1.py](#video_viewer1py)` or the [video_viewer2.py](#video_viewer2py).
 - Save the video frame to the still image file at that time when the user presses the "s" key.
     | Key | Details | 
     :---: | :---
@@ -189,20 +189,20 @@ if __name__ == '__main__':
       cv2.imshow("video", frame)
       cv2.imwrite("selfie.jpg", frame)
   ```
-  - Write a still image 
+  - The following function in the hint code in order to write a still image 
 
     | code | comment |
     :--- | :---
     | cv2.imwrite("name", variable) | 1st argument is the file name(path) of the image which is saved. <br>2nd argument is the variable of the image. | 
 
-  - Compare a received key with a key that you want to detect.
+  - The following function in the hint code in order to compare a received key with a key that you want to detect.
 
     | code | comment |
     :--- | :---
     | ord('a caracter') | It's changed a character in the argument to the number of Unicode. |
 
-- If your program is correct, you will be able to find a jpeg file named "selfie.jpg" in the current folder when you press the "s" key.
+- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in the current folder when you press the `s` key.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
-- It's OK, if you can confirm that the selfie.jpg was saved correctly.
+- It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 
