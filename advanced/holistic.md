@@ -6,11 +6,11 @@ This page explains how to make a program for hands, pose and face detection and 
 ## Prerequisite
 You have to finish [MediaPipe Face](../mediapipe/face.md).
 
-## Face landmark model
+## Landmark models
 MediaPipe Holistic utilizes the pose, face and hand landmark models,  respectively to generate a total of 543 landmarks (33 pose landmarks, 468 face landmarks, and 21 hand landmarks per hand).<br>
 <image src="../image/holistic_sports_and_gestures_example.gif" width="50%" height="50%">
 
-## Practice[Display all face landmarks]
+## Practice[Display all holistic landmarks]
   Get information and display about holistic landmarks.
   - Execute "vscode.bat" file, and open the VSCode.
   - Make a python file `myholistic.py`. 
