@@ -151,7 +151,8 @@ if __name__ == '__main__':
       
 ## Exercise[Hands2]
  - Calculate the center of gravity of fingertips, and draw green circle.
- - The center of gravity can be calculated by calculating the average position of the landmark.<br>
+ - The center of gravity can be calculated by calculating the average position of the landmark.
+ - Since landmarks are sometimes acquired in the wrong position, using the centroid may allow you to create more robust applications.<br>
     <image src="../image/q2_fingertips_c.png" width="30%" height="30%"><br>
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Hands1] and [Hands2].
