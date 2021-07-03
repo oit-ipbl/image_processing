@@ -190,7 +190,7 @@ if __name__ == '__main__':
 ## Practice[Judgement of whether the finger is bend or not]
  - Judge whether the index finger is open by using the 3D coordinates of the landmark.
   - Make a python file `judgeOpen.py`. 
-  - Type the following template. It's OK copy and paste.
+  - Type the following sample code. It's OK copy and paste.
 
 ### Sample code
 ```python
