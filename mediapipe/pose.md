@@ -110,14 +110,6 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Pose1] and [Pose2].
 
-## Exercise[Pose3]
- - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
-    <image src="../image/pose_q3.gif" width="30%" height="30%">
-
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose3].
-          
-
 ---
 
 [README](../README.md)
