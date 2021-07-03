@@ -127,7 +127,7 @@ if __name__ == '__main__':
  - **Complete the `calcAngle` function using the program created in Challenge [Hands1].**<br>
   <image src="../image/angle_app.gif" width="30%" height="30%"><br>
 
-## Challenge[Hans3]
+## Challenge[Hands3]
  - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **hands**.
       
 ## Challenge[Pose1]
