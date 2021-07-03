@@ -93,16 +93,16 @@ if __name__ == '__main__':
     cap.release() 
     ```
     - It can be ignored if a warning message like the following will appear.
-     ```
-     [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
-     ```
+         ```
+         [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+         ```
     - It costs a few minutes to be run the program depending on the environment of your device.
 - Set a value of the global variable `device` to adapt your PC environment.
 - Run the sample code.
     - It can be ignored if a warning message like the following will appear.
-     ```
-     [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
-     ```
+         ```
+         [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+         ```
 - Check the video window is came up, and the program is terminated with the `Esc` key press.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
