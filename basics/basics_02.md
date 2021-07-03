@@ -66,12 +66,12 @@ if __name__ == '__main__':
                 break
             cv2.imshow("video", frame)
     ```
-    - In the video stream, the returned frame from `cap.read()` is the same as the previous frame when the time of the "read" function calling is shorter than 1/FPS sec.
-    - In the movie file, the returned frame from `cap.read()` function is in order, independent of the loop time.
-        | Device | The number of the returned frame |
-        :--- | :--- 
-        | camera | t + int( time of the "read" function calling / fps) |
-        | movie file | t + 1 |
+- In the video stream, the returned frame from `cap.read()` is the same as the previous frame when the time of the "read" function calling is shorter than 1/FPS sec.
+- In the movie file, the returned frame from `cap.read()` function is in order, independent of the loop time.
+    | Device | The number of the returned frame |
+    :--- | :--- 
+    | camera | t + int( time of the "read" function calling / fps) |
+    | movie file | t + 1 |
      
 ### Wait for the user's key input
 - The `waitKey` function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
