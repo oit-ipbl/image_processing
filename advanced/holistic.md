@@ -14,7 +14,7 @@ MediaPipe Holistic utilizes the pose, face and hand landmark models,  respective
   Get information and display about holistic landmarks.
   - Execute "vscode.bat" file, and open the VSCode.
   - Make a python file `myholistic.py`. 
-  - Type the following template. It's OK copy and paste.
+  - Type the following sample code. It's OK copy and paste.
 
 ### Sample code
 ```python
@@ -97,6 +97,7 @@ if __name__ == '__main__':
     
 ## Challenge[Hands2]
  - Create an interactive simple game using the information from **hands** by referring to the sample code below.
+### Sample code
 ```python
 import cv2
 import mediapipe as mp
@@ -217,7 +218,7 @@ if __name__ == '__main__':
     <image src="../image/pose_q3.gif" width="30%" height="30%">
 
 ## Challenge[Pose2]
- - Make a simple game like [Exercise[Hands2]](./holistic.md#exercisehands2) using the information from **pose**.
+ - Make a simple game like [Exercise[Hands2]](./holistic.md#challenge[hands2]) using the information from **pose**.
 
 ## Challenge[Face1]
  - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
@@ -233,8 +234,6 @@ if __name__ == '__main__':
    select = msg_array[random.randint(0, len(msg_array)-1)]
    print(select)
 ````
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Face3].
    
 ## Challenge[Face2]
  - Display "smile" when smile. 
