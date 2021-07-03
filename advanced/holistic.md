@@ -214,7 +214,8 @@ if __name__ == '__main__':
  - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **hands**.
       
 ## Challenge[Pose1]
- - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.<br>
+ - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.
+ - It is possible to judge by comparing the x-coordinate and y-coordinate values between multiple landmarks.<br>
     <image src="../image/pose_q3.gif" width="30%" height="30%">
 
 ## Challenge[Pose2]
