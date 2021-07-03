@@ -1,10 +1,11 @@
-# Basics of image processing
+# Image processing basics (1)
 
 ## Objectives
 - This page explains basics of digital images and image processing with Python3.
 
 ## prerequisite
 - "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already be installed.
+- The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `img` and read from there.
 
 ## Basics of digital images
 ### Color (Additive color) 
@@ -25,16 +26,39 @@
 - Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.    
 
 
-
 ## Image processing with Python3
+### Directory structure for Image processing
+- Make a directory `img` in the directory `code`, and then save the image "[lena.jpg](../image/lena.jpg)" in the directory `img` as follows.
+- Directory stucture
+  ```
+  +[code]                   <== work directory ("C:/oit/py21/code")
+  |
+  |-+[test]                 <== this directory already exists. ("C:/oit/py21/code/test")
+  | |-- testModule.py       <== this program already exists.
+  | |-- testWebcam.py       <== this program already exists.
+  |
+  |-+[img]                  <== make this directory.
+  | |--lena.jpg             <== save the image "lena.jpg" at this place. ("C:/oit/py21/code/img/lena.jpg")
+  | |--xxx.jpg
+  | |--xxx.png
+  | |--
+  |
+  |--hands.py               <== this program already exists. ("C:/oit/py21/code/hands.py")
+  |--python programs(.py)   <== save new python programs at this place.
+  ```
+
 ### Basics of Python3 program
+- more information: [python3.8 docs](https://docs.python.org/3.8/index.html)
 - Indentation is very important in Python programming. Indentation level is used to determine the coding block (the grouping of statements) and scope of variables.
 - Variable is accessible from same block or nested block. Variable doesn't need to declare before using. Type of variable is determined by value to be assigned.Variable declared "global" has globally scope.
-- A comment starts with a hash character (#)
-- If you need more information about Python language, you can see the following site : [python3.8 docs](https://docs.python.org/3.8/index.html)
+- A comment starts with a hash character `#`<br>
+  <image src="../image/pys.png"><br>
+
+#### Practice[basic]
+- Save the following sample code as a python file and execute it. (`C:/oit/py21/code/sample_basic.py`)
 - Sample code
   ```python
-  # basic.py
+  # sample_basic.py
   sum = 0
   for i in range(10):
     sum = sum + i
@@ -47,9 +71,9 @@
   else:
     print("sum is over 50")
   ```
-  <image src="../image/pys.png"><br>
+- It is O.K., if it is executed as follows.
   ```sh
-  C:\oit\py21\code> python basic.py
+  C:\oit\py21\code> python sample_basic.py
   0:0
   1:1
   2:3
@@ -70,8 +94,8 @@
   - a powerful N-dimensional array object
   - useful linear algebra, Fourier transform, and random number capabilities
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("numpy")
-- Save the following sample code as a python file and execute it.
+#### Practice[np]
+- Save the following sample code as a python file and execute it. (`C:/oit/py21/code/sample_numpy.py`)
 - Sample code
   ```python
   # sample_numpy.py
@@ -109,15 +133,15 @@
 - This is an open source module for Computer Vision.
 - It has many functions for image processing.
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("cv2")
-- Save the following sample code as a python file.
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory.
-- Execute the python code.
+#### Practice[cv2]
+- Save the image "[lena.jpg](../image/lena.jpg)" in the directory `img`. (`C:/oit/py21/code/img/lena.jpg`)
+  - If you have never saved the image "lena.jpg" in the directory `img`.
+- Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_cv2.py`)
 - Sample code
   ```python
   # sample_cv2.py
   import cv2
-  img = cv2.imread('lena.jpg') # read image file
+  img = cv2.imread('./img/lena.jpg') # read image file
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -135,7 +159,7 @@
 - more information: [matplotlib tutorials](https://matplotlib.org/tutorials/index.html), [pyplot](https://matplotlib.org/stable/api/pyplot_summary.html)
 - This module is based on MATLAB.
 - It has many functions for image processing.
-- "plt" has many differences from "cv2". The following table shows the main examples in image IO.
+- `plt` has many differences from `cv2`. The following table shows the main examples in image IO.
   ||cv2|plt|
   |----|----|----|
   |color space (order of color channels)|BGR|RGB|
@@ -144,15 +168,15 @@
   |normalization at showing image|default:off|default:on|
   |displaying axis at showing image|default:off|default:on|
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("plt")
-- Save the following sample code as a python file.
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory.
-- Execute the python code.
+#### Practice[plt]
+- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. (`C:/oit/py21/code/img/lena.jpg`)
+  - If you have never saved the image "lena.jpg" in the directory `img`.
+- Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_plt.py`)
 - Sample code
   ```python
   # sample_plt.py
   import matplotlib.pyplot as plt
-  img = plt.imread('lena.jpg')
+  img = plt.imread('./img/lena.jpg')
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -164,19 +188,21 @@
   <image src="../image/lena_plt.png" height=50% width=50%>
 - The window closes when you click [x] button at upper right of the window.
 
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+- It's O.K., if you can finish the Practice[basic], [np], [cv2] and [plt].
 
 ### Script/Function in Python3 and image IO
 - All of the Python programs introduced above is a sequential program called scripts.
 - Making a Python script a function improves reusability.
   - Functions can be call by other python programs.
+
 #### Python Script
-- Sample code
   ```python
   # sample_imgIO.py
   import cv2
 
   # read image file
-  img = cv2.imread('lena.jpg')
+  img = cv2.imread('./img/lena.jpg')
 
   # some image processing ==============
   img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -188,7 +214,7 @@
   # ====================================
 
   # write image file
-  cv2.imwrite('res.png', img)
+  cv2.imwrite('res_scrpt.png', img)
 
   # show image file
   cv2.imshow('window name', img)
@@ -197,7 +223,6 @@
   ```
 
 #### Python Function
-- Sample code 1
   ```python
   # sample_imgIO_func.py
   import cv2
@@ -220,9 +245,9 @@
       return img
 
   def main():
-      in_name = 'lena.jpg' # local
-      out_name = 'res_func1.png' # local
-      img = imageIOdemo(in_name, out_name)
+      in_name = './img/lena.jpg' # local
+      out_name = './img/res_func1.png' # local
+      img = imageIO(in_name, out_name)
       # show image file
       cv2.imshow('window name', img)
       cv2.waitKey(0)  # pause until any key pressed
@@ -233,82 +258,122 @@
       a = 1 # global
       main() # function name is free
   ```
-- Sample code 2
+#### Practice[script/function 1]
+- Save the above two sample codes (`sample_imgIO.py`, `sample_imgIO_func.py`) as a python file. (`C:/oit/py21/code/sample_imgIO.py`) (`C:/oit/py21/code/sample_imgIO_func.py`)
+- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. (`C:/oit/py21/code/img/lena.jpg`)
+  - If you have never saved the image "lena.jpg" in the directory `img`.
+- Execute the two python codes, respectively.
+- It's O.K., if the two result images (`res_scrpt.png`, `res_func1.png`) are the same.
+
+#### Practice[script/function 2]
+- Let's use the function `imageIO` in `sample_imgIO_func.py` on Other python programs!
+- After `Practice[script/function 1]`, Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_other.py`)
+- Sample code
   ```python
-  # other.py
+  # sample_other.py
   import sample_imgIO_func as myImgIO
 
-  myImgIO.imageIO('lena.jpg', 'res_func2.png')
+  myImgIO.imageIO('./img/lena.jpg', './img/res_func2.png')
   ```
-
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("python function")
-- 上記を試させる
+- It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) are the same.
 
 #### Difference of cv2 and plt
+- There are differences between `cv2` and `plt`. 
+- `plt` has many differences from `cv2`. The following table shows the main examples in image IO. (*Repost*)
+  ||cv2|plt|
+  |----|----|----|
+  |color space (order of color channels)|BGR|RGB|
+  |able to show multi-figures on a single window|x|o|
+  |figure window|does not pause|pause and must be closed manually|
+  |normalization at showing image|default:off|default:on|
+  |displaying axis at showing image|default:off|default:on|
+
+#### Practice[cv2 vs plt]
+- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. (`C:/oit/py21/code/img/lena.jpg`)
+  - If you have never saved the image "lena.jpg" in the directory `img`.
+- Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_cv2_plt.py`)
 - Sample code
-```python
-import cv2
-import matplotlib.pyplot as plt
-
-def imageIOdemo(img_name_in, img_name_out_bgr, img_name_out_rgb):
-    # read image file
-    img_BGR = cv2.imread(img_name_in)
-
-    # some image processing ==============
-    img_RGB = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2RGB)
-    #   _____            _____
-    #  /   B/__         /   R/__
-    # /____/ G/__  ==> /____/ G/__
-    #   /____/ R/        /____/ B/
-    #     /____/           /____/
-    # ====================================
-
-    # write image file
-    cv2.imwrite(img_name_out_bgr, img_BGR)
-    cv2.imwrite(img_name_out_rgb, img_RGB)
-
-    # show images (cv2)
-    cv2.imshow('img_BGR', img_BGR)
-    cv2.imshow('img_RGB', img_RGB)
-    # cv2.waitKey(0) # pause until any key pressed
-
-    # show multi-images (plt)
-    plt.subplot(1, 2, 1), plt.imshow(img_BGR), plt.title('img_BGR'), plt.axis('off')
-    plt.subplot(1, 2, 2), plt.imshow(img_RGB), plt.title('img_RGB'), plt.axis('off')
-    plt.show()
-    # plt's figures must be closed manually.
-
-    # close all cv2 windows (cv2)
-    cv2.destroyAllWindows()
-
-if __name__ == '__main__':
-    imageIOdemo('lena.jpg', 'res_bgr.png', 'res_rgb.png')
-```
-
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("cv2 vs plt")
-- 上記を試させる
-
-    
-#### How to resize input images
-- The process with large size images is very heavy. If image size is huge, you should resize it to small.
   ```python
-  # Resize the long side to the specified length
-  def resizeImg(img, length):
-      h, w, _ = img.shape
+  # sample_cv2_plt.py
+  import cv2
+  import matplotlib.pyplot as plt
 
-      if max(h, w) < length:
-          return img
+  def imageIOdemo(img_name_in, img_name_out_bgr, img_name_out_rgb):
+      # read image file
+      img_BGR = cv2.imread(img_name_in)
 
-      if h < w:
-          newSize = (int(h*length/w), length)
-      else:
-          newSize = (length, int(w*length/h))
+      # some image processing ==============
+      img_RGB = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2RGB)
+      #   _____            _____
+      #  /   B/__         /   R/__
+      # /____/ G/__  ==> /____/ G/__
+      #   /____/ R/        /____/ B/
+      #     /____/           /____/
+      # ====================================
 
-      print('resize to', newSize)
+      # write image file
+      cv2.imwrite(img_name_out_bgr, img_BGR)
+      cv2.imwrite(img_name_out_rgb, img_RGB)
 
-      return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
+      # show images (cv2)
+      cv2.imshow('img_BGR', img_BGR)
+      cv2.imshow('img_RGB', img_RGB)
+      # cv2.waitKey(0) # pause until any key pressed
+
+      # show multi-images (plt)
+      plt.subplot(1, 2, 1), plt.imshow(img_BGR), plt.title('img_BGR'), plt.axis('off')
+      plt.subplot(1, 2, 2), plt.imshow(img_RGB), plt.title('img_RGB'), plt.axis('off')
+      plt.show()
+      # plt's figures must be closed manually.
+
+      # close all cv2 windows (cv2)
+      cv2.destroyAllWindows()
+
+  if __name__ == '__main__':
+      imageIOdemo('./img/lena.jpg', './img/res_bgr.png', './img/res_rgb.png')
   ```
+- Please confirm difference between cv2 and plt.
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("resize")
-- 上記を試させる
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+- It's O.K., if you can finish the Practice[script/function 1], [script/function 1] and [cv2 vs plt].
+
+#### Resizing images
+- The process with large size images is very heavy. If image size is huge, you should resize it to small.
+- There are various methods for resizing.
+  - Resize with specified size
+    ```python
+    # the size of img_resize becomes (new_width, new_height).
+    img_resize = cv2.resize(img, (new_width, new_height))
+    ```
+  - Resize with scalling
+    ```python
+    # downscalling -> 1/2
+    img_resize = cv2.resize(img, None, fx=1/2, fy=1/2)
+    ```
+  - Resize the long side to the specified length
+    - This program can resize Images of various sizes to approximately the same data size while maintaining the aspect ratio.
+    ```python
+    def resizeImg(img, length):
+        h, w = img.shape[:2]
+
+        if max(h, w) < length: # do not need resizing
+            return img
+
+        if h < w:
+            newSize = (int(h*length/w), length)
+        else:
+            newSize = (length, int(w*length/h))
+
+        print('resize to', newSize)
+
+        return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
+    ```
+
+#### Exercise[resizing]
+- modify the function `imageIO` in `sample_imgIO_func.py` of`Practice[script/function 1]` to be able to save the half size image.
+- It's O.K., if size of the result image `res_func1.png` is 256x256 as follows.<br>
+  <image src="../image/lena_512.png" height=40% width=40%><image src="../image/lena_256.png" height=39% width=39%>
+
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+- It's O.K., if you can finish the Exercise[resizing].
 

@@ -1,8 +1,16 @@
-# Tutorials for video image processing
-<!--READMEのタイトルとこのページのタイトルをあわせておいたほうがいいかとおもいます．-->
-## Objectives
-To process the video image in Python 3 with your camera device.
+# Image processing basics (2)
 
+## Objectives
+- You can learn how to process the video image in Python 3 with your camera device.
+- You can learn how to detect the face/facial landmarks with OpenCV.
+
+## Prerequisite
+- Open the VS Code by the running the `vscode.bat`. Confirm that the current directory shown in the terminal window is `code`.
+- The python program (.py) has to be made in the `code` folder. And all image files are saved (downloaded) in the `img` folder and read from there. 
+- You can run a python program with the input of the following command in the terminal.
+    ```
+    C:\\...\code> python XXX.py
+    ```
 ## Sample of simple video-image processing
 <!--一番最初だけはvscode.batからvscodeを起動して，codeディレクトリ内にhoge.pyを作成して以下をコピペすることと書いてあげたほうが良いと思います．そういえば村木先生資料にはExecuteボタンを押して実行と書いてあったんですが，コマンドでの実行とボタンでの実行どちらでやるかはどこかで説明があるんでしょうか？-->
 ### video_viewer1.py
@@ -38,24 +46,13 @@ if __name__ == '__main__':
     main()
 ```
 
-### Video properties
-<!--行番号修正しました-->
-- A value of grobal variable "device" (line 5, line 9)  is the device numbers of the camera starting from 0. 
-- If there is a camera on your device, including the built-in, the number of your camera device is 0.
-- You can check which device number that the camera is connected is with running the following program (camera_detect.py). <!--ここはまだ保留ですかね？DSHOWありの場合となしの場合だと番号がずれるので．．あと今試してみた感じ，こちらのプログラムだとDSHOW外しても固まらないですね．ただ，番号が表示されるだけなのでどの番号がどのカメラかは分かりませんでした-->
-    ```python
-    import cv2
-
-    for i in range(0, 10): 
-        cap = cv2.VideoCapture(i, cv2.CAP_DSHOW)
-        if cap.isOpened(): 
-            print("VideoCapture(", i, ") : Found")
-    else:
-        print("VideoCapture(", i, ") : None")
-    cap.release() 
-    ```
-  - The value is set as a file name if you want to process the movie file.<!--すみません．the valueが何を指すのか分かりませんでした-->
-- Open the video stream and get the propaties of the video image. <!--ここですが，camera_detect.pyに対して実施するんでしょうか？video viewerには既にあるような-->
+### Video propaties
+- A value of grobal variable `device` is the device numbers of the camera starting from 0. 
+  - It can be read the movie file when it's set a value of the global variable `device` to a file name of the movie, like the following.
+  ```python
+  device = "moviefile.mp3"
+  ```
+- The following codes in `video_viewer1.py` are in order to Open the video stream and get the propaties of the video image. 
     | code | comment |
     :--- | :---
     | cv2.VideoCapture(device) | Open the video stream | 
@@ -64,37 +61,59 @@ if __name__ == '__main__':
     | cv2.CAP_PROP_FRAME_HEIGHT | Frame height | 
 
 ### Read a frame from video stream
-- `cap.read()` is used for reading a frame form video steram. <!--こんな感じでどうでしょうか．-->
+- The following function in `video_viewer1.py` are in order to read a frame form video steram.
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
     - The read function is called by every loop in `video_viewer1.py`, independent of the FPS. 
-    ```python
-    while cap.isOpened() :
-        ret, frame = cap.read()
-
-        if cv2.waitKey(1) & 0xFF == 27:
-            break
-        cv2.imshow("video", frame)
-    ```
-    - The looping time is costed the sum of the processing time with the "read" and any other functions in the while block and the sleep time with the "waitKey" function(1m sec).   
-    - In the video stream, the returned frame from the "read" function is the same as the previous frame when the time of the "read" function calling is shorter than 1/FPS sec.
-    - In the movie file, the returned frame from the "read" function is in order, independent of the loop time.
-        | Device | The number of the returned frame |
-        :--- | :--- 
-        | camera | t + int( time of the "read" function calling / fps) |
-        | movie file | t + 1 |
+    - The looping time is costed the sum of the processing time with the `read()` and any other functions in the while block and the sleep time with the `waitKey()` function(1m sec).   
+        ```python
+            while cap.isOpened() :
+                ret, frame = cap.read()
+                if cv2.waitKey(1) & 0xFF == 27:
+                    break
+                cv2.imshow("video", frame)
+        ```
+- In the video stream, the returned frame from `cap.read()` is the same as the previous frame when the time of the `cap.read()` function calling is shorter than 1/FPS sec.
+- In the movie file, the returned frame from `cap.read()` function is in order, independent of the loop time.
+    | Device | The number of the returned frame |
+    :--- | :--- 
+    | camera | t + int( time of the "read" function calling / fps) |
+    | movie file | t + 1 |
      
 ### Wait for the user's key input
-- The "waitKey" function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
-- It exits the while loop when the user presses the "Esc" key.
-- "Esc" key is coded at 27.
+- The `waitKey` function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
+- It exits the while loop when the user presses the `Esc` key.
+- `Esc` key is coded at 27.
 
-<!--順番にちょっと違和感がありました．ここでdevice番号を触らせるなら，この直後にcamera_detect.pyを動かさせたほうが良いのではないでしょうか．あるいはSample of simple video-image processingをPractice[Sample of simple video-image processing]にしてしまって，ここはCheckpointだけにしても良いと思います-->
 ### Practice
-- Set a value of the global variable "device" to adapt your PC environment.
+- You should be copy [`video_viewer1.py`](#video_viewer1py) with the `clipboard` button and paste it to the VS Code, and save it as  `video_viewer1.py` in the `code` folder.
+- If there is a camera on your device, including the built-in, the number of your camera device is 0.
+- You can check which device number that the camera is connected is with running the following program (`camera_detect.py`).
+    ```python
+    import cv2
+
+    for i in range(0, 10): 
+        cap = cv2.VideoCapture(i)
+        if cap.isOpened(): 
+            print("VideoCapture(", i, ") : Found")
+            cap.release() 
+        else:
+            print("VideoCapture(", i, ") : None")
+    cap.release() 
+    ```
+    - It can be ignored if a warning message like the following will appear.
+         ```
+         [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+         ```
+    - It costs a few minutes to be run the program depending on the environment of your device.
+- Set a value of the global variable `device` to adapt your PC environment.
 - Run the sample code.
-- Check the video window is came up, and the program is terminated with the "Esc" key press.
+    - It can be ignored if a warning message like the following will appear.
+         ```
+         [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+         ```
+- Check the video window is came up, and the program is terminated with the `Esc` key press.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
 - It's OK, you can show the video image with your camera device.
@@ -155,17 +174,17 @@ if __name__ == '__main__':
     main()
 ```
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of video-image processing adapted the frame rate)
 - It's OK, you confirm only to be able to run the program.
-- Which program, [video_viewer2.py](#video_viewer2py) or [video_viewer1.py](#video_viewer1py), is better to use is dependent on the situation.
-- It's a more simple way for adapting the frame rate that a value of the argument in the "waitKey" function in the [video_viewer1.py](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
+- Which program, [`video_viewer2.py`](#video_viewer2py) or [`video_viewer1.py`](#video_viewer1py), is better to use is dependent on the situation.
+- It's a more simple way for adapting the frame rate that a value of the argument in the `waitKey` function in the [`video_viewer1.py`](#video_viewer1py) is replaced to the time to the next frame is provided, like the following.
   ```python
   if cv2.waitKey(int(1000/fps)) & 0xFF == 27:
   ```
 
 ### Exercise (selfie.py)
-- Try to make "Let's selfie program"(selfie.py) by editing the [video_viewer1.py](#video_viewer1py) or the [video_viewer2.py](#video_viewer2py).
-- Save the video frame to the still image file at that time when the user presses the "s" key.
+- Try to make "Let's selfie program" (`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
+- Save the video frame to the still image file at that time when the user presses the `s` key.
     | Key | Details | 
     :---: | :---
     | Esc | The program is terminated. |
@@ -178,21 +197,103 @@ if __name__ == '__main__':
       break
   elif key & 0xFF == ord('s'):
       cv2.imshow("video", frame)
-      cv2.imwrite("selfie.jpg", frame)
+      cv2.imwrite("./img/selfie.jpg", frame)
   ```
-  - Write a still image 
+  - The following function in the hint code in order to write a still image. 
 
     | code | comment |
     :--- | :---
     | cv2.imwrite("name", variable) | 1st argument is the file name(path) of the image which is saved. <br>2nd argument is the variable of the image. | 
 
-  - Compare a received key with a key that you want to detect.
+  - The following function in the hint code in order to compare a received key with a key that you want to detect.
 
     | code | comment |
     :--- | :---
     | ord('a caracter') | It's changed a character in the argument to the number of Unicode. |
 
-- If your program is correct, you will be able to find a jpeg file named "selfie.jpg" in the current folder when you press the "s" key.  
+- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `img` folder when you press the `s` key.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
-- It's OK, if you can confirm that the selfie.jpg was saved correctly.
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
+- It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
+
+## Sample of face/facial landmarks detection 
+
+### preparation
+- Download [`haarcascade_frontalface_default.xml`]() which is provied by [OpenCV](https://github.com/opencv), and save it to `code` folder.
+    - It's a trained dataset file to detect the faces with the Haarcascade.
+- Download [`lbfmodel.ymal`]() which is provied by [kurnianggoro](https://github.com/kurnianggoro), and save it to `code` folder.
+    - It's a trained dateset file to detect the facial landmarks with the LBF(Local binary fitting) model.
+
+### cvface_detection.py
+```python
+# -*- coding: utf-8 -*-
+import cv2
+
+# main--------------------------------------------------------------------------------------
+def main():  
+    cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
+
+    img = cv2.imread('./img/lena.jpg')
+    faces = cascade.detectMultiScale(img, 1.1, 5)
+
+    for i, face in enumerate(faces):
+        fx, fy, fw, fh = face
+        cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+
+    cv2.imshow("face", img)
+    
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# run---------------------------------------------------------------------------------------
+if __name__ == '__main__':
+    main()
+```
+### Practice
+- You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
+- Check it can detect the face on Lenna's face.<br>
+        ![result](../image/dflenna.jpg)
+- The program is terminated with any key press.
+
+
+### cvfacemark_detection.py
+```python
+# -*- coding: utf-8 -*-
+import cv2
+
+# main--------------------------------------------------------------------------------------
+def main():  
+    cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
+    lbf = cv2.face.createFacemarkLBF()
+    lbf.loadModel("lbfmodel.yaml")
+
+    img = cv2.imread('./img/lena.jpg')
+    faces = cascade.detectMultiScale(img, 1.1, 5)
+    
+    for i,face in enumerate(faces):
+        fx, fy, fw, fh = face
+        cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+        landmarks = lbf.fit(img, faces)
+        _, list = landmarks
+
+        for x, y in list[i][0]:
+            cv2.circle(img, (x, y), 2,(0,255, 0), -1)
+
+    cv2.imshow("face+facemark", img)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# run---------------------------------------------------------------------------------------
+if __name__ == '__main__':
+    main()
+```
+
+### Practice
+- You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
+- Check it can detect the face and facial landmarks on Lenna's face.<br>
+    ![result](../image/dfmlenna.jpg)
+- The program is terminated with any key press.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of face/facial landmarks detection)
+- It's OK, you can run the program of face/facial landmarks detection.
