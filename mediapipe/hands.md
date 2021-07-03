@@ -178,7 +178,7 @@ if __name__ == '__main__':
     main()
 ````
  - Execute "calcAngle3D.py" by clicking the execution button.
- - In this Sample code, calculate the angle between vec1 and vec2. The `calcAngle` function takes two vectors as input and returns the angle(degree) between the two vectors.
+ - In this sample code, calculate the angle between vec1 and vec2. The `calcAngle` function takes two vectors as input and returns the angle(degree) between the two vectors.
 
 ## Practice[Judgement of whether the finger is bend or not]
  - Judge whether the index finger is open by using the 3D coordinates of the landmark.
