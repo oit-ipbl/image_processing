@@ -368,11 +368,11 @@
         return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
     ```
 
-#### Practice[resizing]
+#### Exercise[resizing]
 - modify the function `imageIO` in `sample_imgIO_func.py` of`Practice[script/function 1]` to be able to save the half size image.
 - It's O.K., if size of the result image `res_func1.png` is 256x256 as follows.<br>
-  <image src="../image/lena_512.png"><image src="../image/lena_256.png">
+  <image src="../image/lena_512.png" height=40% width=40%><image src="../image/lena_256.png" height=39% width=39%>
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-- It's O.K., if you can finish the Practice[resizing].
+- It's O.K., if you can finish the Exercise[resizing].
 
