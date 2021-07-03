@@ -87,7 +87,7 @@ if __name__ == '__main__':
 - `Esc` key is coded at 27.
 
 ### Practice
-- You should be copy [`video_viewer1.py`](#video_viewer1py) with the `clipboard` button and paste it to the VS Code, and save it as the `video_viewer1.py` in the `code` folder.
+- You should be copy [`video_viewer1.py`](#video_viewer1py) with the `clipboard` button and paste it to the VS Code, and save it as  `video_viewer1.py` in the `code` folder.
 - If there is a camera on your device, including the built-in, the number of your camera device is 0.
 - You can check which device number that the camera is connected is with running the following program (`camera_detect.py`).
     ```python
@@ -250,13 +250,10 @@ if __name__ == '__main__':
     main()
 ```
 ### Practice
-- You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as the `cvface_detection.py` in the `code` folder.
+- You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
 - Check it can detect the face on Lenna's face.<br>
         ![result](../image/dflenna.jpg)
 - The program is terminated with any key press.
-
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
-- It's OK, you can show the video image with your camera device.
 
 
 ### cvfacemark_detection.py
@@ -293,7 +290,7 @@ if __name__ == '__main__':
 ```
 
 ### Practice
-- You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as the `cvfacemark_detection.py` in the `code` folder.
+- You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
 - Check it can detect the face and facial landmarks on Lenna's face.<br>
     ![result](../image/dfmlenna.jpg)
 - The program is terminated with any key press.
