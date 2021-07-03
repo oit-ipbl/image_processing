@@ -30,9 +30,9 @@
 ### Directory structure for Image processing 
 - directory stucture
   ```
-  +[code]                   <== work directory ("C:/oit/py21/code/hands.py")
+  +[code]                   <== work directory ("C:/oit/py21/code")
   |
-  |-+[test]                 <== this directory already exists.
+  |-+[test]                 <== this directory already exists. ("C:/oit/py21/code/test")
   | |-- testModule.py       <== this program already exists.
   | |-- testWebcam.py       <== this program already exists.
   |
@@ -90,7 +90,7 @@
   - useful linear algebra, Fourier transform, and random number capabilities
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("numpy")
-- Save the following sample code as a python file and execute it.
+- Save the following sample code as a python file and execute it. ("C:/oit/py21/code/sample_numpy.py")
 - Sample code
   ```python
   # sample_numpy.py
@@ -129,14 +129,14 @@
 - It has many functions for image processing.
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("cv2")
-- Save the following sample code as a python file.
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory.
+- Save the following sample code as a python file. ("C:/oit/py21/code/sample_cv2.py")
+- Save the image "[lena.jpg](../image/lena.jpg)" in the directory "img". ("C:/oit/py21/code/img/lena.jpg")
 - Execute the python code.
 - Sample code
   ```python
   # sample_cv2.py
   import cv2
-  img = cv2.imread('lena.jpg') # read image file
+  img = cv2.imread('./img/lena.jpg') # read image file
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -164,14 +164,14 @@
   |displaying axis at showing image|default:off|default:on|
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("plt")
-- Save the following sample code as a python file.
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory.
+- Save the following sample code as a python file. ("C:/oit/py21/code/sample_plt.py")
+- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. ("C:/oit/py21/code/img/lena.jpg")
 - Execute the python code.
 - Sample code
   ```python
   # sample_plt.py
   import matplotlib.pyplot as plt
-  img = plt.imread('lena.jpg')
+  img = plt.imread('./img/lena.jpg')
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -195,7 +195,7 @@
   import cv2
 
   # read image file
-  img = cv2.imread('lena.jpg')
+  img = cv2.imread('./img/lena.jpg')
 
   # some image processing ==============
   img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -239,8 +239,8 @@
       return img
 
   def main():
-      in_name = 'lena.jpg' # local
-      out_name = 'res_func1.png' # local
+      in_name = './img/lena.jpg' # local
+      out_name = './img/res_func1.png' # local
       img = imageIOdemo(in_name, out_name)
       # show image file
       cv2.imshow('window name', img)
@@ -257,7 +257,7 @@
   # other.py
   import sample_imgIO_func as myImgIO
 
-  myImgIO.imageIO('lena.jpg', 'res_func2.png')
+  myImgIO.imageIO('./img/lena.jpg', './img/res_func2.png')
   ```
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint("python function")
