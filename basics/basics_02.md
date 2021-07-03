@@ -1,7 +1,8 @@
 # Image processing basics (2)
 
 ## Objectives
-- To process the video image in Python 3 with your camera device.
+- You can learn how to process the video image in Python 3 with your camera device.
+- You can learn how to detect the face/facial landmarks with OpenCV.
 
 ## Prerequisite
 - Open the VS Code by the running the `vscode.bat`. Confirm that the current directory shown in the terminal window is `code`.
@@ -182,7 +183,7 @@ if __name__ == '__main__':
   ```
 
 ### Exercise (selfie.py)
-- Try to make "Let's selfie program"(`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
+- Try to make "Let's selfie program" (`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
 - Save the video frame to the still image file at that time when the user presses the `s` key.
     | Key | Details | 
     :---: | :---
@@ -215,3 +216,7 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 
+## Sample of face/facial landmark detection 
+
+### preparation
+- Download the [`haarcascade_frontalface_default.xml`](https://github.com/opencv/opencv/blob/821fae0d94a06105402b38c482cc84efbdd27b7b/data/haarcascades/haarcascade_frontalface_default.xml) from OpenCV github page.
