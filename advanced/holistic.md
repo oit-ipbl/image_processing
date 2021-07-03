@@ -20,46 +20,73 @@ MediaPipe Holistic utilizes the pose, face and hand landmark models,  respective
 ```python
 import cv2
 import mediapipe as mp
+import time
 mp_drawing = mp.solutions.drawing_utils
 mp_holistic = mp.solutions.holistic
 
-# For webcam input:
-cap = cv2.VideoCapture(0)
-with mp_holistic.Holistic(
-    min_detection_confidence=0.5,
-    min_tracking_confidence=0.5) as holistic:
-  while cap.isOpened():
-    success, image = cap.read()
-    if not success:
-      print("Ignoring empty camera frame.")
-      # If loading a video, use 'break' instead of 'continue'.
-      continue
+device = 0 # cameera device number
 
-    # Flip the image horizontally for a later selfie-view display, and convert
-    # the BGR image to RGB.
-    image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
-    # To improve performance, optionally mark the image as not writeable to
-    # pass by reference.
-    image.flags.writeable = False
-    results = holistic.process(image)
+def getFrameNumber(start:float, fps:int):
+    now = time.perf_counter() - start
+    frame_now = int(now * 1000 / fps)
 
-    # Draw landmark annotation on the image.
-    image.flags.writeable = True
-    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-    mp_drawing.draw_landmarks(
-        image, results.face_landmarks, mp_holistic.FACE_CONNECTIONS)
-    mp_drawing.draw_landmarks(
-        image, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
-    mp_drawing.draw_landmarks(
-        image, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
-    mp_drawing.draw_landmarks(
-        image, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS)
-    cv2.imshow('MediaPipe Holistic', image)
-    if cv2.waitKey(5) & 0xFF == 27:
-      break
-cap.release()
+    return frame_now
+
+def main():
+    # For webcam input:
+    global device
+
+    cap = cv2.VideoCapture(device)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    wt  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    ht  = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+    print("Size:", ht, "x", wt, "/Fps: ", fps)
+
+    start = time.perf_counter()
+    frame_prv = -1
+    with mp_holistic.Holistic(
+        min_detection_confidence=0.5,
+        min_tracking_confidence=0.5) as holistic:
+        while cap.isOpened():
+            frame_now=getFrameNumber(start, fps)
+            if frame_now == frame_prv:
+                continue
+            frame_prv = frame_now
+
+            ret, frame = cap.read()
+            if not ret:
+                print("Ignoring empty camera frame.")
+                # If loading a video, use 'break' instead of 'continue'.
+                continue
+
+            # Flip the image horizontally for a later selfie-view display, and convert
+            # the BGR image to RGB.
+            frame = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)
+            # To improve performance, optionally mark the image as not writeable to
+            # pass by reference.
+            frame.flags.writeable = False
+            results = holistic.process(frame)
+
+            # Draw landmark annotation on the image.
+            frame.flags.writeable = True
+            frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+            mp_drawing.draw_landmarks(frame, results.face_landmarks, mp_holistic.FACE_CONNECTIONS)
+            mp_drawing.draw_landmarks(frame, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
+            mp_drawing.draw_landmarks(frame, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
+            mp_drawing.draw_landmarks(frame, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS)
+            cv2.imshow('MediaPipe Holistic', frame)
+            if cv2.waitKey(5) & 0xFF == 27:
+                break
+    cap.release()
+
+if __name__ == '__main__':
+    main()
 ```
-  - Execute "myholistic.py" by clicking the execution button.<br>
+  - Run the sample code with input the following command in the terminal.
+```
+    C:\\...\code> python myholistic.py
+``` 
   <image src="../image/holistic.png" width="30%" height="30%"><br>
   - If you want to stop this program, press "Esc" key while the preview window is active.
 
