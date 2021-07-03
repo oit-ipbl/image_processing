@@ -32,6 +32,25 @@ def getFrameNumber(start:float, fps:int):
 
     return frame_now
 
+def drawFace(image, landmarks):
+    image_width, image_height = image.shape[1], image.shape[0]
+    landmark_point = []
+
+    for index, landmark in enumerate(landmarks.landmark):
+        if landmark.visibility < 0 or landmark.presence < 0:
+            continue
+        
+        # Convert the obtained landmark values x and y to the coordinates on the image
+        landmark_x = min(int(landmark.x * image_width), image_width - 1)
+        landmark_y = min(int(landmark.y * image_height), image_height - 1)
+        landmark_z = landmark.z
+
+        landmark_point.append([landmark_x, landmark_y, landmark_z])
+
+    if len(landmark_point) != 0:
+        for i in range(0, len(landmark_point)):
+            cv2.circle(image, (int(landmark_point[i][0]),int(landmark_point[i][1])), 1, (0, 255, 0), 1)
+
 def main():
     # For webcam input:
     global device
@@ -47,7 +66,7 @@ def main():
     frame_prv = -1
 
     drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
-
+    cap = cv2.VideoCapture(0)
     with mp_face_mesh.FaceMesh(
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5) as face_mesh:
@@ -76,32 +95,11 @@ def main():
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
             if results.multi_face_landmarks:
                 for face_landmarks in results.multi_face_landmarks:
-                    #mp_drawing.draw_landmarks(image, face_landmarks, mp_face_mesh.FACE_CONNECTIONS)
-                    my_draw_face(frame, face_landmarks)
+                    drawFace(frame, face_landmarks)
             cv2.imshow('MediaPipe FaceMesh', frame)
             if cv2.waitKey(5) & 0xFF == 27:
                 break
         cap.release()
-
-def my_draw_face(image, landmarks):
-    image_width, image_height = image.shape[1], image.shape[0]
-    landmark_point = []
-
-    for index, landmark in enumerate(landmarks.landmark):
-        if landmark.visibility < 0 or landmark.presence < 0:
-            continue
-        
-        # Convert the obtained landmark values x and y to the coordinates on the image
-        landmark_x = min(int(landmark.x * image_width), image_width - 1)
-        landmark_y = min(int(landmark.y * image_height), image_height - 1)
-        landmark_z = landmark.z
-
-        landmark_point.append([landmark_x, landmark_y, landmark_z])
-
-    if len(landmark_point) != 0:
-        for i in range(0, len(landmark_point)):
-            cv2.circle(image, (int(landmark_point[i][0]),int(landmark_point[i][1])), 1, (0, 255, 0), 1)
-
 
 if __name__ == '__main__':
     main()
@@ -133,30 +131,6 @@ It's OK, you can finish the Exercise[Face1].
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
 It's OK, you can finish the Exercise[Face2].
-
-## Exercise[Face3]
- - Display the direction randomly, and count up and display if the user points in the same direction.<br>
- <image src="../image/ques.gif" width="30%" height="30%"><br>
- - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
-````python
-    import random
-    random.randint(0, 5)
-````
- - You can randomly select and display the elements of the array with the following code.
-````python
-   msg_array = ("msg1", "msg2", "msg3")
-   select = msg_array[random.randint(0, len(msg_array)-1)]
-   print(select)
-````
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Face3].
-   
-## Challenge[Face1]
- - Display "smile" when smile. 
- - The position of facial parts is the basic information for classifying facial expressions.
- - Think so that you can judge correctly even if you tilt your face.<br>
-<image src="../image/smile.gif" width="30%" height="30%"><br>
-
 
 ---
 
