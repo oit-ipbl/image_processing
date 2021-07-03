@@ -249,7 +249,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-
+--
 ### face detection propaties
 - It's a face detection program using Haar Cascade.
     - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
@@ -341,3 +341,7 @@ if __name__ == '__main__':
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of face/facial landmarks detection)
 - It's OK, you can run the program of face/facial landmarks detection.
+
+---
+[README](../README.md)
+
