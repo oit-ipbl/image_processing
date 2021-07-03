@@ -219,4 +219,4 @@ if __name__ == '__main__':
 ## Sample of face/facial landmark detection 
 
 ### preparation
-- Download the [`haarcascade_frontalface_default.xml`]({{file name='https://github.com/opencv/opencv/blob/821fae0d94a06105402b38c482cc84efbdd27b7b/data/haarcascades/haarcascade_frontalface_default.xml'}}) from OpenCV github page.
+- Download the [`haarcascade_frontalface_default.xml`] <a href='https://github.com/opencv/opencv/blob/821fae0d94a06105402b38c482cc84efbdd27b7b/data/haarcascades/haarcascade_frontalface_default.xml'>dl</a> from OpenCV github page.
