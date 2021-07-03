@@ -81,19 +81,28 @@ if __name__ == '__main__':
 ### Practice
 - If there is a camera on your device, including the built-in, the number of your camera device is 0.
 - You can check which device number that the camera is connected is with running the following program (camera_detect.py).
-```python
-import cv2
+    ```python
+    import cv2
 
-for i in range(0, 10): 
-    cap = cv2.VideoCapture(i)
-    if cap.isOpened(): 
-        print("VideoCapture(", i, ") : Found")
-    else:
-        print("VideoCapture(", i, ") : None")
-cap.release() 
-```
+    for i in range(0, 10): 
+        cap = cv2.VideoCapture(i)
+        if cap.isOpened(): 
+            print("VideoCapture(", i, ") : Found")
+        else:
+            print("VideoCapture(", i, ") : None")
+    cap.release() 
+    ```
+    - It can be ignored if a warning message like the following will appear.
+     ```
+     [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+     ```
+    - It costs a few minutes to be run the program depending on the environment of your device.
 - Set a value of the global variable `device` to adapt your PC environment.
 - Run the sample code.
+    - It can be ignored if a warning message like the following will appear.
+     ```
+     [ WARN:0] global C:\Users\appveyor\AppData\Local\Temp\1\pip-req-build-sxpsnzt6\opencv\modules\videoio\src\cap_msmf.cpp (435) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+     ```
 - Check the video window is came up, and the program is terminated with the `Esc` key press.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
@@ -163,7 +172,7 @@ if __name__ == '__main__':
   if cv2.waitKey(int(1000/fps)) & 0xFF == 27:
   ```
 
-### Exercise (Selfie.py)
+### Exercise (selfie.py)
 - Try to make "Let's selfie program"(selfie.py) by editing the [video_viewer1.py](#video_viewer1py) or the [video_viewer2.py](#video_viewer2py).
 - Save the video frame to the still image file at that time when the user presses the "s" key.
     | Key | Details | 
@@ -192,4 +201,8 @@ if __name__ == '__main__':
     :--- | :---
     | ord('a caracter') | It's changed a character in the argument to the number of Unicode. |
 
-- If your program is correct, you will be able to find a jpeg file named "selfie.jpg" in the current folder when you press the "s" key.  
+- If your program is correct, you will be able to find a jpeg file named "selfie.jpg" in the current folder when you press the "s" key.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+- It's OK, if you can confirm that the selfie.jpg was saved correctly.
+
