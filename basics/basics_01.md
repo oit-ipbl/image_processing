@@ -4,8 +4,8 @@
 - This page explains basics of digital images and image processing with Python3.
 
 ## prerequisite
-- "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already be installed.
-- The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `img` and read from there.
+- "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already been installed.
+- The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `imgs` and read from there.
 
 ## Basics of digital images
 ### Color (Additive color) 
@@ -28,7 +28,7 @@
 
 ## Image processing with Python3
 ### Directory structure for Image processing
-- Make a directory `img` in the directory `code`, and then save the image "[lena.jpg](../image/lena.jpg)" in the directory `img` as follows.
+- The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `imgs` and read from there.
 - Directory stucture
   ```
   +[code]                   <== work directory ("C:/oit/py21/code")
@@ -37,14 +37,15 @@
   | |-- testModule.py       <== this program already exists.
   | |-- testWebcam.py       <== this program already exists.
   |
-  |-+[img]                  <== make this directory.
-  | |--lena.jpg             <== save the image "lena.jpg" at this place. ("C:/oit/py21/code/img/lena.jpg")
+  |-+[imgs]                 <== this directory already exists.
+  | |--lena.jpg             <== this image already exists. ("C:/oit/py21/code/imgs/lena.jpg")
   | |--xxx.jpg
   | |--xxx.png
   | |--
   |
   |--hands.py               <== this program already exists. ("C:/oit/py21/code/hands.py")
   |--python programs(.py)   <== save new python programs at this place.
+  |--
   ```
 
 ### Basics of Python3 program
@@ -87,7 +88,7 @@
   sum is between 30 and 50
   ```
 
-### Cardinal modules in image processing
+### Important modules in image processing
 #### numpy (short name: np)
 - more information: [numpy docs](https://numpy.org/doc/stable/)
 - This module is the fundamental package for scientific computing.
@@ -134,14 +135,12 @@
 - It has many functions for image processing.
 
 #### Practice[cv2]
-- Save the image "[lena.jpg](../image/lena.jpg)" in the directory `img`. (`C:/oit/py21/code/img/lena.jpg`)
-  - If you have never saved the image "lena.jpg" in the directory `img`.
 - Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_cv2.py`)
 - Sample code
   ```python
   # sample_cv2.py
   import cv2
-  img = cv2.imread('./img/lena.jpg') # read image file
+  img = cv2.imread('./imgs/lena.jpg') # read image file
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -169,14 +168,12 @@
   |displaying axis at showing image|default:off|default:on|
 
 #### Practice[plt]
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. (`C:/oit/py21/code/img/lena.jpg`)
-  - If you have never saved the image "lena.jpg" in the directory `img`.
 - Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_plt.py`)
 - Sample code
   ```python
   # sample_plt.py
   import matplotlib.pyplot as plt
-  img = plt.imread('./img/lena.jpg')
+  img = plt.imread('./imgs/lena.jpg')
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -192,9 +189,8 @@
 - It's O.K., if you can finish the Practice[basic], [np], [cv2] and [plt].
 
 ### Script/Function in Python3 and image IO
-- All of the Python programs introduced above is a sequential program called scripts.
 - Making a Python script a function improves reusability.
-  - Functions can be call by other python programs.
+  - Functions can be called by other python programs.
 
 #### Python Script
   ```python
@@ -202,7 +198,7 @@
   import cv2
 
   # read image file
-  img = cv2.imread('./img/lena.jpg')
+  img = cv2.imread('./imgs/lena.jpg')
 
   # some image processing ==============
   img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -214,7 +210,7 @@
   # ====================================
 
   # write image file
-  cv2.imwrite('res_scrpt.png', img)
+  cv2.imwrite('./imgs/res_scrpt.png', img)
 
   # show image file
   cv2.imshow('window name', img)
@@ -245,8 +241,8 @@
       return img
 
   def main():
-      in_name = './img/lena.jpg' # local
-      out_name = './img/res_func1.png' # local
+      in_name = './imgs/lena.jpg' # local
+      out_name = './imgs/res_func1.png' # local
       img = imageIO(in_name, out_name)
       # show image file
       cv2.imshow('window name', img)
@@ -260,10 +256,8 @@
   ```
 #### Practice[script/function 1]
 - Save the above two sample codes (`sample_imgIO.py`, `sample_imgIO_func.py`) as a python file. (`C:/oit/py21/code/sample_imgIO.py`) (`C:/oit/py21/code/sample_imgIO_func.py`)
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. (`C:/oit/py21/code/img/lena.jpg`)
-  - If you have never saved the image "lena.jpg" in the directory `img`.
 - Execute the two python codes, respectively.
-- It's O.K., if the two result images (`res_scrpt.png`, `res_func1.png`) are the same.
+- It's O.K., if the two result images (`res_scrpt.png`, `res_func1.png`) in the directory `imgs` are the same.
 
 #### Practice[script/function 2]
 - Let's use the function `imageIO` in `sample_imgIO_func.py` on Other python programs!
@@ -273,13 +267,13 @@
   # sample_other.py
   import sample_imgIO_func as myImgIO
 
-  myImgIO.imageIO('./img/lena.jpg', './img/res_func2.png')
+  myImgIO.imageIO('./imgs/lena.jpg', './imgs/res_func2.png')
   ```
-- It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) are the same.
+- It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) in the directory `imgs` are the same.
 
 #### Difference of cv2 and plt
-- There are differences between `cv2` and `plt`. 
-- `plt` has many differences from `cv2`. The following table shows the main examples in image IO. (*Repost*)
+- Let's confirm differences between `cv2` and `plt`!
+- (*Repost*) `plt` has many differences from `cv2`. The following table shows the main examples in image IO.
   ||cv2|plt|
   |----|----|----|
   |color space (order of color channels)|BGR|RGB|
@@ -289,8 +283,6 @@
   |displaying axis at showing image|default:off|default:on|
 
 #### Practice[cv2 vs plt]
-- Save the image "[lena.jpg](../image/lena.jpg)" in the same directory. (`C:/oit/py21/code/img/lena.jpg`)
-  - If you have never saved the image "lena.jpg" in the directory `img`.
 - Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_cv2_plt.py`)
 - Sample code
   ```python
@@ -330,7 +322,7 @@
       cv2.destroyAllWindows()
 
   if __name__ == '__main__':
-      imageIOdemo('./img/lena.jpg', './img/res_bgr.png', './img/res_rgb.png')
+      imageIOdemo('./imgs/lena.jpg', './imgs/res_bgr.png', './imgs/res_rgb.png')
   ```
 - Please confirm difference between cv2 and plt.
 
@@ -353,6 +345,12 @@
   - Resize the long side to the specified length
     - This program can resize Images of various sizes to approximately the same data size while maintaining the aspect ratio.
     ```python
+    # ###########################################
+    # res = resizeImg(src, length)
+    # src: input image
+    # length[int]: length of long side after resizing
+    # res: resized image
+    # ###########################################
     def resizeImg(img, length):
         h, w = img.shape[:2]
 
@@ -370,7 +368,7 @@
     ```
 
 #### Exercise[resizing]
-- modify the function `imageIO` in `sample_imgIO_func.py` of`Practice[script/function 1]` to be able to save the half size image.
+- modify the function `imageIO` in `sample_imgIO_func.py` of`Practice[script/function 1]` to be able to save the half size (256x256) image by using above three resizing methods, respectively.
 - It's O.K., if size of the result image `res_func1.png` is 256x256 as follows.<br>
   <image src="../image/lena_512.png" height=40% width=40%><image src="../image/lena_256.png" height=39% width=39%>
 
