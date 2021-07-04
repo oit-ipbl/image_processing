@@ -290,8 +290,8 @@ if __name__ == '__main__':
     | argument | comment |
     :--- | :---
     | img | The image to draw the rectangle. |
-    | (fx, fy) | The x and y coordinates of the upper-left corner for the rectangle. |
-    | (fx+fw, fy+fh) | The x and y coordinates of the lower-right corner for the rectangle. |
+    | (fx, fy) | The x and y coordinates of the upper-left corner of the rectangle. |
+    | (fx+fw, fy+fh) | The x and y coordinates of the lower-right corner of the rectangle. |
     | \[0,0,255\] | The line color of the rectangle. It's represented by the values of BGR color components. |
     | 1 | The line width of the rectangle. The rectangle is filled in with the color if its value sets -1. |
 
@@ -351,28 +351,29 @@ if __name__ == '__main__':
         ```python
         _, list = landmarks
         ```
-    - You can check the landmarks on each face like the following.
+    - It's defined that 68 facial landmarks are mapped on the face like [here](https://www.researchgate.net/figure/The-68-specific-human-face-landmarks_fig4_331769278).
+    - You can extract all landmarks on each face like the following.
         ```python
         for x, y in list[i][0]:
         ```
-    - You can refer to the specific landmark like the following. It's an example to extract the No.10.
+    - You can extract the specific landmark like the following. It's an example to extract the No.10.
         ```python
         x, y = list[i][0][10]
         ```
         
 ### Tips on OpenCV
     
-- The following line is to draw the rectangle on the image.
+- The following line is to draw the circle on the image.
     ```python
-    cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+    cv2.circle(img, (x, y), 5,(255,255, 0), -1)
     ```
     | argument | comment |
     :--- | :---
-    | img | The image to draw the rectangle. |
-    | (fx, fy) | The x and y coordinates of the upper-left corner for the rectangle. |
-    | (fx+fw, fy+fh) | The x and y coordinates of the lower-right corner for the rectangle. |
-    | \[0,0,255\] | The line color of the rectangle. It's represented by the values of BGR color components. |
-    | 1 | The line width of the rectangle. The rectangle is filled in with the color if its value sets -1. |
+    | img | The image to draw the circle. |
+    | (x, f) | The x and y coordinates of the center of the circle. |
+    | 5 | The radius of the circle. |
+    | (255, 255, 0) | The line color of the circle. It's represented by the values of BGR color components. |
+    | -1 | The line width of the circle. The circle is filled in with the color if its value sets -1. |
 
 ### Practice
 - You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
