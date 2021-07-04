@@ -57,6 +57,15 @@
 
 #### Practice[basic]
 - Save the following sample code as a python file and execute it. (`C:/oit/py21/code/sample_basic.py`)
+  - How to make new python files with VSCode
+    - Confirm that the selected directory is the directory where you want to make a new python file.<br>
+      <image src="../image/new_python_file_1.png" height=40% width=40%>
+    - Click `New File` icon.<br>
+      <image src="../image/new_python_file_2.png" height=40% width=40%>
+    - Enter the name of the new file, including the extension (.py). Then the new python file is made.<br>
+      <image src="../image/new_python_file_3.png" height=40% width=40%><image src="../image/new_python_file_4.png" height=50% width=50%>
+  - The case that you make a new python file in another directory<br>
+    <image src="../image/new_python_file_5.png" height=40% width=40%><image src="../image/new_python_file_6.png" height=35% width=35%>
 - Sample code
   ```python
   # sample_basic.py
