@@ -470,7 +470,7 @@ if __name__ == '__main__':
 - Check it can detect the face and facial landmarks on the face in the video-image.
 - The program is terminated with `Esc` key press.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of the face/facial landmarks detection on the video image)
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of the face/facial landmarks detection on the video-image)
 - It's OK, you can run the program of face/facial landmarks detection on the video-image.
 
 ---
