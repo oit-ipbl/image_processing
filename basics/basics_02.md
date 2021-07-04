@@ -219,7 +219,7 @@ if __name__ == '__main__':
 
 ## Appendix: Sample of video-image recorder
 ### Preparation
-- Download [`openh264-1.8.0-win64.dll`](#../data/openh264-180-win64dll), and save it to `code` folder.
+- Download [`openh264-1.8.0-win64.dll`](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EbP0DohYsAtHt9sXCA22EZ8BR1LDrgoMHTeAv_ihERy_Kg?e=HVQlFv), and save it to `code` folder.
     - It's a H264 codec file for Windows.
 
 ### video_recorder.py
