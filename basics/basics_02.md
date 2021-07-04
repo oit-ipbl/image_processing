@@ -385,7 +385,7 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of face/facial landmarks detection)
 - It's OK, you can run the program of face/facial landmarks detection.
 
-## Sample of the face/facial landmarks detection on the video image
+## Sample of the face/facial landmarks detection on the video-image
 
 ### cvfacemark_video.py
 
@@ -451,7 +451,27 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-- This program is combined [video_viewer2.py](#video_viewer2py) with [cvfacemark_detection.py](#cvfacemark_detectionpy).
+- This program is combined [`video_viewer2.py`](#video_viewer2py) with [`cvfacemark_detection.py`](#cvfacemark_detectionpy).
+- This program is changed to be able to detect only one person in the video. You can check it in the following.
+    - face detection
+        ```python
+        if len(faces)>0:
+            face = faces[0]
+            fx, fy, fw, fh = face
+        ```
+    - facial landmarks detection
+        ```python
+        for x, y in list[0][0]:
+        ``` 
+- Sometimes, the results of the detections not good because the face detection time with haar cascade would be longer than the FPS.
+
+### Practice
+- You should be copy [`cvfacemark_video.py`](#cvfacemark_videopy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_video.py` in the `code` folder.
+- Check it can detect the face and facial landmarks on the face in the video-image.
+- The program is terminated with `Esc` key press.
+
+### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of the face/facial landmarks detection on the video image)
+- It's OK, you can run the program of face/facial landmarks detection on the video-image.
 
 ---
 [README](../README.md)
