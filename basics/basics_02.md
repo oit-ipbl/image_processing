@@ -185,7 +185,7 @@ if __name__ == '__main__':
 
 ### Exercise (selfie.py)
 - Try to make "Let's selfie program" (`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
-- Save the video frame to the still image file at that time when the user presses the `s` key.
+- Save the video frame to the still image file at that time when the user presses `s` key.
     | Key | Details | 
     :---: | :---
     | Esc | The program is terminated. |
@@ -212,13 +212,82 @@ if __name__ == '__main__':
     :--- | :---
     | ord('a caracter') | It's changed a character in the argument to the number of Unicode. |
 
-- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `imgs` folder when you press the `s` key.
+- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `imgs` folder when you press `s` key.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 
+## Appendix: Sample of video-image recorder
+### Preparation
+- Download [`openh264-1.8.0-win64.dll`](), and save it to `code` folder.
+    - It's a H264 codec file for Windows.
+
+### video_recorder.py
+```python
+# Sample of video-image recorder
+# -*- coding: utf-8 -*-
+import cv2
+
+device = 0 # camera device number
+video_name = "record.avi"
+
+# main----------------------------------------------------
+def main():
+    global device, video_name
+    recflag = False
+
+    cap = cv2.VideoCapture(device)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    wt  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    ht  = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+    print("Size:", ht, "x", wt, "/Fps: ", fps)
+
+    writer = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*"H264"), fps, (int(wt), int(ht)))
+
+    while cap.isOpened() :
+        ret, frame = cap.read()
+        if recflag:
+            writer.write(frame)
+            cv2.circle(frame, (20, 20), 5, [0,0,255], -1)
 
 
+        key = cv2.waitKey(1)
+        if key == 27:
+            break
+        elif key == ord('r'):
+            recflag = True
+        elif key == ord('q'):
+            recflag = False
+
+        cv2.imshow("video", frame)
+
+    if writer.isOpened():
+        writer.release()
+    cv2.destroyAllWindows()
+    cap.release()
+
+# run-----------------------------------------------------
+if __name__ == '__main__':
+    main()
+```
+- The following line is to open the VideoWriter for preparing the video-image recording.
+    ```python
+    writer = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*"H264"), fps, (int(wt), int(ht)))
+    ```
+    - `cv2.VideoWriter_fourcc(*"H264")` specifies the codec of the recording. You can use the H264 codec if there is a codec file in the code folder.
+    - You can see the arguments and more details of `VideoWriter()` [here](https://docs.opencv.org/3.4/dd/d9e/classcv_1_1VideoWriter.html)
+- It can be started to record the video-image to `video_name` file when the user presses `r` key. And its recording is stopped when the user presses presses `q` key. It's implemented with the value in `recflag` flag.
+- The following line is to write the frame on the file.
+    ```python
+    writer.write(frame)
+    ```
+- The following line is to close the writer before it's finished the program. 
+    ```python
+    writer.release()
+    ```
+- You can find `video_name` in the `code` folder. 
+    
 ## Sample of face/facial landmarks detection 
 
 ### Preparation
@@ -229,6 +298,7 @@ if __name__ == '__main__':
 
 ### cvface_detection.py
 ```python
+# Sample of face detection 
 # -*- coding: utf-8 -*-
 import cv2
 
@@ -305,6 +375,7 @@ if __name__ == '__main__':
 
 ### cvfacemark_detection.py
 ```python
+# Sample of facial landmarks detection 
 # -*- coding: utf-8 -*-
 import cv2
 
