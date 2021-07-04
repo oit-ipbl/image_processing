@@ -255,7 +255,7 @@ if __name__ == '__main__':
 ### face detection propaties
 - It's a face detection program using Haar Cascade.
     - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
-    - The following line is to prepare the face detection by reading a trained dataset file.
+    - The following line is to prepare the face detection by reading a trained dataset `haarcascade_frontalface_default.xml`.
         ```python
         cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
         ```
@@ -338,26 +338,28 @@ if __name__ == '__main__':
 ### facial landmarks detection propaties
 - It's a facial landmarks detection program using LBF(Local binary fitting).
     - You can see the theory of LBF [here](https://github.com/kurnianggoro). 
-    - The following line is to prepare to use the LBF model, and to read a trained dataset file.
+    - The following line is to prepare to use the LBF model, and to read a trained dataset `lbfmodel.yaml`.
         ```python
         lbf = cv2.face.createFacemarkLBF()
         lbf.loadModel("lbfmodel.yaml")
         ```
-    - The following line is to detect the faces in the image which is set in the argument.
+    - The following line is to detect the facial landmarks around the face area in the image, which are set in the argument.
         ```python
         landmarks = lbf.fit(imgs, faces)
+        ```
+    - The following line is to extract the coordinates of the landmarks on each face as the list.
+        ```python
         _, list = landmarks
         ```
-    - The return value of `cascade.detectMultiScale(img)` is an array which is listed the detected faces.
-    - The element in `faces` array is the list of the area for each detected face.
-    - The values of each element in `faces` array are consist of the x and y coordinates of upper-left, the width and height, for the area of the detected face. <br>
-         ```
-         face[i] = [x, y, width, height]
-         faces = [face[0], face[1], face[2], ...]
-         ```
-    
-    - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
-
+    - You can check the landmarks on each face like the following.
+        ```python
+        for x, y in list[i][0]:
+        ```
+    - You can refer to the specific landmark like the following. It's an example to extract the No.10.
+        ```python
+        x, y = list[i][0][10]
+        ```
+        
 ### Tips on OpenCV
     
 - The following line is to draw the rectangle on the image.
