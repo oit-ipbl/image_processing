@@ -39,7 +39,7 @@
   |
   |-+[imgs]                 <== this directory already exists.
   | |--lena.jpg             <== this image already exists. ("C:/oit/py21/code/imgs/lena.jpg")
-  | |--xxx.jpg
+  | |--xxx.jpg              <== save new image files at this place.
   | |--xxx.png
   | |--
   |
