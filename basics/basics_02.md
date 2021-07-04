@@ -1,8 +1,9 @@
 # Image processing basics (2)
 
 ## Objectives
-- You can learn how to process the video image in Python 3 with your camera device.
-- You can learn how to detect the face/facial landmarks with OpenCV.
+- This page explains how to process the video image in Python 3 with your camera device.
+- This page explains how to detect the face/facial landmarks with OpenCV.
+- This page explains how to process the face/facial landmarks detection on the video image.
 
 ## Prerequisite
 - Open the VS Code by the running the `vscode.bat`. Confirm that the current directory shown in the terminal window is `code`.
@@ -383,6 +384,74 @@ if __name__ == '__main__':
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of face/facial landmarks detection)
 - It's OK, you can run the program of face/facial landmarks detection.
+
+## Sample of the face/facial landmarks detection on the video image
+
+### cvfacemark_video.py
+
+```python
+# -*- coding: utf-8 -*-
+import cv2
+import time
+
+device = 0 # camera device number
+
+# added function -----------------------------------------
+def getFrameNumber(start:float, fps:int):
+    now = time.perf_counter() - start
+    frame_now = int(now * 1000 / fps)
+
+    return frame_now
+
+# main--------------------------------------------------------------------------------------
+def main():  
+    global device
+
+    cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
+    lbf = cv2.face.createFacemarkLBF()
+    lbf.loadModel("lbfmodel.yaml")
+
+    cap = cv2.VideoCapture(device)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    wt  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+    ht  = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+    print("Size:", ht, "x", wt, "/Fps: ", fps)
+
+    start = time.perf_counter()
+    frame_prv = -1
+    while cap.isOpened() :
+        frame_now=getFrameNumber(start, fps)
+        if frame_now == frame_prv:
+            continue
+        frame_prv = frame_now
+
+        ret, frame = cap.read()
+
+        faces = cascade.detectMultiScale(frame)
+    
+        if len(faces)>0:
+            face = faces[0]
+            fx, fy, fw, fh = face
+            cv2.rectangle(frame, (fx, fy), (fx+fw, fy+fh), [0,0,255], 0)
+            landmarks = lbf.fit(frame, faces)
+            _, list = landmarks
+
+            for x, y in list[0][0]:
+                cv2.circle(frame, (x, y), 2,(0,255, 0), -1)
+
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
+        cv2.imshow("video", frame)
+
+    cv2.destroyAllWindows()
+    cap.release()
+
+# run---------------------------------------------------------------------------------------
+if __name__ == '__main__':
+    main()
+```
+- This program is combined [video_viewer2.py](#video_viewer2py) with [cvfacemark_detection.py](#cvfacemark_detectionpy).
 
 ---
 [README](../README.md)
