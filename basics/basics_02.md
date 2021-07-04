@@ -6,7 +6,7 @@
 
 ## Prerequisite
 - Open the VS Code by the running the `vscode.bat`. Confirm that the current directory shown in the terminal window is `code`.
-- The python program (.py) has to be made in the `code` folder. And all image files are saved (downloaded) in the `img` folder and read from there. 
+- The python program (.py) has to be made in the `code` folder. And all image files are saved (downloaded) in the `imgs` folder and read from there. 
 - You can run a python program with the input of the following command in the terminal.
     ```
     C:\\...\code> python XXX.py
@@ -197,7 +197,7 @@ if __name__ == '__main__':
       break
   elif key & 0xFF == ord('s'):
       cv2.imshow("video", frame)
-      cv2.imwrite("./img/selfie.jpg", frame)
+      cv2.imwrite("./imgs/selfie.jpg", frame)
   ```
   - The following function in the hint code in order to write a still image. 
 
@@ -211,7 +211,7 @@ if __name__ == '__main__':
     :--- | :---
     | ord('a caracter') | It's changed a character in the argument to the number of Unicode. |
 
-- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `img` folder when you press the `s` key.
+- If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `imgs` folder when you press the `s` key.
 
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
@@ -235,7 +235,7 @@ import cv2
 def main():  
     cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
 
-    img = cv2.imread('./img/lena.jpg')
+    img = cv2.imread('./imgs/lena.jpg')
     faces = cascade.detectMultiScale(img)
 
     for i, face in enumerate(faces):
@@ -319,7 +319,7 @@ def main():
     for i,face in enumerate(faces):
         fx, fy, fw, fh = face
         cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
-        landmarks = lbf.fit(img, faces)
+        landmarks = lbf.fit(imgs, faces)
         _, list = landmarks
 
         for x, y in list[i][0]:
@@ -334,6 +334,43 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+### facial landmarks detection propaties
+- It's a facial landmarks detection program using LBF(Local binary fitting).
+    - You can see the theory of LBF [here](https://github.com/kurnianggoro). 
+    - The following line is to prepare to use the LBF model, and to read a trained dataset file.
+        ```python
+        lbf = cv2.face.createFacemarkLBF()
+        lbf.loadModel("lbfmodel.yaml")
+        ```
+    - The following line is to detect the faces in the image which is set in the argument.
+        ```python
+        landmarks = lbf.fit(imgs, faces)
+        _, list = landmarks
+        ```
+    - The return value of `cascade.detectMultiScale(img)` is an array which is listed the detected faces.
+    - The element in `faces` array is the list of the area for each detected face.
+    - The values of each element in `faces` array are consist of the x and y coordinates of upper-left, the width and height, for the area of the detected face. <br>
+         ```
+         face[i] = [x, y, width, height]
+         faces = [face[0], face[1], face[2], ...]
+         ```
+    
+    - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
+
+### Tips on OpenCV
+    
+- The following line is to draw the rectangle on the image.
+    ```python
+    cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
+    ```
+    | argument | comment |
+    :--- | :---
+    | img | The image to draw the rectangle. |
+    | (fx, fy) | The x and y coordinates of the upper-left corner for the rectangle. |
+    | (fx+fw, fy+fh) | The x and y coordinates of the lower-right corner for the rectangle. |
+    | \[0,0,255\] | The line color of the rectangle. It's represented by the values of BGR color components. |
+    | 1 | The line width of the rectangle. The rectangle is filled in with the color if its value sets -1. |
 
 ### Practice
 - You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
