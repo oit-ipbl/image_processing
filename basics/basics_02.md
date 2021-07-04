@@ -294,7 +294,7 @@ if __name__ == '__main__':
 - Download [trainedfile.zip](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EQzYzqnBcFdGvyDWooZESeIBGTP8bVaCJNiOQvCnTBGuKg?e=bmXtHn) and unzip the ZIP files. 
 - `haarcascade_frontalface_default.xml` should be saved to `code` folder.
     - It's a trained dataset file that is provieded by [OpenCV](https://github.com/opencv) to detect the faces with the Haarcascade.
-- `lbfmodel.ymal` should be saved it to `code` folder.
+- `lbfmodel.ymal` should be saved to `code` folder.
     - It's a trained dateset file that is provieded by [kurnianggoro](https://github.com/kurnianggoro) to detect the facial landmarks with the LBF(Local binary fitting) model.
 
 ### cvface_detection.py
