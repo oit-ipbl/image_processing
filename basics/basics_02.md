@@ -49,11 +49,11 @@ if __name__ == '__main__':
 
 ### Video propaties
 - A value of grobal variable `device` is the device number of the camera starting from 0. 
-  - It can be read the movie file when a value of the global variable `device` is set to a movie file name, like the following.
+  - It can be read the movie file when a value of the global variable `device` is set a movie file name, like the following.
   ```python
   device = "moviefile.mp3"
   ```
-- The following codes in `video_viewer1.py` are in order to Open the video stream and get the propaties of the video image. 
+- The following codes in `video_viewer1.py` are in order to open the video stream and get the propaties of the video-image. 
     | code | comment |
     :--- | :---
     | cv2.VideoCapture(device) | Open the video stream | 
@@ -62,12 +62,12 @@ if __name__ == '__main__':
     | cv2.CAP_PROP_FRAME_HEIGHT | Frame height | 
 
 ### Read a frame from video stream
-- The following function in `video_viewer1.py` are in order to read a frame form video steram.
+- The following function in `video_viewer1.py` is in order to read a frame form video steram.
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
     - The read function is called by every loop in `video_viewer1.py`, independent of the FPS. 
-    - The looping time is costed the sum of the processing time with the `read()` and any other functions in the while block and the sleep time with the `waitKey()` function(1m sec).   
+    - The looping time is costed the sum of the processing time with the `cap.read()` and any other functions in the while block and the sleep time with the `cv2.waitKey()` function(1m sec).   
         ```python
             while cap.isOpened() :
                 ret, frame = cap.read()
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     | movie file | t + 1 |
      
 ### Wait for the user's key input
-- The `waitKey` function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
+- The `cv2.waitKey()` function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
 - It exits the while loop when the user presses the `Esc` key.
 - `Esc` key is coded at 27.
 
@@ -271,18 +271,18 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-- The following line is to open the VideoWriter for preparing the video-image recording.
+- The following line in `video_recorder.py` is to open the VideoWriter for preparing the video-image recording.
     ```python
     writer = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*"H264"), fps, (int(wt), int(ht)))
     ```
     - `cv2.VideoWriter_fourcc(*"H264")` specifies the codec of the recording. You can use the H264 codec if there is a codec file in the code folder.
     - You can see the arguments and more details of `VideoWriter()` [here](https://docs.opencv.org/3.4/dd/d9e/classcv_1_1VideoWriter.html)
 - It can be started to record the video-image to `video_name` file when the user presses `r` key. And its recording is stopped when the user presses presses `q` key. It's implemented with the value in `recflag` flag.
-- The following line is to write the frame on the file.
+- The following line in `video_recorder.py` is to write the frame on the file.
     ```python
     writer.write(frame)
     ```
-- The following line is to close the writer before it's finished the program. 
+- The following line in `video_recorder.py` is to close the writer before it's finished the program. 
     ```python
     writer.release()
     ```
@@ -346,7 +346,7 @@ if __name__ == '__main__':
     - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
 
 ### Tips on OpenCV
-- The following line can extract the element (`face`) in order from `faces` array along with the index number (`i`).
+- The following line in `cvface_detection.py` can extract the element (`face`) in order from `faces` array along with the index number (`i`).
     ```python
     for i, face in enumerate(faces):
     ```
@@ -355,7 +355,7 @@ if __name__ == '__main__':
         for face in faces:
         ```
     
-- The following line is to draw the rectangle on the image.
+- The following line in `cvface_detection.py` is to draw the rectangle on the image.
     ```python
     cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
     ```
@@ -411,16 +411,16 @@ if __name__ == '__main__':
 ### facial landmarks detection propaties
 - It's a facial landmarks detection program using LBF(Local binary fitting).
     - You can see the theory of LBF [here](https://github.com/kurnianggoro). 
-    - The following line is to prepare to use the LBF model, and to read a trained dataset `lbfmodel.yaml`.
+    - The following line in `cvfacemark_detection.py` is to prepare to use the LBF model, and to read a trained dataset `lbfmodel.yaml`.
         ```python
         lbf = cv2.face.createFacemarkLBF()
         lbf.loadModel("lbfmodel.yaml")
         ```
-    - The following line is to detect the facial landmarks around the face area in the image, which are set in the argument.
+    - The following line in `cvfacemark_detection.py` is to detect the facial landmarks around the face area in the image, which are set in the argument.
         ```python
         landmarks = lbf.fit(imgs, faces)
         ```
-    - The following line is to extract the coordinates of the landmarks on each face as the list.
+    - The following line in `cvfacemark_detection.py` is to extract the coordinates of the landmarks on each face as the list.
         ```python
         _, list = landmarks
         ```
@@ -436,7 +436,7 @@ if __name__ == '__main__':
         
 ### Tips on OpenCV
     
-- The following line is to draw the circle on the image.
+- The following line in `cvfacemark_detection.py` is to draw the circle on the image.
     ```python
     cv2.circle(img, (x, y), 5,(255,255, 0), -1)
     ```
