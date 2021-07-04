@@ -219,7 +219,7 @@ if __name__ == '__main__':
 
 ## Appendix: Sample of video-image recorder
 ### Preparation
-- Download [`openh264-1.8.0-win64.dll`](), and save it to `code` folder.
+- Download [`openh264-1.8.0-win64.dll`](#../data/openh264-1.8.0-win64.dll), and save it to `code` folder.
     - It's a H264 codec file for Windows.
 
 ### video_recorder.py
@@ -291,10 +291,11 @@ if __name__ == '__main__':
 ## Sample of face/facial landmarks detection 
 
 ### Preparation
-- Download [`haarcascade_frontalface_default.xml`]() which is provied by [OpenCV](https://github.com/opencv), and save it to `code` folder.
-    - It's a trained dataset file to detect the faces with the Haarcascade.
-- Download [`lbfmodel.ymal`]() which is provied by [kurnianggoro](https://github.com/kurnianggoro), and save it to `code` folder.
-    - It's a trained dateset file to detect the facial landmarks with the LBF(Local binary fitting) model.
+- Download [trainedfile.zip](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EQzYzqnBcFdGvyDWooZESeIBGTP8bVaCJNiOQvCnTBGuKg?e=bmXtHn) and unzip the ZIP files. 
+- `haarcascade_frontalface_default.xml` should be saved to `code` folder.
+    - It's a trained dataset file that is provieded by [OpenCV](https://github.com/opencv) to detect the faces with the Haarcascade.
+- `lbfmodel.ymal` should be saved it to `code` folder.
+    - It's a trained dateset file that is provieded by [kurnianggoro](https://github.com/kurnianggoro) to detect the facial landmarks with the LBF(Local binary fitting) model.
 
 ### cvface_detection.py
 ```python
