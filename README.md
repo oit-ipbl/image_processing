@@ -5,4 +5,4 @@
 - [MediaPipe Hands](mediapipe/hands.md)
 - [MediaPipe Pose](mediapipe/pose.md)
 - [MediaPipe Face](mediapipe/face.md)
-- [MediaPipe Holistic](advanced/holistic.md)
+- [Image processing advanced](advanced/holistic.md)
