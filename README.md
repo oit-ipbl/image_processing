@@ -1,7 +1,7 @@
 # Image processing
 - You have to read all documents.
-- You have to do the `practice` tasks and the `exercise` tasks which are in each section.
-- There are the `challenge` tasks in the `Image processing advanced section`. Especially you want to work hard about image processing, please try to resolve those tasks if possible.
+- You have to do `practice` tasks and `exercise` tasks which are in each section.
+- There are `challenge` tasks in `Image processing advanced` section. Especially you want to work hard about image processing, please try to resolve those tasks if possible.
 <br><br>
 - Index
   - [Image processing basics (1)](basics/basics_01.md)
