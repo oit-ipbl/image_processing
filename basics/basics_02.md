@@ -48,8 +48,8 @@ if __name__ == '__main__':
 ```
 
 ### Video propaties
-- A value of grobal variable `device` is the device numbers of the camera starting from 0. 
-  - It can be read the movie file when it's set a value of the global variable `device` to a file name of the movie, like the following.
+- A value of grobal variable `device` is the device number of the camera starting from 0. 
+  - It can be read the movie file when a value of the global variable `device` is set to a movie file name, like the following.
   ```python
   device = "moviefile.mp3"
   ```
