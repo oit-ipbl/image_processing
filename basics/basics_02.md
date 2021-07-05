@@ -271,18 +271,18 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-- The following line in `video_recorder.py` is to open the VideoWriter for preparing the video-image recording.
+- The following line in `video_recorder.py` is in order to open the VideoWriter for preparing the video-image recording.
     ```python
     writer = cv2.VideoWriter(video_name, cv2.VideoWriter_fourcc(*"H264"), fps, (int(wt), int(ht)))
     ```
     - `cv2.VideoWriter_fourcc(*"H264")` specifies the codec of the recording. You can use the H264 codec if there is a codec file in the code folder.
     - You can see the arguments and more details of `VideoWriter()` [here](https://docs.opencv.org/3.4/dd/d9e/classcv_1_1VideoWriter.html)
 - It can be started to record the video-image to `video_name` file when the user presses `r` key. And its recording is stopped when the user presses presses `q` key. It's implemented with the value in `recflag` flag.
-- The following line in `video_recorder.py` is to write the frame on the file.
+- The following line in `video_recorder.py` is in order to write the frame on the file.
     ```python
     writer.write(frame)
     ```
-- The following line in `video_recorder.py` is to close the writer before it's finished the program. 
+- The following line in `video_recorder.py` is in order to close the writer before it's finished the program. 
     ```python
     writer.release()
     ```
@@ -327,11 +327,11 @@ if __name__ == '__main__':
 ### face detection propaties
 - It's a face detection program using Haar Cascade.
     - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
-    - The following line is to prepare the face detection by reading a trained dataset `haarcascade_frontalface_default.xml`.
+    - The following line is in order to prepare the face detection by reading a trained dataset `haarcascade_frontalface_default.xml`.
         ```python
         cascade = cv2.CascadeClassifier("./haarcascade_frontalface_default.xml")
         ```
-    - The following line is to detect the faces in the image which is set in the argument.
+    - The following line is in order to detect the faces in the image which is set in the argument.
         ```python
         faces = cascade.detectMultiScale(img)
         ```
@@ -355,7 +355,7 @@ if __name__ == '__main__':
         for face in faces:
         ```
     
-- The following line in `cvface_detection.py` is to draw the rectangle on the image.
+- The following line in `cvface_detection.py` is order to draw the rectangle on the image.
     ```python
     cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
     ```
@@ -416,11 +416,11 @@ if __name__ == '__main__':
         lbf = cv2.face.createFacemarkLBF()
         lbf.loadModel("lbfmodel.yaml")
         ```
-    - The following line in `cvfacemark_detection.py` is to detect the facial landmarks around the face area in the image, which are set in the argument.
+    - The following line in `cvfacemark_detection.py` is in order to detect the facial landmarks around the face area in the image, which are set in the argument.
         ```python
         landmarks = lbf.fit(imgs, faces)
         ```
-    - The following line in `cvfacemark_detection.py` is to extract the coordinates of the landmarks on each face as the list.
+    - The following line in `cvfacemark_detection.py` is in order to extract the coordinates of the landmarks on each face as the list.
         ```python
         _, list = landmarks
         ```
@@ -436,7 +436,7 @@ if __name__ == '__main__':
         
 ### Tips on OpenCV
     
-- The following line in `cvfacemark_detection.py` is to draw the circle on the image.
+- The following line in `cvfacemark_detection.py` is in order to draw the circle on the image.
     ```python
     cv2.circle(img, (x, y), 5,(255,255, 0), -1)
     ```
