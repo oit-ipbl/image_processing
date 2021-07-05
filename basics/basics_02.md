@@ -185,7 +185,7 @@ if __name__ == '__main__':
 
 ### Exercise (selfie.py)
 - Try to make "Let's selfie program" (`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
-- Save the video frame to the still image file at that time when the user presses `s` key.
+- Save a video frame to a still image file at that time when the user presses `s` key.
     | Key | Details | 
     :---: | :---
     | Esc | The program is terminated. |
