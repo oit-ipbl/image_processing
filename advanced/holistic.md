@@ -39,7 +39,7 @@ This page contains challenges using all the techniques you have learned.
     ```python 
     img[256:512, 256:512] = fimg
     ```
-    !['resulst'](#../imgs/upon_donuts1.png)     
+    !['resulst'](../imgs/upon_donuts1.png)     
 
 ## Challenge[Hands1]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
