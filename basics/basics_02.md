@@ -66,8 +66,8 @@ if __name__ == '__main__':
     | code | comment | 
     :--- | :---
     | cap.read() | 1st return value is a boolean value for whether was able to read a frame <br> 2nd return value is the list of the pixel values in a frame |
-    - The read function is called by every loop in `video_viewer1.py`, independent of the FPS. 
-    - The looping time is costed the sum of the processing time with the `cap.read()` and any other functions in the while block and the sleep time with the `cv2.waitKey()` function(1m sec).   
+    - `cap.read()` function is called by every loop in `video_viewer1.py`, independent of the FPS. 
+    - The looping time is costed the sum of the processing time with `cap.read()` and any other functions in the while block and the sleep time with `cv2.waitKey()` function(1m sec).   
         ```python
             while cap.isOpened() :
                 ret, frame = cap.read()
