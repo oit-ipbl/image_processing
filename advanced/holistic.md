@@ -141,7 +141,7 @@ if __name__ == '__main__':
 
 ## Challenge[Face1]
  - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
- <image src="../image/ques.gif" width="30%" height="30%"><br>
+ <image src="../image/face_app.gif" width="30%" height="30%"><br>
  - Use the following code to randomly generate an integer. In this code, `random.randint(0, 5)` returns a random integer int with `0<=n<=5`.
 ````python
     import random
