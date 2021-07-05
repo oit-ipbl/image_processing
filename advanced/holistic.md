@@ -94,7 +94,7 @@ if __name__ == '__main__':
 ### Challenge task
 - Create the camera viewer that the donuts image is drawn upon each frame.
 - To make this program should be modified [`upon_image2.py`](#Step3).
-- \[Much difficult\] In addition, please try to be resized the donuts image adapted to the one's face, if possible. 
+- <b>\[Much difficult\]</b> In addition, please try to be resized the donuts image adapted to the one's face, if possible. (You can skip it) 
 
 ## Challenge[Hands1]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
