@@ -221,7 +221,7 @@ if __name__ == '__main__':
 ### Preparation
 - Download [`openh264-1.8.0-win64.dll`](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EbP0DohYsAtHt9sXCA22EZ8BR1LDrgoMHTeAv_ihERy_Kg?e=HVQlFv), and save it in `code` folder.
     - It's a H264 codec file for Windows.
-
+<!--
 ### video_recorder.py
 ```python
 # Sample of video-image recorder
@@ -287,7 +287,7 @@ if __name__ == '__main__':
     writer.release()
     ```
 - You can find `video_name` in the `code` folder. 
-    
+-->
 ## Sample of face/facial landmarks detection 
 
 ### Preparation
