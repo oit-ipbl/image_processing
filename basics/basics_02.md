@@ -189,7 +189,7 @@ if __name__ == '__main__':
     | Key | Details | 
     :---: | :---
     | Esc | The program is terminated. |
-    | s | The video frame is saved as the still image. |
+    | s | The video frame is saved as a still image. |
 
 - Here is the hint code.  
   ```python
