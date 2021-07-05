@@ -89,7 +89,7 @@ if __name__ == '__main__':
 
 ### Practice
 - You should be copy [`video_viewer1.py`](#video_viewer1py) with the `clipboard` button and paste it to the VS Code, and save it as  `video_viewer1.py` in the `code` folder.
-- If there is a camera on your device, including the built-in, the number of your camera device is 0.
+- If there is only one camera on your device, including the built-in, the number of your camera device is 0.
 <!-- - You can check which device number that the camera is connected is with running the following program (`camera_detect.py`).
     ```python
     import cv2
