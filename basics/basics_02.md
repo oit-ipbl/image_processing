@@ -7,7 +7,7 @@
 
 ## Prerequisite
 - Open the VS Code by the running the `vscode.bat`. Confirm that the current directory shown in the terminal window is `code`.
-- The python program (.py) has to be made in the `code` folder. And all image files are saved (downloaded) in the `imgs` folder and read from there. 
+- The python program (.py) has to be made in `code` folder. And all image files are saved (downloaded) in `imgs` folder and read from there. 
 - You can run a python program with the input of the following command in the terminal.
     ```
     C:\\...\code> python XXX.py
@@ -200,13 +200,13 @@ if __name__ == '__main__':
       cv2.imshow("video", frame)
       cv2.imwrite("./imgs/selfie.jpg", frame)
   ```
-  - The following function in the hint code in order to write a still image. 
+  - The following function in the hint code is in order to write a still image. 
 
     | code | comment |
     :--- | :---
     | cv2.imwrite("name", variable) | 1st argument is the file name(path) of the image which is saved. <br>2nd argument is the variable of the image. | 
 
-  - The following function in the hint code in order to compare a received key with a key that you want to detect.
+  - The following function in the hint code is in order to compare a received key with a key that you want to detect.
 
     | code | comment |
     :--- | :---
@@ -219,7 +219,7 @@ if __name__ == '__main__':
 
 ## Appendix: Sample of video-image recorder
 ### Preparation
-- Download [`openh264-1.8.0-win64.dll`](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EbP0DohYsAtHt9sXCA22EZ8BR1LDrgoMHTeAv_ihERy_Kg?e=HVQlFv), and save it to `code` folder.
+- Download [`openh264-1.8.0-win64.dll`](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EbP0DohYsAtHt9sXCA22EZ8BR1LDrgoMHTeAv_ihERy_Kg?e=HVQlFv), and save it in `code` folder.
     - It's a H264 codec file for Windows.
 
 ### video_recorder.py
@@ -292,9 +292,9 @@ if __name__ == '__main__':
 
 ### Preparation
 - Download [trainedfile.zip](https://oskit-my.sharepoint.com/:u:/g/personal/yoshiyuki_kamakura_oit_ac_jp/EQzYzqnBcFdGvyDWooZESeIBGTP8bVaCJNiOQvCnTBGuKg?e=bmXtHn) and unzip the ZIP files. 
-- `haarcascade_frontalface_default.xml` should be saved to `code` folder.
+- `haarcascade_frontalface_default.xml` should be saved in `code` folder.
     - It's a trained dataset file that is provieded by [OpenCV](https://github.com/opencv) to detect the faces with the Haarcascade.
-- `lbfmodel.ymal` should be saved to `code` folder.
+- `lbfmodel.ymal` should be saved in `code` folder.
     - It's a trained dateset file that is provieded by [kurnianggoro](https://github.com/kurnianggoro) to detect the facial landmarks with the LBF(Local binary fitting) model.
 
 ### cvface_detection.py
@@ -355,7 +355,7 @@ if __name__ == '__main__':
         for face in faces:
         ```
     
-- The following line in `cvface_detection.py` is order to draw the rectangle on the image.
+- The following line in `cvface_detection.py` is in order to draw the rectangle on the image.
     ```python
     cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
     ```
@@ -411,7 +411,7 @@ if __name__ == '__main__':
 ### facial landmarks detection propaties
 - It's a facial landmarks detection program using LBF(Local binary fitting).
     - You can see the theory of LBF [here](https://github.com/kurnianggoro). 
-    - The following line in `cvfacemark_detection.py` is to prepare to use the LBF model, and to read a trained dataset `lbfmodel.yaml`.
+    - The following line in `cvfacemark_detection.py` is in order to prepare to use the LBF model, and to read a trained dataset `lbfmodel.yaml`.
         ```python
         lbf = cv2.face.createFacemarkLBF()
         lbf.loadModel("lbfmodel.yaml")
