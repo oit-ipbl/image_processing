@@ -282,7 +282,7 @@ if __name__ == '__main__':
     ```python
     writer.write(frame)
     ```
-- The following line in `video_recorder.py` is in order to close the writer before it's finished the program. 
+- The following line in `video_recorder.py` is in order to close the writer before the program is finished. 
     ```python
     writer.release()
     ```
@@ -335,8 +335,8 @@ if __name__ == '__main__':
         ```python
         faces = cascade.detectMultiScale(img)
         ```
-    - The return value of `cascade.detectMultiScale(img)` is an array which is listed the detected faces.
-    - The element in `faces` array is the list of the area for each detected face.
+    - The returned value of `cascade.detectMultiScale(img)` is an array which is listed the detected faces.
+    - `faces` array consists of the elements which have the parameters of each detected face area.
     - The values of each element in `faces` array are consist of the x and y coordinates of upper-left, the width and height, for the area of the detected face. <br>
          ```
          face[i] = [x, y, width, height]
@@ -346,7 +346,7 @@ if __name__ == '__main__':
     - You can see the arguments and more details of `cv2.CascadeClassifier()` and `detectMultiScale()` [here](https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html).
 
 ### Tips on OpenCV
-- The following line in `cvface_detection.py` can extract the element (`face`) in order from `faces` array along with the index number (`i`).
+- The following line in `cvface_detection.py` is to be able to extract the element (`face`) in order from `faces` array along with the index number (`i`).
     ```python
     for i, face in enumerate(faces):
     ```
@@ -524,14 +524,14 @@ if __name__ == '__main__':
     main()
 ```
 - This program is combined [`video_viewer2.py`](#video_viewer2py) with [`cvfacemark_detection.py`](#cvfacemark_detectionpy).
-- This program is changed to be able to detect only one person in the video. You can check it in the following.
-    - face detection
+- This program is changed to be able to detect only one person in the video. You can check that in the following.
+    - face detection for one perspn
         ```python
         if len(faces)>0:
             face = faces[0]
             fx, fy, fw, fh = face
         ```
-    - facial landmarks detection
+    - facial landmarks detection for one perspn
         ```python
         for x, y in list[0][0]:
         ``` 
