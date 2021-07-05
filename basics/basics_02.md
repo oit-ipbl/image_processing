@@ -178,14 +178,14 @@ if __name__ == '__main__':
 ### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of video-image processing adapted the frame rate)
 - It's OK, you confirm only to be able to run the program.
 - Which program, [`video_viewer2.py`](#video_viewer2py) or [`video_viewer1.py`](#video_viewer1py), is better to use is dependent on the situation.
-- There're a more simple way for adapting the frame rate that a value of the argument in `cv2.waitKey()` function in the [`video_viewer1.py`](#video_viewer1py) is replaced to the time until the next frame is provided, like the following.
+- There is a more simple way for adapting the frame rate that a value of the argument in `cv2.waitKey()` function in the [`video_viewer1.py`](#video_viewer1py) is replaced to the time until the next frame is provided, like the following.
   ```python
   if cv2.waitKey(int(1000/fps)) & 0xFF == 27:
   ```
 
 ### Exercise (selfie.py)
 - Try to make "Let's selfie program" (`selfie.py`) by modifying the [`video_viewer1.py`](#video_viewer1py) or the [`video_viewer2.py`](#video_viewer2py).
-- Save a video frame to a still image file at that time when the user presses `s` key.
+- Save a video frame to a still image file at the time when the user presses `s` key.
     | Key | Details | 
     :---: | :---
     | Esc | The program is terminated. |
