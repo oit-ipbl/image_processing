@@ -7,16 +7,16 @@ This page contains challenges using all the techniques you have learned.
 - You have to finish [basic(2)](../basics/basics_02.md).
 - You have to finish [MediaPipe Face](../mediapipe/face.md).
 
-## Challenge[]
+## Challenge[Upon the another image]
 ### Step1
 - Download [`donuts.png`](../image/donuts.png), and save it in `imgs` folder.
-- The following `upon_image.py` is a sample that is drawn another image upon the original image.
+- The following `upon_image1.py` is a sample that is drawn another image upon the original image.
   ```python
   # -*- coding: utf-8 -*-
   import cv2
+  import numpy as np
 
   def main():
-
       img = cv2.imread('./imgs/lena.jpg')
       fimg = cv2.imread('./imgs/donuts.png')
 
@@ -35,12 +35,66 @@ This page contains challenges using all the techniques you have learned.
       main()
   ```
 - You can see the image size of `lena.jpg` as 512 x 512 pixels. And you can see the image size of `donuts.png` as 256 x 256 pixels.
-- In `upon_image.py`, it is considered that `donuts.png` is drawn upon the right-bottom of `lena.jpg`.
+- In `upon_image1.py`, it is considered that `donuts.png` is drawn upon the right-bottom of `lena.jpg`.
 - The size of both images has to be the same when a part of `lena.jpg` substitutes `donuts.png`.
     ```python 
     img[256:512, 256:512] = fimg
     ```
     ![result](../image/upon_donuts1.jpg)
+
+### Step2
+- You can get the 512 x 512 pixels donuts image with a white background when the following line in `upon_image.py` is replaced. 
+  - original code
+    ```python 
+    img = cv2.imread('./imgs/lena.jpg')
+    ```
+  - replaced code
+    ```python 
+    img = np.ones((512, 512, 3), dtype=np.uint8) * 255
+    ```
+- `np.ones((512, 512, 3), dtype=np.uint8)` is in order to make the 512(height) by 512(width) by 3(depth) matrix whose elements are ones. Therefore, to use the upper replaced code can get the white image whose size is 512 x 512 pixels.
+    ![result](../image/upon_donuts2.jpg)
+
+### Step3
+- The following `upon_image2.py` is a sample that is drawn another image upon the original image without the background.
+```python 
+# -*- coding: utf-8 -*-
+import cv2
+import numpy as np
+
+def main():
+    lena  = cv2.imread('./imgs/lena.jpg')
+    dnts  = cv2.imread('./imgs/donuts.png')
+    white = np.ones((lena.shape), dtype=np.uint8) * 255 #make a matrix whose size is the same as lena 
+
+    white[256:512,256:512] = dnts
+
+    print([white!=[255,255,255]])
+
+    lena[white!=[255, 255, 255]] = white[white!=[255, 255, 255]]
+
+    cv2.imshow("mask", lena)
+    cv2.imwrite("upon_donuts1.png", lena)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# run---------------------------------------------------------------------------------------
+if __name__ == '__main__':
+    main()
+```
+- `[white!=[255,255,255]]` is out the boolean value that each pixel value that is the element in the white matrix is whether equals \[255, 255, 255\].
+  - The pixels that make up a part of the donut return "True".
+  - The pixels whose colors are equals white (\[255, 255, 255\]) return "False".
+- The size of `lena` is same as `white`.
+- The following line is in order to replace the pixel values in `lena` to the pixel values in `white`, without its values equals \[255, 255, 255\].
+    ```python    
+    lena[white!=[255, 255, 255]] = white[white!=[255, 255, 255]]
+    ![result](../image/upon_donuts3.jpg)
+### Challenge task
+- Create the camera viewer that the donuts image is drawn upon each frame.
+- To make this program should be modified [`upon_image2.py`](#Step3).
+- \[Much difficult\] In addition, please try to be resized the donuts image adapted to the one's face, if possible. 
 
 ## Challenge[Hands1]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
