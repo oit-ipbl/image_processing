@@ -97,10 +97,11 @@ def main():
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
 
             # Display the message
+            cv2.rectangle(frame, (0, 80), (int(wt), 110), (255,255,255), -1)
             msg1 = "Point in the direction of " + str(quest) + " degrees"
-            cv2.putText(frame, "Reset[r key], Exit[Esc key]", (100, 50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,0),1)
-            cv2.putText(frame, msg1, (100, 100), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,255,255),2)
-            cv2.putText(frame, msg2, (100, 200), cv2.FONT_HERSHEY_COMPLEX_SMALL, 5, (0,0,255),2)
+            cv2.putText(frame, "Reset[r key], Exit[Esc key]", (100, int(ht)-50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,255),1)
+            cv2.putText(frame, msg1, (100, 100), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,0),1)
+            cv2.putText(frame, msg2, (100, 200), cv2.FONT_HERSHEY_COMPLEX_SMALL, 5, (0,255,0),3)
             if results.multi_hand_landmarks:
                 for hand_landmarks in results.multi_hand_landmarks:
                     if flag == 0:
