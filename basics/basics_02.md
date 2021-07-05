@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
 ### Video propaties
 - A value of grobal variable `device` in `video_viewer1.py` is the device number of the camera starting from 0. 
-  - It can be read the movie file when a value of the global variable `device` is set a movie file name, like the following.
+  - It can be read the movie file when a value of the `device` is set a movie file name, like the following.
   ```python
   device = "moviefile.avi"
   ```
