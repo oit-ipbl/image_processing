@@ -4,7 +4,42 @@
 This page contains challenges using all the techniques you have learned.
 
 ## Prerequisite
-You have to finish [MediaPipe Face](../mediapipe/face.md).
+- You have to finish [basic(2)](../basics/basics_02.md).
+- You have to finish [MediaPipe Face](../mediapipe/face.md).
+
+## Challenge[]
+### Step1
+- The following `upon_image.py` is a sample that is drawn another image upon the original image.
+  ```python
+  # -*- coding: utf-8 -*-
+  import cv2
+
+  def main():
+
+      img = cv2.imread('./imgs/lena.jpg')
+      fimg = cv2.imread('./imgs/donuts.png')
+
+      print("Lenna:", img.shape)
+      print("donuts:", fimg.shape)
+
+      img[256:512, 256:512] = fimg
+
+      cv2.imshow("mask", img)
+
+      cv2.waitKey(0)
+      cv2.destroyAllWindows()
+
+  # run---------------------------------------------------------------------------------------
+  if __name__ == '__main__':
+      main()
+  ```
+- You can see the image size of `lena.jpg` as 512 x 512 pixels. And you can see the image size of `donuts.png` as 256 x 256 pixels.
+- In `upon_image.py`, it is considered that `donuts.png` is drawn upon the right-bottom of `lena.jpg`.
+- The size of both images has to be the same when a part of `lena.jpg` substitutes `donuts.png`.
+    ```python 
+    img[256:512, 256:512] = fimg
+    ```
+    ![]     
 
 ## Challenge[Hands1]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
