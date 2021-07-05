@@ -52,7 +52,7 @@ This page contains challenges using all the techniques you have learned.
     ```python 
     img = np.ones((512, 512, 3), dtype=np.uint8) * 255
     ```
-- `np.ones((512, 512, 3), dtype=np.uint8)` is in order to make the 512(height) by 512(width) by 3(depth) matrix whose elements are ones. Therefore, to use the upper replaced code can get the white image whose size is 512 x 512 pixels.
+- `np.ones((512, 512, 3), dtype=np.uint8)` is in order to make the 512(height) by 512(width) by 3(depth) matrix whose elements are ones. Therefore, to use the upper replaced code can get the white image whose size is 512 x 512 pixels.<br>
     ![result](../image/upon_donuts2.jpg)
 
 ### Step3
@@ -74,7 +74,6 @@ def main():
     lena[white!=[255, 255, 255]] = white[white!=[255, 255, 255]]
 
     cv2.imshow("mask", lena)
-    cv2.imwrite("upon_donuts1.png", lena)
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
@@ -90,6 +89,7 @@ if __name__ == '__main__':
 - The following line is in order to replace the pixel values in `lena` to the pixel values in `white`, without its values equals \[255, 255, 255\].
     ```python    
     lena[white!=[255, 255, 255]] = white[white!=[255, 255, 255]]
+    ```
     ![result](../image/upon_donuts3.jpg)
 ### Challenge task
 - Create the camera viewer that the donuts image is drawn upon each frame.
