@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
 ### Add the function to calculate the frame number from the processing time
 - Define the function for the frame number calculation in order to avoid to be called `cap.read()` function multiple times, independent on the FPS.
-- In this program, the process after `cap.read()` function in the while block is skipped and continued the iteration if the next iteration is came up faster than the next frame is provided from the video stream.
+- The process after `cap.read()` function in the while block is skipped and continued the iteration if the next iteration is came up before the next frame is provided from the video stream.
 
 ### video_viewer2.py
 ```python
