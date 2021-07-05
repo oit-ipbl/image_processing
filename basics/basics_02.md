@@ -83,7 +83,7 @@ if __name__ == '__main__':
     | movie file | t + 1 |
      
 ### Wait for the user's key input
-- The `cv2.waitKey()` function sleeps the process(thread) to wait for the user's key input during a value of the argument (m sec).
+- `cv2.waitKey()` function sleeps the process(thread) in order to wait for the user's key input during a value of the argument (m sec).
 - It exits the while loop when the user presses the `Esc` key.
 - `Esc` key is coded at 27.
 
