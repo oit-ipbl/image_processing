@@ -93,7 +93,7 @@ if __name__ == '__main__':
     ![result](../image/upon_donuts3.jpg)
 ### Challenge task
 - Create the camera viewer that the donuts image is drawn upon each frame.
-- To make this program should be modified [`upon_image2.py`](#Step3).
+- To make this program should be modified [`upon_image2.py`](#Step3) or [`upon_image1.py`](#Step1).
 - <b>\[Much difficult\]</b> In addition, please try to be resized the donuts image adapted to the one's face, if possible. (You can skip it) 
 
 ## Challenge[Hands1]
