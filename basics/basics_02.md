@@ -76,7 +76,7 @@ if __name__ == '__main__':
                 cv2.imshow("video", frame)
         ```
 - In the video stream, the returned frame from `cap.read()` is the same as the previous frame when the time of the `cap.read()` function calling is shorter than 1/FPS sec.
-- In the movie file, the returned frame from `cap.read()` function is in order, independent of the loop time.
+- In the movie file, the returned frame from `cap.read()` function is in order, independent on the time of function calling.
     | Device | The number of the returned frame |
     :--- | :--- 
     | camera | t + int( time of the "read" function calling / fps) |
