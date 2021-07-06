@@ -4,6 +4,9 @@
 - There are `challenge` tasks in `Image processing advanced` section.
     - We strongly recommend all students read the documents on `challenge` tasks because there would be many hints or important information helping you done the final tasks.
     - Especially you want to work hard about image processing, please try to complete `challenge` tasks if possible. 
+- Please check the following official documents if you want to know the other functions and more details about the OpenCV or the MediaPipe.
+	- [OpenCV Tutorials](https://docs.opencv.org/4.5.2/d9/df8/tutorial_root.html)
+	- [MediaPipe Solutions](https://google.github.io/mediapipe/solutions/solutions.html)
 <br><br>
 - Index
   - [Image processing basics (1)](basics/basics_01.md)
