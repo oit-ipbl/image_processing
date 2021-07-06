@@ -194,7 +194,7 @@
   <image src="../image/lena_plt.png" height=50% width=50%>
 - The window closes when you click [x] button at upper right of the window.
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint(basics and important modules)
 - It's O.K., if you can finish the Practice[basic], [np], [cv2] and [plt].
 
 ### Script/Function in Python3 and image IO
@@ -335,8 +335,8 @@
   ```
 - Please confirm difference between cv2 and plt.
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-- It's O.K., if you can finish the Practice[script/function 1], [script/function 1] and [cv2 vs plt].
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint(script/function and cv2/plt)
+- It's O.K., if you can finish the Practice[script/function 1], [script/function 2] and [cv2 vs plt].
 
 #### Resizing images
 - The process with large size images is very heavy. If image size is huge, you should resize it to small.
@@ -381,6 +381,9 @@
 - It's O.K., if size of the result image `res_func1.png` is 256x256 as follows.<br>
   <image src="../image/lena_512.png" height=40% width=40%><image src="../image/lena_256.png" height=39% width=39%>
 
-#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint(resizing)
 - It's O.K., if you can finish the Exercise[resizing].
 
+---
+
+[README](../README.md)
