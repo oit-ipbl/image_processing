@@ -386,13 +386,13 @@ def main():
     lbf = cv2.face.createFacemarkLBF()
     lbf.loadModel("lbfmodel.yaml")
 
-    img = cv2.imread('./img/lena.jpg')
+    img = cv2.imread('./imgs/lena.jpg')
     faces = cascade.detectMultiScale(img)
     
     for i,face in enumerate(faces):
         fx, fy, fw, fh = face
         cv2.rectangle(img, (fx, fy), (fx+fw, fy+fh), [0,0,255], 1)
-        landmarks = lbf.fit(imgs, faces)
+        landmarks = lbf.fit(img, faces)
         _, list = landmarks
 
         for x, y in list[i][0]:
