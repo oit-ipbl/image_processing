@@ -396,7 +396,7 @@ def main():
         _, list = landmarks
 
         for x, y in list[i][0]:
-            cv2.circle(img, (x, y), 2,(0,255, 0), -1)
+            cv2.circle(img, (int(x), int(y)), 2,(0,255, 0), -1)
 
     cv2.imshow("face+facemark", img)
 
@@ -510,7 +510,7 @@ def main():
             _, list = landmarks
 
             for x, y in list[0][0]:
-                cv2.circle(frame, (x, y), 2,(0,255, 0), -1)
+                cv2.circle(frame, (int(x), int(y)), 2,(0,255, 0), -1)
 
         if cv2.waitKey(1) & 0xFF == 27:
             break
