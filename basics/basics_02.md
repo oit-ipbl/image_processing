@@ -464,6 +464,7 @@ if __name__ == '__main__':
 ```python
 # -*- coding: utf-8 -*-
 import cv2
+import numpy as np
 import time
 
 device = 0 # camera device number
@@ -505,8 +506,8 @@ def main():
         if len(faces)>0:
             face = faces[0]
             fx, fy, fw, fh = face
-            cv2.rectangle(frame, (fx, fy), (fx+fw, fy+fh), [0,0,255], 0)
-            landmarks = lbf.fit(frame, faces)
+            cv2.rectangle(frame, (int(fx), int(fy)), (fx+fw, fy+fh), [0,0,255], 0)
+            landmarks = lbf.fit(frame, np.array([face]))
             _, list = landmarks
 
             for x, y in list[0][0]:
