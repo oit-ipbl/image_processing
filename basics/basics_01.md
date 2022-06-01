@@ -1,4 +1,4 @@
-# Image processing basics (1)
+# Image processing basics for static images
 
 ## Objectives
 - This page explains basics of digital images and image processing with Python3.
