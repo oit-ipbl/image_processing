@@ -5,7 +5,7 @@
     - We strongly recommend all students read the documents on all `challenge` tasks because there would be many hints or important information helping you done the final tasks.
     - Especially you want to work hard about image processing, please try to complete `challenge` tasks if possible. 
 
-- The following sample programs will help you develop more advanced robot programs. Work with your team members to try out the samples.
+- The following `Sample programs` will help you develop more advanced image processing programs. Work with your team members to try out the samples.
 
 - Pre-learning Assignments
   - [Image processing basics for static images](basics/basics_01.md)
