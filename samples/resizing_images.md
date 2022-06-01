@@ -1,4 +1,4 @@
-# Resizing images
+# Resizing images (単独で完結するように変更する)
 - The process with large size images is very heavy. If image size is huge, you should resize it to small.
 - There are various methods for resizing.
   - Resize with specified size
