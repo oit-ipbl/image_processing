@@ -231,7 +231,7 @@
   ```
 - It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) in the directory `imgs` are the same.
 
-#### :o:Checkpoint(script/function and cv2/plt)
+#### :o:Checkpoint(script/function)
 - It's O.K., if you can finish the Practice[script/function 1] and [script/function 2].
 
 ---
