@@ -163,39 +163,8 @@
   <image src="../image/lena_blur.png" height=50% width=50%>
 - The windows close when you press any key.
 
-#### matplotlib.pyplot (short name: plt)
-- more information: [matplotlib tutorials](https://matplotlib.org/tutorials/index.html), [pyplot](https://matplotlib.org/stable/api/pyplot_summary.html)
-- This module is based on MATLAB.
-- It has many functions for image processing.
-- `plt` has many differences from `cv2`. The following table shows the main examples in image IO.
-  ||cv2|plt|
-  |----|----|----|
-  |color space (order of color channels)|BGR|RGB|
-  |able to show multi-figures on a single window|x|o|
-  |figure window|does not pause|pause and must be closed manually|
-  |normalization at showing image|default:off|default:on|
-  |displaying axis at showing image|default:off|default:on|
-
-#### Practice[plt]
-- Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_plt.py`)
-- Sample code
-  ```python
-  # sample_plt.py
-  import matplotlib.pyplot as plt
-  img = plt.imread('./imgs/lena.jpg')
-  if img is None: # maybe Path is wrong
-      print("image file is not opened.")
-      exit(1)
-  plt.subplot(121),plt.imshow(img)
-  plt.subplot(122),plt.imshow(255-img) # negative-positive conversion
-  plt.show() # required for showing figure
-  ```
-- It is O.K., if the following window pops up.<br>
-  <image src="../image/lena_plt.png" height=50% width=50%>
-- The window closes when you click [x] button at upper right of the window.
-
 #### :o:Checkpoint(basics and important modules)
-- It's O.K., if you can finish the Practice[basic], [np], [cv2] and [plt].
+- It's O.K., if you can finish the Practice[basic], [np] and [cv2].
 
 ### Script/Function in Python3 and image IO
 - Making a Python script a function improves reusability.
@@ -208,15 +177,6 @@
 
   # read image file
   img = cv2.imread('./imgs/lena.jpg')
-
-  # some image processing ==============
-  img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-  #   _____            _____
-  #  /   B/__         /   R/__
-  # /____/ G/__  ==> /____/ G/__
-  #   /____/ R/        /____/ B/
-  #     /____/           /____/
-  # ====================================
 
   # write image file
   cv2.imwrite('./imgs/res_scrpt.png', img)
@@ -235,15 +195,6 @@
   def imageIO(img_name_in, img_name_out):
       # read image file
       img = cv2.imread(img_name_in)
-
-      # some image processing ==============
-      img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-      #   _____            _____
-      #  /   B/__         /   R/__
-      # /____/ G/__  ==> /____/ G/__
-      #   /____/ R/        /____/ B/
-      #     /____/           /____/
-      # ====================================
 
       # write image file
       cv2.imwrite(img_name_out, img)
@@ -280,65 +231,10 @@
   ```
 - It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) in the directory `imgs` are the same.
 
-#### Difference of cv2 and plt
-- Let's confirm differences between `cv2` and `plt`!
-- (*Repost*) `plt` has many differences from `cv2`. The following table shows the main examples in image IO.
-  ||cv2|plt|
-  |----|----|----|
-  |color space (order of color channels)|BGR|RGB|
-  |able to show multi-figures on a single window|x|o|
-  |figure window|does not pause|pause and must be closed manually|
-  |normalization at showing image|default:off|default:on|
-  |displaying axis at showing image|default:off|default:on|
-
-#### Practice[cv2 vs plt]
-- Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_cv2_plt.py`)
-- Sample code
-  ```python
-  # sample_cv2_plt.py
-  import cv2
-  import matplotlib.pyplot as plt
-
-  def imageIOdemo(img_name_in, img_name_out_bgr, img_name_out_rgb):
-      # read image file
-      img_BGR = cv2.imread(img_name_in)
-
-      # some image processing ==============
-      img_RGB = cv2.cvtColor(img_BGR, cv2.COLOR_BGR2RGB)
-      #   _____            _____
-      #  /   B/__         /   R/__
-      # /____/ G/__  ==> /____/ G/__
-      #   /____/ R/        /____/ B/
-      #     /____/           /____/
-      # ====================================
-
-      # write image file
-      cv2.imwrite(img_name_out_bgr, img_BGR)
-      cv2.imwrite(img_name_out_rgb, img_RGB)
-
-      # show images (cv2)
-      cv2.imshow('img_BGR', img_BGR)
-      cv2.imshow('img_RGB', img_RGB)
-      # cv2.waitKey(0) # pause until any key pressed
-
-      # show multi-images (plt)
-      plt.subplot(1, 2, 1), plt.imshow(img_BGR), plt.title('img_BGR'), plt.axis('off')
-      plt.subplot(1, 2, 2), plt.imshow(img_RGB), plt.title('img_RGB'), plt.axis('off')
-      plt.show()
-      # plt's figures must be closed manually.
-
-      # close all cv2 windows (cv2)
-      cv2.destroyAllWindows()
-
-  if __name__ == '__main__':
-      imageIOdemo('./imgs/lena.jpg', './imgs/res_bgr.png', './imgs/res_rgb.png')
-  ```
-- Please confirm difference between cv2 and plt.
-
 #### :o:Checkpoint(script/function and cv2/plt)
-- It's O.K., if you can finish the Practice[script/function 1], [script/function 2] and [cv2 vs plt].
+- It's O.K., if you can finish the Practice[script/function 1] and [script/function 2].
 
-#### Resizing images
+#### Resizing images (-> samples)
 - The process with large size images is very heavy. If image size is huge, you should resize it to small.
 - There are various methods for resizing.
   - Resize with specified size
