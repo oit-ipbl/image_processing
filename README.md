@@ -8,10 +8,12 @@
 	- [OpenCV Tutorials](https://docs.opencv.org/4.5.2/d9/df8/tutorial_root.html)
 	- [MediaPipe Solutions](https://google.github.io/mediapipe/solutions/solutions.html)
 <br><br>
-- Index
+- Pre-learning Assignments
   - [Image processing basics for static images](basics/basics_01.md)
   - [Image processing basics (2)](basics/basics_02.md)
   - [MediaPipe Hands](mediapipe/hands.md)
   - [MediaPipe Pose](mediapipe/pose.md)
   - [MediaPipe Face](mediapipe/face.md)
   - [Image processing advanced](advanced/holistic.md)
+- Sample Programs
+  - [Resizing images](samples/resizing_images.md)
