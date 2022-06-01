@@ -15,5 +15,6 @@
   - [MediaPipe Pose](mediapipe/pose.md)
   - [MediaPipe Face](mediapipe/face.md)
   - [Image processing advanced](advanced/holistic.md)
+
 - Sample Programs
   - [Resizing images](samples/resizing_images.md)
