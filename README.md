@@ -9,7 +9,7 @@
 	- [MediaPipe Solutions](https://google.github.io/mediapipe/solutions/solutions.html)
 <br><br>
 - Index
-  - [Image processing basics (1)](basics/basics_01.md)
+  - [Image processing basics for static images](basics/basics_01.md)
   - [Image processing basics (2)](basics/basics_02.md)
   - [MediaPipe Hands](mediapipe/hands.md)
   - [MediaPipe Pose](mediapipe/pose.md)
