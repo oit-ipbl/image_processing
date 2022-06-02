@@ -19,7 +19,7 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 
 ### Sample code
 ```python
-
+import numpy as np
 import cv2
 import mediapipe as mp
 import time
