@@ -47,7 +47,7 @@ def drawFingertip(image, landmarks):
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
 
-        landmark_point.append([landmark_x, landmark_y, landmark_z])
+        landmark_point.append(np.array([landmark_x, landmark_y, landmark_z]))
 
     # Draw a circle on index finger and display the coordinate value
     cv2.circle(image, (landmark_point[8][0], landmark_point[8][1]), 7, (0, 0, 255), 3)
