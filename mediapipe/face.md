@@ -4,7 +4,7 @@
 This page explains how to make a program for face detection and get information.
 
 ## Prerequisite
-You have to finish [MediaPipe Pose](../mediapipe/pose.md).
+You have to finish [MediaPipe Hands](../mediapipe/hands.md).
 ## Face landmark model
 By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D position information of 468 landmarks as shown by the red marker in the following figure.<br>
 <image src="../image/face_mesh_android_gpu.gif" width="20%" height="20%">
