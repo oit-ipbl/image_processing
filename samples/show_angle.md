@@ -1,5 +1,5 @@
 # Show the angle pointed by the index finger (未完成)
-## sample code[Hands]
+## Sample code[Hands]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
  - In this program we need to calculate the angle using 2D vectors.<br>
     <image src="../image/angle.gif" width="30%" height="30%"><br>
@@ -12,10 +12,12 @@ import mediapipe as mp
 import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
+ 
+device = 0 # cameera device number
 
 def main():
     # For webcam input:
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(device)
     cv2.namedWindow('MediaPipe Hands', cv2.WINDOW_NORMAL)
     hands = mp_hands.Hands(
     max_num_hands=1,
@@ -42,8 +44,7 @@ def main():
 
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks:
-                count_fingers(image, hand_landmarks)
-                mp_drawing.draw_landmarks(image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+                show_angle(image, hand_landmarks)
 
         cv2.imshow('MediaPipe Hands', image)
 
@@ -51,11 +52,10 @@ def main():
             break
     cap.release()
 
-# Count and display the number of fingers
-def count_fingers(image, landmarks):
+# check the index finger
+def show_angle(image, landmarks):
     image_width, image_height = image.shape[1], image.shape[0]
     landmark_point = []
-    tipids = [4,8,12,16,20]   #list of all landmarks of the tips of fingers
 
     for index, landmark in enumerate(landmarks.landmark):
         if landmark.visibility < 0 or landmark.presence < 0:
@@ -69,52 +69,34 @@ def count_fingers(image, landmarks):
         landmark_point.append(np.array([landmark_x, landmark_y, landmark_z], dtype=int))
 
         if len(landmark_point) != 0 and len(landmark_point)==21:
-            fingerlist=[]
+            cv2.circle(image, (landmark_point[6][0], landmark_point[6][1]), 7, (0, 0, 255), 3)
+            cv2.circle(image, (landmark_point[7][0], landmark_point[7][1]), 7, (0, 0, 255), 3)
+            cv2.circle(image, (landmark_point[8][0], landmark_point[8][1]), 7, (0, 0, 255), 3)
+            cv2.line(image, (landmark_point[6][0], landmark_point[6][1]), (landmark_point[7][0], landmark_point[7][1]), (0, 255, 0))
+            cv2.line(image, (landmark_point[7][0], landmark_point[7][1]), (landmark_point[8][0], landmark_point[8][1]), (0, 255, 0))
 
-            #thumb and dealing with flipping of hands
-            if landmark_point[12][0] > landmark_point[20][0]:
-                if landmark_point[tipids[0]][0] > landmark_point[tipids[0]-1][0]:
-                    fingerlist.append(1)
-                else:
-                    fingerlist.append(0)
-            else:
-                if landmark_point[tipids[0]][0] < landmark_point[tipids[0]-1][0]:
-                    fingerlist.append(1)
-                else:
-                    fingerlist.append(0)
+            # calculate the angle between the index finger and vertical direction
+            ifinger_vec = (int(landmark_point[8][0]-landmark_point[6][0]), 
+            int(landmark_point[8][1]-landmark_point[6][1]))
 
-            #others
-            for index in range (1,5):
-                vec1 = (landmark_point[tipids[index]-3][0] - landmark_point[tipids[index]-2][0], 
-                landmark_point[tipids[index]-3][1] - landmark_point[tipids[index]-2][1], 
-                landmark_point[tipids[index]-3][2] - landmark_point[tipids[index]-2][2])
-                vec2 = (landmark_point[tipids[index]-1][0] - landmark_point[tipids[index]-2][0], 
-                landmark_point[tipids[index]-1][1] - landmark_point[tipids[index]-2][1], 
-                landmark_point[tipids[index]-1][2] - landmark_point[tipids[index]-2][2])
-                cv2.circle(image, (landmark_point[tipids[index]-3][0], landmark_point[tipids[index]-3][1]), 7, (0, 0, 255), 3)
-                cv2.circle(image, (landmark_point[tipids[index]-2][0], landmark_point[tipids[index]-2][1]), 7, (0, 0, 255), 3)
-                cv2.circle(image, (landmark_point[tipids[index]-1][0], landmark_point[tipids[index]-1][1]), 7, (0, 0, 255), 3)
-                cv2.line(image, (landmark_point[5][0], landmark_point[5][1]), (landmark_point[6][0], landmark_point[6][1]), (0, 255, 0))
-                cv2.line(image, (landmark_point[6][0], landmark_point[6][1]), (landmark_point[7][0], landmark_point[7][1]), (0, 255, 0))
+            vertical_vec = (0, -1)
 
-                if v_angle3d(vec1, vec2) > 140:
-                    fingerlist.append(1)
-                else:
-                    fingerlist.append(0)
+            A = np.array(ifinger_vec)
+            B = np.array(vertical_vec)
+            angle = int(v_angle(A, B))
 
+            if(landmark_point[8][0] - landmark_point[6][0] < 0):
+                angle = 360 - angle
 
-            if len(fingerlist)!=0:
-                fingercount=fingerlist.count(1)
+            cv2.putText(image, str(angle), (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 
-            cv2.putText(image, str(fingercount), (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
-
-def v_angle3d(v1, v2):
+def v_angle(v1, v2):
     v1_n = np.linalg.norm(v1)
     v2_n = np.linalg.norm(v2)
 
     cos_theta = np.inner(v1, v2) / (v1_n * v2_n)
 
-    return np.rad2deg(np.arccos(cos_theta))
+    return np.degrees(np.arccos(cos_theta))
 
 if __name__ == '__main__':
     main()
