@@ -5,6 +5,7 @@
 ```python
     image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
 ```
+<image src="../image/pose_q2-1.png" width="30%" height="30%"> <image src="../image/pose_q2-2.png" width="30%" height="30%"> <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
 
 Type the following template. It's OK copy and paste.
 
@@ -15,9 +16,11 @@ import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
+device = 0 # cameera device number
+
 def main():
     # For webcam input:
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(device)
     pose = mp_pose.Pose(
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5)
@@ -79,4 +82,3 @@ def judge_raise_hand(image, landmarks):
 if __name__ == '__main__':
     main()
 ```
- <image src="../image/pose_q2-1.png" width="30%" height="30%"> <image src="../image/pose_q2-2.png" width="30%" height="30%"> <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
