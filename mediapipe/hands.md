@@ -324,14 +324,8 @@ if __name__ == '__main__':
     if calcAngle(vec1, vec2) > 140:
         cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 ```
-
-## Exercise[Hands3]
- - Count and display the number of fingers opened.
-    - It is necessary to think about the judgment method with each finger.
-    - To be robust to changes in hand orientation, we need to use 3D vectors to calculate the angle.<br>
-    <image src="../image/num.gif" width="30%" height="30%"><br>
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Hands3].
+### :o:Checkpoint
+It's OK, you can finish the Exercise[Hands1] and [Hands2].
 
 ---
 
