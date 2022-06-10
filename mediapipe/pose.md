@@ -100,16 +100,8 @@ if __name__ == '__main__':
  - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](../mediapipe/hands.md)<br>
     <image src="../image/pose_center.png" width="30%" height="30%"><br>
 
-## Exercise[Pose2]
- - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands. 
-    - Use relative positions in 3D coordinates.<br>
- - The following code flips the image horizontally.
-```python
-    image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
-```
- <image src="../image/pose_q2-1.png" width="30%" height="30%"> <image src="../image/pose_q2-2.png" width="30%" height="30%"> <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
-It's OK, you can finish the Exercise[Pose1] and [Pose2].
+### :o:Checkpoint
+It's OK, you can finish the Exercise[Pose1].
 
 ---
 
