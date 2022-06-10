@@ -155,7 +155,7 @@ if __name__ == '__main__':
  - The center of gravity can be calculated by calculating the average position of the landmark.
  - Since landmarks are sometimes acquired in the wrong position, using the centroid may allow you to create more robust applications.<br>
     <image src="../image/q2_fingertips_c.png" width="30%" height="30%"><br>
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint
+### :o:Checkpoint
 It's OK, you can finish the Exercise[Hands1] and [Hands2].
 
 ## Practice[Calculate the angle between two vectors]
@@ -324,8 +324,6 @@ if __name__ == '__main__':
     if calcAngle(vec1, vec2) > 140:
         cv2.putText(image, "open", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0,0,255),5)
 ```
-### :o:Checkpoint
-It's OK, you can finish the Exercise[Hands1] and [Hands2].
 
 ---
 
