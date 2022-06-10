@@ -1,5 +1,5 @@
 # Shape with arms (未完成)
-## sample code[Pose]
+## Sample code[Pose]
  - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.
  - It is possible to judge by comparing the x-coordinate and y-coordinate values between multiple landmarks.<br>
     <image src="../image/pose_q3.gif" width="30%" height="30%">
@@ -13,9 +13,11 @@ import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
+device = 0 # cameera device number
+
 def main():
     # For webcam input:
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(device)
     pose = mp_pose.Pose(
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5)
