@@ -1,5 +1,5 @@
 # Show face orientation (未完成)
-## sample code[Face]
+## Sample code[Face]
  - Display "left" or "right" according to the orientation of the face.
  - There are several judgment methods, but the simple one is a judgment method that compares the x-coordinates of several landmarks.<br>
     <image src="../image/q2_face.gif" width="30%" height="30%"><br>
@@ -59,7 +59,7 @@ def face_orientation(image, landmarks):
         if landmark.visibility < 0 or landmark.presence < 0:
             continue
         
-        # Convert the obtained landmark values x and y to the coordinates on the image
+        # Convert the obtained landmark values x, y, z to the coordinates on the image
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
@@ -75,9 +75,6 @@ def face_orientation(image, landmarks):
             cv2.circle(image, (int(landmark_point[i][0]),int(landmark_point[i][1])), 1, (0, 255, 0), 1)
         cx = int(cx/len(landmark_point))
         cy = int(cy/len(landmark_point))
-        # cv2.putText(image, "(" + str(cx) + ", " + str(cy) + ")", 
-        # (cx - 20, cy - 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
-        # cv2.circle(image, (cx, cy), 7, (0, 0, 255), 3)
 
         # top
         cv2.circle(image, (int(landmark_point[10][0]),int(landmark_point[10][1])), 5, (255, 255, 0), 1)
