@@ -1,5 +1,5 @@
 # Count opened fingers (未完成)
-## sample code[Hands]
+## Sample code[Hands]
  - Count and display the number of fingers opened.
     - It is necessary to think about the judgment method with each finger.
     - To be robust to changes in hand orientation, we need to use 3D vectors to calculate the angle.<br>
@@ -14,9 +14,11 @@ import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
+device = 0 # cameera device number
+ 
 def main():
     # For webcam input:
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(device)
     cv2.namedWindow('MediaPipe Hands', cv2.WINDOW_NORMAL)
     hands = mp_hands.Hands(
     max_num_hands=1,
