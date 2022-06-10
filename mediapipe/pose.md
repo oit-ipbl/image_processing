@@ -13,9 +13,10 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 ## Practice[Display all pose landmarks]
   Get pose landmarks and display them.
   - Execute "vscode.bat" file, and open the VSCode.
-  - Make a python file `mypose.py`. 
+  - Click the following button, and make a python file `mypose.py` in the `code` directory. <br>
+  <image src="../image/newfile2_2022.png" width="50%" height="50%"><br>
   - Type the following sample code. It's OK copy and paste.
-
+    
 ### Sample code
 ```python
 import cv2
