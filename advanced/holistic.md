@@ -95,13 +95,8 @@ if __name__ == '__main__':
 - Create the camera viewer that the donuts image is drawn upon each frame.
 - To make this program should be modified [`upon_image2.py`](#Step3) or [`upon_image1.py`](#Step1).
 - <b>\[Much difficult\]</b> In addition, please try to be resized the donuts image adapted to the size or the position of the one's face, if possible. (You can skip it) 
-
-## Challenge[Hands1]
- - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
- - In this program we need to calculate the angle using 2D vectors.<br>
-    <image src="../image/angle.gif" width="30%" height="30%"><br>
     
-## Challenge[Hands2]
+## Challenge[Hands1]
  - Create an interactive simple game using the information from **hands** by referring to the sample code below.
 ### Sample code
 ```python
@@ -158,56 +153,56 @@ def main():
     msg1 = ""
     msg2 = ""
     
-    with mp_hands.Hands(
-        max_num_hands=1,
-        min_detection_confidence=0.7) as hands:
-        while cap.isOpened():
-            frame_now=getFrameNumber(start, fps)
-            if frame_now == frame_prv:
-                continue
-            frame_prv = frame_now
+    hands = mp_hands.Hands(
+    max_num_hands=1,
+    min_detection_confidence=0.7)
+    while cap.isOpened():
+        frame_now=getFrameNumber(start, fps)
+        if frame_now == frame_prv:
+            continue
+        frame_prv = frame_now
 
-            ret, frame = cap.read()
-            if not ret:
-                print("Ignoring empty camera frame.")
-                # If loading a video, use 'break' instead of 'continue'.
-                continue
+        ret, frame = cap.read()
+        if not ret:
+            print("Ignoring empty camera frame.")
+            # If loading a video, use 'break' instead of 'continue'.
+            continue
 
-            # Flip the image horizontally for a later selfie-view display, and convert
-            # the BGR image to RGB.
-            frame = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)
+        # Flip the image horizontally for a later selfie-view display, and convert
+        # the BGR image to RGB.
+        frame = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)
 
-            # To improve performance, optionally mark the image as not writeable to
-            # pass by reference.
-            frame.flags.writeable = False
-            results = hands.process(frame)
+        # To improve performance, optionally mark the image as not writeable to
+        # pass by reference.
+        frame.flags.writeable = False
+        results = hands.process(frame)
 
-            # Draw the index finger annotation on the image.
-            frame.flags.writeable = True
-            frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+        # Draw the index finger annotation on the image.
+        frame.flags.writeable = True
+        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
 
-            # Display the message
-            cv2.rectangle(frame, (0, 80), (int(wt), 110), (255,255,255), -1)
-            msg1 = "Point in the direction of " + str(quest) + " degrees"
-            cv2.putText(frame, "Reset[r key], Exit[Esc key]", (100, int(ht)-50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,255),1)
-            cv2.putText(frame, msg1, (100, 100), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,0),1)
-            cv2.putText(frame, msg2, (100, 200), cv2.FONT_HERSHEY_COMPLEX_SMALL, 5, (0,255,0),3)
-            if results.multi_hand_landmarks:
-                for hand_landmarks in results.multi_hand_landmarks:
-                    if flag == 0:
-                        if checkAngle(frame, hand_landmarks) == quest:
-                            flag = 1
+        # Display the message
+        cv2.rectangle(frame, (0, 80), (int(wt), 110), (255,255,255), -1)
+        msg1 = "Point in the direction of " + str(quest) + " degrees"
+        cv2.putText(frame, "Reset[r key], Exit[Esc key]", (100, int(ht)-50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,255),1)
+        cv2.putText(frame, msg1, (100, 100), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,0),1)
+        cv2.putText(frame, msg2, (100, 200), cv2.FONT_HERSHEY_COMPLEX_SMALL, 5, (0,255,0),3)
+        if results.multi_hand_landmarks:
+            for hand_landmarks in results.multi_hand_landmarks:
+                if flag == 0:
+                    if checkAngle(frame, hand_landmarks) == quest:
+                        flag = 1
                         
-            cv2.imshow('MediaPipe Hands', frame)
+        cv2.imshow('MediaPipe Hands', frame)
 
-            if flag == 1:
-                msg2 = "ok!"
-            if cv2.waitKey(1) & 0xFF == 114:
-                flag = 0
-                msg2 = ""
-                quest = random.randint(1, 359)
-            if cv2.waitKey(1) & 0xFF == 27:
-                break
+        if flag == 1:
+            msg2 = "ok!"
+        if cv2.waitKey(1) & 0xFF == 114:
+            flag = 0
+            msg2 = ""
+            quest = random.randint(1, 359)
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
     cap.release()
 
 if __name__ == '__main__':
@@ -215,19 +210,14 @@ if __name__ == '__main__':
 ```
  - In this sample code, 1 to 359 degrees are displayed randomly, and "OK!" is displayed when the user points to the same angle.
  - In the `checkAngle` function, the angle between the vertical upward direction and the index finger is calculated.
- - **Complete the `calcAngle` function using the program created in Challenge [Hands1].**<br>
+ - **Complete the `checkAngle` function.**<br>
   <image src="../image/angle_app.gif" width="30%" height="30%"><br>
 
-## Challenge[Hands3]
- - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **hands**.
+## Challenge[Hands2]
+ - Make a simple game like [Challenge[Hands1]](./holistic.md#challengehands1) using the information from **hands**.
       
 ## Challenge[Pose1]
- - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.
- - It is possible to judge by comparing the x-coordinate and y-coordinate values between multiple landmarks.<br>
-    <image src="../image/pose_q3.gif" width="30%" height="30%">
-
-## Challenge[Pose2]
- - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **pose**.
+ - Make a simple game like [Challenge[Hands1]](./holistic.md#challengehands1) using the information from **pose**.
 
 ## Challenge[Face1]
  - Display the face direction randomly,  and show how many times you have turned your face to the direction.<br>
@@ -243,15 +233,9 @@ if __name__ == '__main__':
    select = msg_array[random.randint(0, len(msg_array)-1)]
    print(select)
 ````
-   
-## Challenge[Face2]
- - Display "smile" when smile. 
- - The position of facial parts is the basic information for classifying facial expressions.
- - Think so that you can judge correctly even if you tilt your face.<br>
-<image src="../image/smile.gif" width="30%" height="30%"><br>
   
-## Challenge[Face3]
- - Make a simple game like [Challenge[Hands2]](./holistic.md#challengehands2) using the information from **face**.
+## Challenge[Face2]
+ - Make a simple game like [Challenge[Hands1]](./holistic.md#challengehands1) using the information from **face**.
  
 ---
 # MediaPipe Holistic
