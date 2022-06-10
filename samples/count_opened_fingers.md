@@ -64,7 +64,7 @@ def count_fingers(image, landmarks):
         if landmark.visibility < 0 or landmark.presence < 0:
             continue
 
-        # Convert the obtained landmark values x and y to the coordinates on the image
+        # Convert the obtained landmark values x, y, z to the coordinates on the image
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
         landmark_z = landmark.z
