@@ -79,4 +79,4 @@ def judge_raise_hand(image, landmarks):
 if __name__ == '__main__':
     main()
 ```
- <image src="image/pose_q2-1.png" width="30%" height="30%"> <image src="image/pose_q2-2.png" width="30%" height="30%"> <image src="image/pose_q2-3.png" width="30%" height="30%"><br>
+ <image src="../image/pose_q2-1.png" width="30%" height="30%"> <image src="../image/pose_q2-2.png" width="30%" height="30%"> <image src="../image/pose_q2-3.png" width="30%" height="30%"><br>
