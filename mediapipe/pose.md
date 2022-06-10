@@ -95,10 +95,19 @@ if __name__ == '__main__':
 ### How to refer to landmark information
  - `landmark.x` and `landmark.y` are normalized to [0.0-1.0].
  - `landmark.z` represents the landmark depth with the depth at the midpoint of hips being the origin, and the smaller the value the closer the landmark is to the camera.
+ - In the above sample code, the detection results of all pose are stored in the variable `results`.
+```python
+    results = pose.process(frame)
+```
+ - All the obtained landmark information is stored in the variable `results`. 
+    You can refer to the landmark information of a specific pose as follows. 
+```python
+    results.pose_landmarks.landmark[0]
+```
 
 ## Exercise[Pose1]
  - Calculate and display the center of gravity from all the obtained landmarks.
- - Define a function that calculates and displays the center of gravity with reference to [MediaPipe (1)](../mediapipe/hands.md)<br>
+ - Define a function that calculates and displays the center of gravity.<br>
     <image src="../image/pose_center.png" width="30%" height="30%"><br>
 
 ### :o:Checkpoint
