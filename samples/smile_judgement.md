@@ -1,5 +1,5 @@
 # Show face orientation (未完成)
-## sample code[Face]
+## Sample code[Face]
  - Display "smile" when smile. 
  - The position of facial parts is the basic information for classifying facial expressions.<br>
 <image src="../image/smile.gif" width="30%" height="30%"><br>
@@ -13,10 +13,11 @@ import numpy as np
 mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
+device = 0 # cameera device number
+
 def main():
     # For webcam input:
-    drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(device)
 
     face_mesh = mp_face_mesh.FaceMesh(
     min_detection_confidence=0.5,
