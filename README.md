@@ -9,7 +9,7 @@
 
 # Pre-learning Assignments
 - [Image processing basics for static images](basics/basics_01.md)
-- [Image processing basics (2)](basics/basics_02.md)
+- [Image processing basics for video image](basics/basics_02.md)
 - [MediaPipe Pose](mediapipe/pose.md)
 - [MediaPipe Hands](mediapipe/hands.md)
 - [MediaPipe Face](mediapipe/face.md)
