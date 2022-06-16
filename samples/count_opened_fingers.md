@@ -1,4 +1,4 @@
-# Count opened fingers (未完成)
+# Count opened fingers
 ## Sample code[Hands]
  - Count and display the number of fingers opened.
     - It is necessary to think about the judgment method with each finger.
