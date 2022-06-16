@@ -1,25 +1,33 @@
-# Resizing images (単独で完結するように変更する)
+# Resizing images
+
+[README](../README.md)
+
+---
+
+## Objectives
+
+This page explains how to resize images.
+
+## Prerequisite
+
+You have to finish [Image processing basics for static images](../basics/basics_static.md).
+
+## Python Code for Resizing images
 - The process with large size images is very heavy. If image size is huge, you should resize it to small.
 - There are various methods for resizing.
-  - Resize with specified size
+  - Resizing with specified size
     ```python
     # the size of img_resize becomes (new_width, new_height).
     img_resize = cv2.resize(img, (new_width, new_height))
     ```
-  - Resize with scalling
+  - Resizing with scalling
     ```python
     # downscalling -> 1/2
     img_resize = cv2.resize(img, None, fx=1/2, fy=1/2)
     ```
-  - Resize the long side to the specified length
+  - Resizing the long side of images to a specified length while keeping the aspect ratio
     - This program can resize Images of various sizes to approximately the same data size while maintaining the aspect ratio.
     ```python
-    # ###########################################
-    # res = resizeImg(src, length)
-    # src: input image
-    # length[int]: length of long side after resizing
-    # res: resized image
-    # ###########################################
     def resizeImg(img, length):
         h, w = img.shape[:2]
 
@@ -36,10 +44,56 @@
         return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
     ```
 
-## Exercise[resizing]
-- modify the function `imageIO` in `sample_imgIO_func.py` of`Practice[script/function 1]` to be able to save the half size (256x256) image by using above three resizing methods, respectively.
-- It's O.K., if size of the result image `res_func1.png` is 256x256 as follows.<br>
-  <image src="../image/lena_512.png" height=40% width=40%><image src="../image/lena_256.png" height=39% width=39%>
+## :o:Exercise[resizing]
+- Please edit `resize.py` and type the following template. It's O.K. copy and paste.
+```python
+import cv2
 
-## :o:Checkpoint(resizing)
-- It's O.K., if you can finish the Exercise[resizing].
+def resizeImg(img, length):
+    """
+    This function resizes the long side of images to the specified length while keeping the aspect ratio.
+
+    Args:
+        img(numpy.ndarray): input image
+        length(int): length of long side after resizing
+
+    Returns:
+        numpy.ndarray: resized image
+    """
+    h, w = img.shape[:2]
+    if max(h, w) < length:
+        return img
+    if h < w:
+        newSize = (int(h*length/w), length)
+    else:
+        newSize = (length, int(w*length/h))
+    print('resize to', newSize)
+    return cv2.resize(img, (newSize[1], newSize[0])) # (w, h)
+
+def main():
+    in_name = './img/Mandrill.png'
+    img = cv2.imread(in_name)
+
+    img150x100 = cv2.resize(img, (150, 100))
+    img_half = cv2.resize(img, None, fx=2/3, fy=2/3)
+    img150 = resizeImg(img.copy(), 150)
+
+    cv2.imshow('img', img)
+    cv2.imshow('img150x100', img150x100)
+    cv2.imshow('img_half', img_half)
+    cv2.imshow('img150', img150)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    main()
+```
+
+### Run
+- Please run `resize.py`.
+- It's O.K., if the following figures pops up.<br>
+  <image src="../image/Mandrill_resizing.png" height=50% width=50%>
+
+---
+
+[README](../README.md)
