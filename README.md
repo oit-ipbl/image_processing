@@ -16,6 +16,7 @@
 - [Image processing advanced](advanced/holistic.md)
 
 # Sample Programs
+- [Sample of face/facial landmarks detection](samples/sample_face_detection.md)
 - [Resizing images](samples/resizing_images.md)
 - [Show raised hands](samples/show_raised_hands.md)
 - [Shape with arms](samples/shape_with_arms.md)
