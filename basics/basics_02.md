@@ -47,13 +47,13 @@ if __name__ == '__main__':
     main()
 ```
 
-### Video propaties
+### Video properties
 - A value of grobal variable `device` in `video_viewer1.py` is the device number of the camera starting from 0. 
   - It can be read the movie file when a value of the `device` is set a movie file name, like the following.
   ```python
   device = "moviefile.avi"
   ```
-- The following codes in `video_viewer1.py` are in order to open the video stream and get the propaties of the video-image. 
+- The following codes in `video_viewer1.py` are in order to open the video stream and get the properties of the video-image. 
     | code | comment |
     :--- | :---
     | cv2.VideoCapture(device) | Open the video stream | 
@@ -324,7 +324,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### face detection propaties
+### face detection properties
 - It's a face detection program using Haar Cascade.
     - You can see the theory of Haar Cascade [here](https://docs.opencv.org/4.5.2/db/d28/tutorial_cascade_classifier.html). 
     - The following line is in order to prepare the face detection by reading a trained dataset `haarcascade_frontalface_default.xml`.
@@ -408,7 +408,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### facial landmarks detection propaties
+### facial landmarks detection properties
 - It's a facial landmarks detection program using LBF(Local binary fitting).
     - You can see the theory of LBF [here](https://github.com/kurnianggoro). 
     - The following line in `cvfacemark_detection.py` is in order to prepare to use the LBF model, and to read a trained dataset `lbfmodel.yaml`.
