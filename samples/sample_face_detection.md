@@ -77,7 +77,7 @@ if __name__ == '__main__':
     | \[0,0,255\] | The line color of the rectangle. It's represented by the values of BGR color components. |
     | 1 | The line width of the rectangle. The rectangle is filled in with the color if its value sets -1. |
 
-### Practice
+### :o:Practice
 - You should be copy [`cvface_detection.py`](#cvface_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvface_detection.py` in the `code` folder.
 - Check it can detect the face on Lenna's face.<br>
         ![result](../image/dflenna.jpg)
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     | (255, 255, 0) | The line color of the circle. It's represented by the values of BGR color components. |
     | -1 | The line width of the circle. The circle is filled in with the color if its value sets -1. |
 
-### Practice
+### :o:Practice
 - You should be copy [`cvfacemark_detection.py`](#cvfacemark_detectionpy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_detection.py` in the `code` folder.
 - Check it can detect the face and facial landmarks on Lenna's face.<br>
     ![result](../image/dfmlenna.jpg)
@@ -248,7 +248,7 @@ if __name__ == '__main__':
         ``` 
 - Sometimes, the results of the detections not good because the face detection time with haar cascade would be longer than the FPS.
 
-### Practice
+### :o:Practice
 - You should be copy [`cvfacemark_video.py`](#cvfacemark_videopy) with the `clipboard` button and paste it to the VS Code, and save it as `cvfacemark_video.py` in the `code` folder.
 - Check it can detect the face and facial landmarks on the face in the video-image.
 - The program is terminated with `Esc` key press.
