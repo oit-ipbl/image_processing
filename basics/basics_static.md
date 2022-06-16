@@ -4,11 +4,11 @@
 - This page explains basics of digital images and image processing with Python3.
 
 ## prerequisite
-- "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/2e4097811b9ddfcdf6e5ac80b4ffa5f66edb6c32/setup/python+vscode.md)" has already been installed.
+- "[Image Processing Environment for iPBL](https://github.com/oit-ipbl/portal/blob/main/setup/python%2Bvscode.md)" has already been installed.
 - The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `imgs` and read from there.
 
 ## Basics of digital images
-### Color (Additive color) 
+### Color (Additive color)
 - Many colors can be created by mixing the primary colors (Blue, Green, Red).<br>
   <image src="../image/Color-additive-mixing.png" height=25% width=25%><br>
   Additive color mixing([wikipedia](https://commons.wikimedia.org/wiki/File:Color-additive-mixing.png))
@@ -23,7 +23,7 @@
 - Digital color images can be represented by 3 dimensional array.<br>
   <image src="../image/imageArray.png" height=30% width=30%><br>
   Color image array
-- Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.    
+- Range of pixel value is 0 to 255 (8bit). Thus, each pixel can create 16,777,216 (=(256)3) colors.
 
 
 ## Image processing with Python3
@@ -31,32 +31,30 @@
 - The python programs (.py) have to be put under the directory `code`. And the all image files are saved/downloaded in the directory `imgs` and read from there.
 - Directory stucture
   ```
-  +[code]                   <== work directory ("C:/oit/py21/code")
+  +[code]                   <== work directory ("C:\oit\py22_ipbl\code")
   |
-  |-+[test]                 <== this directory already exists. ("C:/oit/py21/code/test")
-  | |-- testModule.py       <== this program already exists.
-  | |-- testWebcam.py       <== this program already exists.
-  |
-  |-+[imgs]                 <== this directory already exists.
-  | |--lena.jpg             <== this image already exists. ("C:/oit/py21/code/imgs/lena.jpg")
+  |-+[img]                  <== this directory already exists.
+  | |--Mandrill.png         <== this image already exists. ("C:\oit\py22_ipbl\code\imgs\Mandrill.png")
   | |--xxx.jpg              <== save new image files at this place.
   | |--xxx.png
   | |--
   |
-  |--hands.py               <== this program already exists. ("C:/oit/py21/code/hands.py")
+  |--hands.py               <== this program already exists. ("C:/oit/py22_ipbl/code/hands.py")
+  |--test.py                <== this program already exists.
+  |--testWebcam.py          <== this program already exists.
   |--python programs(.py)   <== save new python programs at this place.
   |--
   ```
 
 ### Basics of Python3 program
-- more information: [python3.8 docs](https://docs.python.org/3.8/index.html)
+- more information: [python3.9 docs](https://docs.python.org/3.9/index.html)
 - Indentation is very important in Python programming. Indentation level is used to determine the coding block (the grouping of statements) and scope of variables.
 - Variable is accessible from same block or nested block. Variable doesn't need to declare before using. Type of variable is determined by value to be assigned.Variable declared "global" has globally scope.
 - A comment starts with a hash character `#`<br>
   <image src="../image/pys.png"><br>
 
 #### Practice[basic]
-- Save the following sample code as a python file and execute it. (`C:/oit/py21/code/sample_basic.py`)
+- Save the following sample code as a python file and execute it. (`C:/oit/py22_ipbl/code/sample_basic.py`)
   - How to make new python files with VSCode
     - Confirm that the selected directory (or files directly under it) is the directory where you want to make a new python file.<br>
       <image src="../image/new_python_file_1.png" height=40% width=40%>
@@ -72,18 +70,18 @@
   sum = 0
   for i in range(10):
     sum = sum + i
-    print(str(i) + ":" + str(sum))  
+    print(str(i) + ":" + str(sum))
 
   if sum <= 30 :
     print("sum is under 30")
   elif sum <= 50 :
-    print("sum is between 30 and 50") 
+    print("sum is between 30 and 50")
   else:
     print("sum is over 50")
   ```
 - It is O.K., if it is executed as follows.
   ```sh
-  C:\oit\py21\code> python sample_basic.py
+  C:\\...\code> python sample_basic.py
   0:0
   1:1
   2:3
@@ -105,7 +103,7 @@
   - useful linear algebra, Fourier transform, and random number capabilities
 
 #### Practice[np]
-- Save the following sample code as a python file and execute it. (`C:/oit/py21/code/sample_numpy.py`)
+- Save the following sample code as a python file and execute it. (`C:/oit/py22_ipbl/code/sample_numpy.py`)
 - Sample code
   ```python
   # sample_numpy.py
@@ -118,17 +116,17 @@
   ```
 - It is O.K., if it is executed as follows.
   ```sh
-  C:\oit\py21\code> python sample_numpy.py
-  [[[0. 0.] 
-    [0. 1.] 
+  C:\\...\code> python sample_numpy.py
+  [[[0. 0.]
+    [0. 1.]
     [0. 0.]]
 
-   [[0. 0.] 
-    [0. 1.] 
+   [[0. 0.]
+    [0. 1.]
     [0. 0.]]
 
-   [[0. 0.] 
-    [0. 0.] 
+   [[0. 0.]
+    [0. 0.]
     [0. 0.]]
 
    [[0. 0.]
@@ -139,17 +137,17 @@
   ```
 
 #### cv2 (opencv-python)
-- more information: [OpenCV4.5.2 docs](https://docs.opencv.org/4.5.2/)
+- more information: [OpenCV4.5.5 docs](https://docs.opencv.org/4.5.5/)
 - This is an open source module for Computer Vision.
 - It has many functions for image processing.
 
 #### Practice[cv2]
-- Save the following sample code as a python file, and execute it. (`C:/oit/py21/code/sample_cv2.py`)
+- Save the following sample code as a python file, and execute it. (`C:/oit/py22_ipbl/code/sample_cv2.py`)
 - Sample code
   ```python
   # sample_cv2.py
   import cv2
-  img = cv2.imread('./imgs/lena.jpg') # read image file
+  img = cv2.imread('./img/Mandrill.png') # read image file
   if img is None: # maybe Path is wrong
       print("image file is not opened.")
       exit(1)
@@ -160,7 +158,7 @@
   cv2.destroyAllWindows # close all cv2's windows
   ```
 - It is O.K., if the following windows pop up.<br>
-  <image src="../image/lena_blur.png" height=50% width=50%>
+  <image src="../image/Mandrill_blur.png" height=50% width=50%>
 - The windows close when you press any key.
 
 #### :o:Checkpoint(basics and important modules)
@@ -176,10 +174,10 @@
   import cv2
 
   # read image file
-  img = cv2.imread('./imgs/lena.jpg')
+  img = cv2.imread('./img/Mandrill.png')
 
   # write image file
-  cv2.imwrite('./imgs/res_scrpt.png', img)
+  cv2.imwrite('./img/res_scrpt.png', img)
 
   # show image file
   cv2.imshow('window name', img)
@@ -201,8 +199,8 @@
       return img
 
   def main():
-      in_name = './imgs/lena.jpg' # local
-      out_name = './imgs/res_func1.png' # local
+      in_name = './img/Mandrill.png' # local
+      out_name = './img/res_func1.png' # local
       img = imageIO(in_name, out_name)
       # show image file
       cv2.imshow('window name', img)
@@ -215,9 +213,9 @@
       main() # function name is free
   ```
 #### Practice[script/function 1]
-- Save the above two sample codes (`sample_imgIO.py`, `sample_imgIO_func.py`) as a python file. (`C:/oit/py21/code/sample_imgIO.py`) (`C:/oit/py21/code/sample_imgIO_func.py`)
+- Save the above two sample codes (`sample_imgIO.py`, `sample_imgIO_func.py`) as a python file. (`C:/oit/py22_ipbl/code/sample_imgIO.py`) (`C:/oit/py22_ipbl/code/sample_imgIO_func.py`)
 - Execute the two python codes, respectively.
-- It's O.K., if the two result images (`res_scrpt.png`, `res_func1.png`) in the directory `imgs` are the same.
+- It's O.K., if the two result images (`res_scrpt.png`, `res_func1.png`) in the directory `img` are the same.
 
 #### Practice[script/function 2]
 - Let's use the function `imageIO` in `sample_imgIO_func.py` on Other python programs!
@@ -227,9 +225,9 @@
   # sample_other.py
   import sample_imgIO_func as myImgIO
 
-  myImgIO.imageIO('./imgs/lena.jpg', './imgs/res_func2.png')
+  myImgIO.imageIO('./img/Mandrill.png', './img/res_func2.png')
   ```
-- It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) in the directory `imgs` are the same.
+- It's O.K., if the all result images (`res_scrpt.png`, `res_func1.png`, `res_func2.png`) in the directory `img` are the same.
 
 #### :o:Checkpoint(script/function)
 - It's O.K., if you can finish the Practice[script/function 1] and [script/function 2].
