@@ -9,13 +9,14 @@
 
 # Pre-learning Assignments
 - [Image processing basics for static images](basics/basics_static.md)
-- [Image processing basics (2)](basics/basics_02.md)
+- [Image processing basics for video image](basics/basics_02.md)
 - [MediaPipe Pose](mediapipe/pose.md)
 - [MediaPipe Hands](mediapipe/hands.md)
 - [MediaPipe Face](mediapipe/face.md)
 - [Image processing advanced](advanced/holistic.md)
 
 # Sample Programs
+- [Sample of face/facial landmarks detection](samples/sample_face_detection.md)
 - [Resizing images](samples/resizing_images.md)
 - [Show raised hands](samples/show_raised_hands.md)
 - [Shape with arms](samples/shape_with_arms.md)

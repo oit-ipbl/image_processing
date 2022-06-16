@@ -1,4 +1,4 @@
-# Show face orientation (未完成)
+# Show face orientation
 ## Sample code[Face]
  - Display "left" or "right" according to the orientation of the face.
  - There are several judgment methods, but the simple one is a judgment method that compares the x-coordinates of several landmarks.<br>
