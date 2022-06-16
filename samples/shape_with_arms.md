@@ -1,4 +1,4 @@
-# Shape with arms (未完成)
+# Shape with arms
 ## Sample code[Pose]
  - Make a shape of "O" or "X" with your arm and display it on the screen according to the shape.
  - It is possible to judge by comparing the x-coordinate and y-coordinate values between multiple landmarks.<br>

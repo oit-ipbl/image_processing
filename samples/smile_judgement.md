@@ -1,4 +1,4 @@
-# Show face orientation (未完成)
+# Show face orientation
 ## Sample code[Face]
  - Display "smile" when smile. 
  - The position of facial parts is the basic information for classifying facial expressions.<br>
