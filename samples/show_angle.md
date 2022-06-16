@@ -1,4 +1,4 @@
-# Show the angle pointed by the index finger (未完成)
+# Show the angle pointed by the index finger
 ## Sample code[Hands]
  - Display the angle between the vertical upward direction and the direction pointed by the index finger as shown in the figure below.
  - In this program we need to calculate the angle using 2D vectors.<br>
