@@ -116,7 +116,7 @@ if __name__ == '__main__':
          ```
 - Check the video window is came up, and the program is terminated with the `Esc` key press.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of simple video-image processing)
+### :o:Checkpoint (Sample of simple video-image processing)
 - It's OK, you can show the video image with your camera device.
 
 
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Sample of video-image processing adapted the frame rate)
+### :o:Checkpoint (Sample of video-image processing adapted the frame rate)
 - It's OK, you confirm only to be able to run the program.
 - Which program, [`video_viewer2.py`](#video_viewer2py) or [`video_viewer1.py`](#video_viewer1py), is better to use is dependent on the situation.
 - There is a more simple way for adapting the frame rate that a value of the argument in `cv2.waitKey()` function in the [`video_viewer1.py`](#video_viewer1py) is replaced to the time until the next frame is provided, like the following.
@@ -214,7 +214,7 @@ if __name__ == '__main__':
 
 - If your program is correct, you will be able to find a jpeg file named `selfie.jpg` in `imgs` folder when you press `s` key.
 
-### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)Checkpoint (Exercise (selfie.py))
+### :o:Checkpoint (Exercise (selfie.py))
 - It's OK, if you can confirm that the `selfie.jpg` was saved correctly.
 <!--
 ## Appendix: Sample of video-image recorder
