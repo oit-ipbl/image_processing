@@ -1,4 +1,4 @@
-# Show raised hands (未完成)
+# Show raised hands
 ## Sample code[Pose]
  - Display "right" when you raise your right hand and "left" when you raise your left hand. In addition, display "both" when you raise your both hands. 
  - The following code flips the image horizontally.
