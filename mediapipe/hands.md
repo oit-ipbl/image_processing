@@ -13,8 +13,7 @@ By using [MediaPipe](https://google.github.io/mediapipe/), we can obtain 3D posi
 ## Practice[Get information of arbitrary landmark]
   Get information and display about an landmark of index finger.
   - Execute "vscode.bat" file, and open the VSCode.
-  - Click the following button, and make a python file `myhands.py` in the `code` directory. <br>
-  <image src="../image/newfile2.png" width="50%" height="50%"><br>
+  - Make a python file `myhands.py` in the `code` directory. <br>
   - Type the following sample code. It's OK copy and paste.
 
 ### Sample code
