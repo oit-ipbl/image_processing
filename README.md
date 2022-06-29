@@ -3,7 +3,7 @@
 
 - There are `challenge` tasks in `Image processing advanced` section.
     - We strongly recommend all students read the documents on all `challenge` tasks because there would be many hints or important information helping you done the final tasks.
-    - Especially you want to work hard about image processing, please try to complete `challenge` tasks if possible. 
+    - If you have time to spare,  please try to complete `challenge` tasks. 
 
 - The following `Sample programs` will help you develop more advanced image processing programs. Work with your team members to try out the samples.
 
