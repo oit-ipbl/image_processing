@@ -70,7 +70,9 @@ if __name__ == '__main__':
 ```
 
 ## Detect skin color region
+```sh
 python opencv_sample_03.py
+```
 ```python
 from __future__ import print_function
 import cv2
