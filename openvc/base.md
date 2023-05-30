@@ -27,7 +27,6 @@ if __name__ == '__main__':
 Copy and paste the following code as “opencv_sample_01.py” and execute it!
 
 ```python
-from __future__ import print_function
 import cv2
 import numpy
 
