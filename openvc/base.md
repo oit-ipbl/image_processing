@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cv2.imshow(WINNAME, img)
     key = cv2.waitKey(0)
 ```
-
+---
 ## Simple image manipulation
 Copy and paste the following code as “opencv_sample_01.py” and execute it!
 
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     cv2.namedWindow(WINNAME)
     run()
 ```
-
+---
 ## Camera capture
 ```sh
 python opencv_sample_02.py
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         if key%256 == ord('q'):
             break
 ```
-
+---
 ## Detect skin color region
 ```sh
 python opencv_sample_03.py
@@ -113,6 +113,7 @@ if __name__ == '__main__':
         if key % 256 == ord('q'):
             break
 ```
+---
 ## Change color spaces (BGR to HSV) 
 
 ```sh
@@ -128,7 +129,7 @@ if __name__ == '__main__':
     hsv_blue = cv2.cvtColor(blue, cv2.COLOR_BGR2HSV)
     print(hsv_blue)
 ```
-
+---
 ## Detect center and the size for each contour
 python opencv_sample_05.py
 ```python
@@ -191,7 +192,7 @@ if __name__ == '__main__':
         if key % 256 == ord('q'):
             break
 ```
-
+---
 ## Color Picker
 ```sh
  python color_picker.py
