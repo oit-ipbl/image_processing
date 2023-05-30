@@ -1,10 +1,7 @@
 # OpenCV
 OpenCV (Open Source Computer Vision) is an open-source library designed to facilitate computer vision tasks, such as image processing, object detection, and image recognition. It provides a collection of programming functions and algorithms that enable developers to perform various vision-related operations.
-
 OpenCV supports multiple programming languages, including C++, Python, Java, and more, making it accessible to a wide range of developers. It offers a comprehensive set of functionalities for image and video processing, including image filtering, feature extraction, object tracking, camera calibration, machine learning, and more.
-
 With OpenCV, developers can read and write images and videos, implement various image processing algorithms, perform feature detection and description, conduct object detection and tracking, and apply advanced computer vision techniques to analyze and manipulate visual data. It also provides tools for camera calibration, which is useful for computer vision applications involving camera geometries and 3D reconstruction.
-
 OpenCV has gained popularity and widespread adoption due to its extensive functionality, cross-platform compatibility, and active community support. It is widely used in various domains, including robotics, augmented reality, autonomous vehicles, medical imaging, and security systems, to name a few.
 ```bash
 mkdir ~/python_opencv
