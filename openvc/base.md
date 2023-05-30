@@ -1,4 +1,4 @@
-# Opencv
+# OpenCV
 ```bash
 mkdir ~/python_opencv
 cd ~/python_opencv
