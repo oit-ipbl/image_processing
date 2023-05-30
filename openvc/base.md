@@ -4,6 +4,7 @@ mkdir ~/python_opencv
 cd ~/python_opencv
 ```
 ![image00.jpg](../image/image00.jpg "image00.jpg")
+
 Please download the following image as 'image00.jpg' into ~/python_opencv
 ## Simple image viewer
 Copy and paste the following code as “opencv_sample_00.py” and execute it!
