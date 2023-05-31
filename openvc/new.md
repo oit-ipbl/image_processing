@@ -13,6 +13,7 @@ Please download the following image as 'image00.jpg' into ~/python_opencv
 ## Simple image viewer
 ### Opencv_sample_00.py
 This code is an example of using the OpenCV library to read and display an image file. 
+
 Copy and paste the following code as “opencv_sample_00.py” and execute it!
 ```python
 import cv2
