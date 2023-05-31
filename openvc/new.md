@@ -26,7 +26,7 @@ cv2.destroyAllWindows()
 ```
 ---
 ## Simple image manipulation
-Opencv_sample_00.py
+### Opencv_sample_01.py
 Copy and paste the following code as “opencv_sample_01.py” and execute it!
 
 ```python
