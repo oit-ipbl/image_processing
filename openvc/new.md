@@ -30,27 +30,25 @@ Copy and paste the following code as “opencv_sample_01.py” and execute it!
 
 ```python
 import cv2
-import numpy
+import numpy as np
 
 WINNAME = "OpenCV Sample 01"
 WIDTH = 640
 HEIGHT = 480
 
-def run():
-    img = numpy.zeros((HEIGHT, WIDTH, 3))
-    for r in range(256):
-        for g in range(256):
-            for b in range(256):
-                img[...] = (b/255.0, g/255.0, r/255.0)
-                print(img)
-                cv2.imshow(WINNAME, img)
-                key = cv2.waitKey(1)
-                if key%256 == ord('q'):
-                    return
+img = np.zeros((HEIGHT, WIDTH, 3))
+for r in range(256):
+    for g in range(256):
+        for b in range(256):
+            img[...] = (b/255.0, g/255.0, r/255.0)
+            print(img)
+            cv2.imshow(WINNAME, img)
+            key = cv2.waitKey(1)
+            if key%256 == ord('q'):
+                break
 
-if __name__ == '__main__':
-    cv2.namedWindow(WINNAME)
-    run()
+cv2.namedWindow(WINNAME)
+cv2.destroyAllWindows()
 ```
 ---
 ## Camera capture
