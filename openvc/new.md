@@ -55,7 +55,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Camera capture
-### Opencv_sample_0.py
+### Opencv_sample_02.py
 ```sh
 python opencv_sample_02.py
 ```
