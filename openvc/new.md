@@ -86,7 +86,6 @@ if __name__ == '__main__':
 ### Opencv_sample_03.py
 
 ```python
-from __future__ import print_function
 import cv2
 import numpy
 
@@ -97,7 +96,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Detect skin color region
-### Opencv_sample_05.py
+### Opencv_sample_04.py
 ```sh
 python opencv_sample_04.py
 ```
@@ -105,7 +104,7 @@ python opencv_sample_04.py
 import cv2
 import numpy
 
-WINNAME = "OpenCV Sample 03"
+WINNAME = "OpenCV Sample 04"
 WIDTH = 640
 HEIGHT = 480
 
@@ -136,10 +135,8 @@ if __name__ == '__main__':
 ```
 ---
 ## Color Picker
-### Opencv_sample_04.py
-```sh
- python color_picker.py
- ```
+### Opencv_sample_05.py
+
  
  ```python
 import numpy as np
@@ -180,7 +177,7 @@ import cv2
 import numpy
 from numpy.random import randint
 
-WINNAME = "OpenCV Sample 05"
+WINNAME = "OpenCV Sample 06"
 WIDTH = 640
 HEIGHT = 480
 
