@@ -83,10 +83,8 @@ if __name__ == '__main__':
 ```
 ---
 ## Change color spaces (BGR to HSV) 
+### Opencv_sample_03.py
 
-```sh
-python opencv_color_sample.py
-```
 ```python
 from __future__ import print_function
 import cv2
@@ -99,9 +97,9 @@ if __name__ == '__main__':
 ```
 ---
 ## Detect skin color region
-### Opencv_sample_03.py
+### Opencv_sample_04.py
 ```sh
-python opencv_sample_03.py
+python opencv_sample_04.py
 ```
 ```python
 import cv2
