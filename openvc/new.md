@@ -97,7 +97,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Detect skin color region
-### Opencv_sample_04.py
+### Opencv_sample_05.py
 ```sh
 python opencv_sample_04.py
 ```
@@ -174,7 +174,7 @@ cv2.destroyAllWindows()
  ```
 ---
 ## Detect center and the size for each contour
-### python opencv_sample_05.py
+### python opencv_sample_06.py
 ```python
 import cv2
 import numpy
