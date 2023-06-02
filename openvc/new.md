@@ -55,6 +55,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Camera capture
+### Opencv_sample_0.py
 ```sh
 python opencv_sample_02.py
 ```
@@ -62,22 +63,16 @@ python opencv_sample_02.py
 import cv2
 
 WINNAME = "OpenCV Sample 02"
-WIDTH = 640
-HEIGHT = 480
 
-if __name__ == '__main__':
-    cv2.namedWindow(WINNAME)
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        sys.exit(1)
+cap = cv2.VideoCapture(0)
+while True:
+    ret, frame = cap.read()
+    cv2.imshow(WINNAME, frame)
+    if cv2.waitKey(1) == ord('q'):
+        break
 
-    while True:
-        _, frame = cap.read()
-        frame.resize((HEIGHT, WIDTH, 3))
-        cv2.imshow(WINNAME, frame)
-        key = cv2.waitKey(1)
-        if key%256 == ord('q'):
-            break
+cap.release()
+cv2.destroyAllWindows()
 ```
 ---
 ## Detect skin color region
