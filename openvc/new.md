@@ -82,6 +82,22 @@ if __name__ == '__main__':
             break
 ```
 ---
+## Change color spaces (BGR to HSV) 
+
+```sh
+python opencv_color_sample.py
+```
+```python
+from __future__ import print_function
+import cv2
+import numpy
+
+if __name__ == '__main__':
+    blue = numpy.uint8([[[255, 0, 0]]])  # BGR
+    hsv_blue = cv2.cvtColor(blue, cv2.COLOR_BGR2HSV)
+    print(hsv_blue)
+```
+---
 ## Detect skin color region
 ### Opencv_sample_03.py
 ```sh
@@ -120,22 +136,7 @@ if __name__ == '__main__':
         if key % 256 == ord('q'):
             break
 ```
----
-## Change color spaces (BGR to HSV) 
 
-```sh
-python opencv_color_sample.py
-```
-```python
-from __future__ import print_function
-import cv2
-import numpy
-
-if __name__ == '__main__':
-    blue = numpy.uint8([[[255, 0, 0]]])  # BGR
-    hsv_blue = cv2.cvtColor(blue, cv2.COLOR_BGR2HSV)
-    print(hsv_blue)
-```
 ---
 ## Detect center and the size for each contour
 python opencv_sample_05.py
