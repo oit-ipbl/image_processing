@@ -136,7 +136,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Color Picker
-### sample04
+### Opencv_sample_04.py
 ```sh
  python color_picker.py
  ```
@@ -174,7 +174,7 @@ cv2.destroyAllWindows()
  ```
 ---
 ## Detect center and the size for each contour
-python opencv_sample_05.py
+### python opencv_sample_05.py
 ```python
 import cv2
 import numpy
