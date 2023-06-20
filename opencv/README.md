@@ -100,7 +100,7 @@ if __name__ == '__main__':
     print(hsv_blue)
 ```
 ---
-## Detect skin color region
+## Detect asian skin color region
 This code uses OpenCV to perform color-based object detection and highlighting in a video feed.
 ### Opencv_sample_04.py
 ```sh
