@@ -58,6 +58,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Camera capture
+This code uses OpenCV to capture video feed from a camera and display it in a window.
 ### Opencv_sample_02.py
 ```sh
 python opencv_sample_02.py
