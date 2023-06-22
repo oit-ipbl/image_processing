@@ -7,8 +7,8 @@ With OpenCV, developers can read and write images and videos, implement various 
 
 OpenCV has gained popularity and widespread adoption due to its extensive functionality, cross-platform compatibility, and active community support. It is widely used in various domains, including robotics, augmented reality, autonomous vehicles, medical imaging, and security systems, to name a few.
 ```bash
-mkdir ~/python_opencv
-cd ~/python_opencv
+mkdir python_opencv
+cd python_opencv
 ```
 ![image00.jpg](../image/image00.jpg "image00.jpg")
 
