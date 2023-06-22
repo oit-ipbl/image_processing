@@ -239,4 +239,7 @@ if __name__ == '__main__':
             break
 ```
 
+## Exercises 
+1. Make a program that detects and prints the center (x, y) and the size (width, height) of multiple red objects with an image coordinate.
 
+2. Make a program that detects and prints the center (x, y) and the size (width, height) of multiple red objects and green objects at the same time with an image coordinate.
