@@ -17,7 +17,7 @@ Please download the following image as 'image00.jpg' into ~/python_opencv
 ### Opencv_sample_00.py
 This code is an example of using the OpenCV library to read and display an image file. 
 
-Copy and paste the following code as “opencv_sample_00.py” and execute it!
+
 ```python
 import cv2
 
@@ -30,7 +30,7 @@ cv2.destroyAllWindows()
 ---
 ## Simple image manipulation
 ### Opencv_sample_01.py
-Copy and paste the following code as “opencv_sample_01.py” and execute it!
+
 
 ```python
 import cv2
