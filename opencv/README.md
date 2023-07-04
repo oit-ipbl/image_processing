@@ -6,6 +6,10 @@ OpenCV supports multiple programming languages, including C++, Python, Java, and
 With OpenCV, developers can read and write images and videos, implement various image processing algorithms, perform feature detection and description, conduct object detection and tracking, and apply advanced computer vision techniques to analyze and manipulate visual data. It also provides tools for camera calibration, which is useful for computer vision applications involving camera geometries and 3D reconstruction.
 
 OpenCV has gained popularity and widespread adoption due to its extensive functionality, cross-platform compatibility, and active community support. It is widely used in various domains, including robotics, augmented reality, autonomous vehicles, medical imaging, and security systems, to name a few.
+
+## Simple image viewer
+### Opencv_sample_00.py
+This code is an example of using the OpenCV library to read and display an image file. 
 ```bash
 mkdir python_opencv
 cd python_opencv
@@ -13,10 +17,6 @@ cd python_opencv
 ![image00.jpg](../image/image00.jpg "image00.jpg")
 
 Please download the following image as 'image00.jpg' into ~/python_opencv
-## Simple image viewer
-### Opencv_sample_00.py
-This code is an example of using the OpenCV library to read and display an image file. 
-
 
 ```python
 import cv2
