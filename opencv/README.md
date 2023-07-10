@@ -86,6 +86,8 @@ if __name__ == '__main__':
             break
 ```
 ---
+
+
 ## Change color spaces (BGR to HSV) 
 This code snippet demonstrates how to convert a BGR color value to its corresponding HSV representation using OpenCV.
 ### opencv_sample_03.py
