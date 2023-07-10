@@ -26,6 +26,8 @@ img = cv2.imread('./image00.jpg')
 cv2.imshow(WINNAME, img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+print(img)
+print(img.shape)
 ```
 ---
 ## Simple image manipulation
