@@ -31,7 +31,7 @@ print(img.shape)
 ---
 ## Simple image manipulation
 ### opencv_sample_01.py
-
+This code is a code that outputs various blue colours
 
 ```python
 import cv2
