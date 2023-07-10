@@ -29,7 +29,7 @@ cv2.destroyAllWindows()
 ```
 ---
 ## Simple image manipulation
-### Opencv_sample_01.py
+### opencv_sample_01.py
 
 
 ```python
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 ---
 ## Camera capture
 This code uses OpenCV to capture video feed from a camera and display it in a window.
-### Opencv_sample_02.py
+### opencv_sample_02.py
 
 ```python
 import cv2
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 ---
 ## Change color spaces (BGR to HSV) 
 This code snippet demonstrates how to convert a BGR color value to its corresponding HSV representation using OpenCV.
-### Opencv_sample_03.py
+### opencv_sample_03.py
 
 ```python
 import cv2
@@ -100,7 +100,7 @@ if __name__ == '__main__':
 ---
 ## Detect asian skin color region
 This code uses OpenCV to perform color-based object detection and highlighting in a video feed.
-### Opencv_sample_04.py
+### opencv_sample_04.py
 ```sh
 python opencv_sample_04.py
 ```
@@ -139,7 +139,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Color Picker
-### Opencv_sample_05.py
+### opencv_sample_05.py
 
  
  ```python
