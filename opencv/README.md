@@ -8,7 +8,7 @@ With OpenCV, developers can read and write images and videos, implement various 
 OpenCV has gained popularity and widespread adoption due to its extensive functionality, cross-platform compatibility, and active community support. It is widely used in various domains, including robotics, augmented reality, autonomous vehicles, medical imaging, and security systems, to name a few.
 
 ## Simple image viewer
-### Opencv_sample_00.py
+### opencv_sample_00.py
 This code is an example of using the OpenCV library to read and display an image file. 
 ```bash
 mkdir python_opencv
