@@ -143,6 +143,7 @@ if __name__ == '__main__':
 ```
 ---
 ## Color Picker
+The following code displays the rgp and hsv values around the clicked location.
 ### opencv_sample_05.py
 
  
