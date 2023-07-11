@@ -231,7 +231,6 @@ if __name__ == '__main__':
             print("(cx,cy)=(" + str(cx) + "," + str(cy) + ")")
             x, y, w, h = cv2.boundingRect(cont)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 5)
-            # cv2.circle(frame, (cx,cy),w,(0,0,255),10)
 
         cv2.imshow('frame', frame)
         cv2.imshow('mask', hueMat)
