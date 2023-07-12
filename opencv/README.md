@@ -34,7 +34,6 @@ print(img.shape)
 ## BRG(Opencv)
 
 Row (height) x Column (width) x Colour (3)
--
 - Blue
 - Green
 - Red
