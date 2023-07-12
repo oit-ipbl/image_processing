@@ -29,8 +29,9 @@ print(img)
 print(img.shape)
 ```
 ---
-
-## RGB(Opencv)
+## RGB
+ RGB stands for Red, Green, and Blue, which are the primary colors of light. RGB is a color model used to represent and display colors on electronic devices such as computer screens, televisions, and digital cameras. Each color in the RGB model is represented by a value ranging from 0 to 255, where 0 represents no intensity of that color, and 255 represents the highest intensity.
+## BGR(Opencv)
 Row (height) x Column (width) x Colour (3)
 - Colour(blue,green,red)
 
@@ -91,11 +92,13 @@ if __name__ == '__main__':
             break
 ```
 ---
-
+## HSV
+HSV stands for Hue, Saturation, and Value, and it is a color model commonly used in image processing and computer graphics. It represents colors based on these three attributes, allowing for more intuitive manipulation and understanding of color.
+[HSV](https://en.wikipedia.org/wiki/HSL_and_HSV)
 
 ## Change color spaces (BGR to HSV) 
 This code snippet demonstrates how to convert a BGR color value to its corresponding HSV representation using OpenCV.
-[HSV](https://en.wikipedia.org/wiki/HSL_and_HSV)
+
 ### opencv_sample_03.py
 
 ```python
