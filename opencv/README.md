@@ -30,7 +30,7 @@ print(img.shape)
 ```
 ---
 
-## RGB
+## RGB(Opencv)
 Row (height) x Column (width) x Colour (3)
 - Colour(blue,green,red)
 
