@@ -101,7 +101,7 @@ HSV stands for Hue, Saturation, and Value, and it is a color model commonly used
 ## HSV(opencv)
 - hue :0 - 180
 - Saturation:0 - 255
-- vale:0 - 255 
+- value:0 - 255 
 ## Change color spaces (BGR to HSV) 
 This code snippet demonstrates how to convert a BGR color value to its corresponding HSV representation using OpenCV.
 
