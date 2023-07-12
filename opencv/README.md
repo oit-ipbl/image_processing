@@ -32,10 +32,7 @@ print(img.shape)
 
 ## RGB
 Row (height) x Column (width) x Colour (3)
-- Colour (3)
-      - blue
-      - green
-      - red
+- Colour(blue,green,red)
 
 
 ## Simple image manipulation
