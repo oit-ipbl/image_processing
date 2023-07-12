@@ -31,7 +31,8 @@ print(img.shape)
 ---
 ## RGB
  RGB stands for Red, Green, and Blue, which are the primary colors of light. RGB is a color model used to represent and display colors on electronic devices such as computer screens, televisions, and digital cameras. Each color in the RGB model is represented by a value ranging from 0 to 255, where 0 represents no intensity of that color, and 255 represents the highest intensity.
-## BGR(Opencv)
+## BRG(Opencv)
+
 Row (height) x Column (width) x Colour (3)
 -
 - Blue
