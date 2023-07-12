@@ -29,6 +29,15 @@ print(img)
 print(img.shape)
 ```
 ---
+
+## RGB
+Row (height) x Column (width) x Colour (3)
+- Colour (3)
+      - blue
+      - green
+      - red
+
+
 ## Simple image manipulation
 ### opencv_sample_01.py
 This code is a code that outputs various blue colours
