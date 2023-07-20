@@ -13,7 +13,7 @@ This code is an example of using the OpenCV library to read and display an image
 mkdir python_opencv
 cd python_opencv
 ```
-![image00.jpg](../image/image00.jpg "image00.jpg")
+![image00.jpg](image/image00.jpg "image00.jpg")
 
 Please download the following image as 'image00.jpg' into ~/python_opencv
 
